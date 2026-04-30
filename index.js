@@ -1,8 +1,16 @@
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
-const { v4: uuidv4 } = require('uuid');
 const path = require('path');
+
+function generateShortId() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 6; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
 
 const app = express();
 const server = http.createServer(app);
@@ -18,7 +26,7 @@ const games = {};
 const GAME_TIMEOUT = 60 * 60 * 1000;
 
 function createGame() {
-    const gameId = uuidv4();
+    const gameId = generateShortId();
     const starter = Math.random() < 0.5 ? 'X' : 'O';
     games[gameId] = {
         board: Array(9).fill(null),
@@ -39,8 +47,8 @@ app.post('/api/games', (req, res) => {
 });
 
 app.get('/:id', (req, res, next) => {
-    // Only match uuid-like strings to avoid conflicting with other static assets
-    if (req.params.id.length === 36) {
+    // Only match 6-character short IDs to avoid conflicting with other static assets
+    if (req.params.id.length === 6) {
         res.sendFile(path.join(__dirname, 'public', 'game.html'));
     } else {
         next();

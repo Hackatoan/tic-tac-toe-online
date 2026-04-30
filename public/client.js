@@ -3,7 +3,7 @@ const socket = io();
 // Parse game ID from URL
 const gameId = window.location.pathname.substring(1);
 
-if (!gameId || gameId.length !== 36) {
+if (!gameId || gameId.length !== 6) {
     window.location.href = '/';
 }
 

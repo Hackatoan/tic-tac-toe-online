@@ -39,6 +39,12 @@ async function runTest() {
         const data = await res.json();
         const gameId = data.gameId;
 
+        if (gameId.length !== 6) {
+            console.error(`Short URL failed: Expected length 6 but got ${gameId.length} (${gameId})`);
+        } else {
+            console.log("Short URL format is correct.");
+        }
+
         const htmlRes = await fetch(`http://localhost:3000/${gameId}`);
         if (htmlRes.ok && (await htmlRes.text()).includes('Tic Tac Toe')) {
             console.log("Clean URL works!");
