@@ -1,10 +1,9 @@
 const socket = io();
 
 // Parse game ID from URL
-const urlParams = new URLSearchParams(window.location.search);
-const gameId = urlParams.get('id');
+const gameId = window.location.pathname.substring(1);
 
-if (!gameId) {
+if (!gameId || gameId.length !== 6) {
     window.location.href = '/';
 }
 

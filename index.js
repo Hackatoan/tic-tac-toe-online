@@ -1,8 +1,16 @@
 const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
-const { v4: uuidv4 } = require('uuid');
 const path = require('path');
+
+function generateShortId() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 6; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
+}
 
 const app = express();
 const server = http.createServer(app);
@@ -18,12 +26,14 @@ const games = {};
 const GAME_TIMEOUT = 60 * 60 * 1000;
 
 function createGame() {
-    const gameId = uuidv4();
+    const gameId = generateShortId();
+    const starter = Math.random() < 0.5 ? 'X' : 'O';
     games[gameId] = {
         board: Array(9).fill(null),
         players: { X: null, O: null },
         scores: { X: 0, O: 0 },
-        turn: 'X',
+        turn: starter,
+        starter: starter,
         winner: null,
         lastActivity: Date.now()
     };
@@ -34,6 +44,15 @@ function createGame() {
 app.post('/api/games', (req, res) => {
     const gameId = createGame();
     res.json({ gameId });
+});
+
+app.get('/:id', (req, res, next) => {
+    // Only match 6-character short IDs to avoid conflicting with other static assets
+    if (req.params.id.length === 6) {
+        res.sendFile(path.join(__dirname, 'public', 'game.html'));
+    } else {
+        next();
+    }
 });
 
 io.on('connection', (socket) => {
@@ -116,7 +135,8 @@ io.on('connection', (socket) => {
         game.lastActivity = Date.now();
         game.board = Array(9).fill(null);
         game.winner = null;
-        game.turn = 'X'; // X always starts next game, or could toggle
+        game.starter = game.starter === 'X' ? 'O' : 'X';
+        game.turn = game.starter;
 
         io.to(currentGameId).emit('gameState', game);
     });
