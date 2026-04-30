@@ -19,7 +19,7 @@
                 const response = await fetch('/api/games', { method: 'POST' });
                 const data = await response.json();
                 if (data.gameId) {
-                    window.location.href = `/game.html?id=${data.gameId}`;
+                    window.location.href = `/${data.gameId}`;
                 } else {
                     alert('Failed to create game.');
                 }

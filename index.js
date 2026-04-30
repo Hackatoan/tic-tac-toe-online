@@ -19,11 +19,13 @@ const GAME_TIMEOUT = 60 * 60 * 1000;
 
 function createGame() {
     const gameId = uuidv4();
+    const starter = Math.random() < 0.5 ? 'X' : 'O';
     games[gameId] = {
         board: Array(9).fill(null),
         players: { X: null, O: null },
         scores: { X: 0, O: 0 },
-        turn: 'X',
+        turn: starter,
+        starter: starter,
         winner: null,
         lastActivity: Date.now()
     };
@@ -34,6 +36,15 @@ function createGame() {
 app.post('/api/games', (req, res) => {
     const gameId = createGame();
     res.json({ gameId });
+});
+
+app.get('/:id', (req, res, next) => {
+    // Only match uuid-like strings to avoid conflicting with other static assets
+    if (req.params.id.length === 36) {
+        res.sendFile(path.join(__dirname, 'public', 'game.html'));
+    } else {
+        next();
+    }
 });
 
 io.on('connection', (socket) => {
@@ -116,7 +127,8 @@ io.on('connection', (socket) => {
         game.lastActivity = Date.now();
         game.board = Array(9).fill(null);
         game.winner = null;
-        game.turn = 'X'; // X always starts next game, or could toggle
+        game.starter = game.starter === 'X' ? 'O' : 'X';
+        game.turn = game.starter;
 
         io.to(currentGameId).emit('gameState', game);
     });
