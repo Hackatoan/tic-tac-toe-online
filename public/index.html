@@ -11,15 +11,15 @@
     <meta property="og:title" content="Tic-Tac-Toe Online · Hackatoa Games" />
     <meta property="og:description" content="Play Tic-Tac-Toe online with a friend in real time. Free, no account needed." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ttc.hackatoa.com/" />
+    <meta property="og:url" content="https://ttt.hackatoa.com/" />
     <meta property="og:site_name" content="Hackatoa" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Tic-Tac-Toe Online · Hackatoa Games" />
     <meta name="twitter:description" content="Play Tic-Tac-Toe online with a friend in real time. Free, no account needed." />
     <meta name="twitter:site" content="@jhackatoa" />
-    <meta property="og:image" content="https://ttc.hackatoa.com/og.svg" />
-    <meta name="twitter:image" content="https://ttc.hackatoa.com/og.svg" />
-    <link rel="canonical" href="https://ttc.hackatoa.com/" />
+    <meta property="og:image" content="https://ttt.hackatoa.com/og.svg" />
+    <meta name="twitter:image" content="https://ttt.hackatoa.com/og.svg" />
+    <link rel="canonical" href="https://ttt.hackatoa.com/" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
     {
@@ -27,7 +27,7 @@
       "@type": "VideoGame",
       "name": "Tic-Tac-Toe Online",
       "description": "Play Tic-Tac-Toe online with a friend in real time. Free, no account needed.",
-      "url": "https://ttc.hackatoa.com/",
+      "url": "https://ttt.hackatoa.com/",
       "genre": ["Strategy", "Board Game"],
       "playMode": "MultiPlayer",
       "applicationCategory": "GameApplication",
@@ -42,8 +42,15 @@
 <body>
     <div class="container">
         <h1>Tic Tac Toe Online</h1>
-        <p>Play Tic Tac Toe with a friend by creating a game and sharing the link!</p>
-        <button id="createGameBtn">Create New Game</button>
+        <p>Play Tic Tac Toe with a friend or challenge the AI!</p>
+        <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
+            <button id="createGameBtn">Play vs Friend</button>
+            <button id="soloBtn" onclick="window.location.href='/solo'" style="background:#3d1a2a;border-color:#9d174d;">Play vs AI</button>
+        </div>
+        <div style="margin-top:1.2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;font-size:.88rem;">
+            <a href="https://games.hackatoa.com" style="color:#888;text-decoration:none;">All Games</a>
+            <a href="https://github.com/Hackatoan/tic-tac-toe-online" target="_blank" rel="noopener" style="color:#888;text-decoration:none;">Source Code</a>
+        </div>
     </div>
 
     <script>
