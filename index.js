@@ -46,6 +46,10 @@ app.post('/api/games', (req, res) => {
     res.json({ gameId });
 });
 
+app.get('/solo', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'solo.html'));
+});
+
 app.get('/:id', (req, res, next) => {
     // Only match 6-character short IDs to avoid conflicting with other static assets
     if (req.params.id.length === 6) {
