@@ -1,31 +1,38 @@
-[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://buymeacoffee.com/hackatoa)
-
 # Tic-Tac-Toe Online
 
-Real-time 2-player Tic-Tac-Toe in the browser. Share a link, play instantly — no account needed.
+![Tic-Tac-Toe Online](https://ttt.hackatoa.com/og.svg)
 
-**Live:** [ttc.hackatoa.com](https://ttc.hackatoa.com)
+Play the classic 3×3 game online — challenge a friend in real time or take on the AI.
 
-## Running locally
+**▶ Play at [ttt.hackatoa.com](https://ttt.hackatoa.com)**
+
+## Features
+
+- Real-time multiplayer via shareable link
+- **Solo mode** — play vs AI with Easy, Medium, or Hard difficulty
+- Hard mode uses **minimax with alpha-beta pruning** (perfect play)
+- Score tracking across rounds
+- No account or download required
+
+## How to play
+
+1. Open [ttt.hackatoa.com](https://ttt.hackatoa.com)
+2. **vs Friend** → share the link with your opponent
+3. **vs AI** → pick a difficulty and play immediately
+
+## Tech stack
+
+- Node.js + Express
+- Socket.io (real-time multiplayer)
+- Vanilla HTML/CSS/JS (zero build step)
+- Docker + GitHub Actions CI/CD
+
+## Self-hosting
 
 ```bash
-git clone https://github.com/Hackatoan/tic-tac-toe-online
-cd tic-tac-toe-online
-npm install
-npm start
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-## Deploy
-
-Containerized with Docker. Auto-deploys on push to main via GitHub Actions.
-
-```bash
-docker build -t tic-tac-toe-online .
-docker run -p 3000:3000 tic-tac-toe-online
+docker run -p 3000:3000 ghcr.io/hackatoan/tic-tac-toe-online:latest
 ```
 
 ---
 
-[hackatoa.com](https://hackatoa.com) · [GitHub](https://github.com/Hackatoan) · [Buy Me A Coffee](https://buymeacoffee.com/hackatoa)
+Part of [Hackatoa Games](https://games.hackatoa.com) · [Buy me a coffee](https://buymeacoffee.com/hackatoa)
