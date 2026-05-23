@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a342d"/>
+      <stop offset="100%" style="stop-color:#1c1209"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="bigblur"><feGaussianBlur stdDeviation="50"/></filter>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Background checker pattern -->
+  <g opacity="0.04">
+    <rect x="0" y="0" width="60" height="60" fill="#f472b6"/><rect x="120" y="0" width="60" height="60" fill="#f472b6"/>
+    <rect x="240" y="0" width="60" height="60" fill="#f472b6"/><rect x="360" y="0" width="60" height="60" fill="#f472b6"/>
+    <rect x="480" y="0" width="60" height="60" fill="#f472b6"/><rect x="600" y="0" width="60" height="60" fill="#f472b6"/>
+    <rect x="720" y="0" width="60" height="60" fill="#f472b6"/><rect x="840" y="0" width="60" height="60" fill="#f472b6"/>
+    <rect x="960" y="0" width="60" height="60" fill="#f472b6"/><rect x="1080" y="0" width="60" height="60" fill="#f472b6"/>
+    <rect x="60" y="60" width="60" height="60" fill="#f472b6"/><rect x="180" y="60" width="60" height="60" fill="#f472b6"/>
+    <rect x="300" y="60" width="60" height="60" fill="#f472b6"/><rect x="420" y="60" width="60" height="60" fill="#f472b6"/>
+    <rect x="540" y="60" width="60" height="60" fill="#f472b6"/><rect x="660" y="60" width="60" height="60" fill="#f472b6"/>
+    <rect x="780" y="60" width="60" height="60" fill="#f472b6"/><rect x="900" y="60" width="60" height="60" fill="#f472b6"/>
+    <rect x="1020" y="60" width="60" height="60" fill="#f472b6"/><rect x="1140" y="60" width="60" height="60" fill="#f472b6"/>
+  </g>
+  <!-- Pink glow center -->
+  <ellipse cx="600" cy="315" rx="400" ry="200" fill="#f472b6" opacity="0.06" filter="url(#bigblur)"/>
+  <!-- Big TTC grid left side -->
+  <g transform="translate(220,160)">
+    <!-- Grid lines -->
+    <line x1="-130" y1="43" x2="130" y2="43" stroke="#f472b6" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="-130" y1="-43" x2="130" y2="-43" stroke="#f472b6" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="43" y1="-130" x2="43" y2="130" stroke="#f472b6" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    <line x1="-43" y1="-130" x2="-43" y2="130" stroke="#f472b6" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+    <!-- X top-left -->
+    <line x1="-115" y1="-115" x2="-57" y2="-57" stroke="#f472b6" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+    <line x1="-57" y1="-115" x2="-115" y2="-57" stroke="#f472b6" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+    <!-- O top-center -->
+    <circle cx="0" cy="-87" r="28" fill="none" stroke="#fbcfe8" stroke-width="10" filter="url(#glow)"/>
+    <!-- X top-right -->
+    <line x1="57" y1="-115" x2="115" y2="-57" stroke="#f472b6" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+    <line x1="115" y1="-115" x2="57" y2="-57" stroke="#f472b6" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+    <!-- O middle-left -->
+    <circle cx="-87" cy="0" r="28" fill="none" stroke="#fbcfe8" stroke-width="10" filter="url(#glow)"/>
+    <!-- X center -->
+    <line x1="-28" y1="-28" x2="28" y2="28" stroke="#f43f5e" stroke-width="12" stroke-linecap="round" filter="url(#glow)"/>
+    <line x1="28" y1="-28" x2="-28" y2="28" stroke="#f43f5e" stroke-width="12" stroke-linecap="round" filter="url(#glow)"/>
+    <!-- O middle-right -->
+    <circle cx="87" cy="0" r="28" fill="none" stroke="#fbcfe8" stroke-width="10" filter="url(#glow)"/>
+    <!-- O bottom-left -->
+    <circle cx="-87" cy="87" r="28" fill="none" stroke="#fbcfe8" stroke-width="10" filter="url(#glow)"/>
+    <!-- X bottom-center -->
+    <line x1="-28" y1="57" x2="28" y2="115" stroke="#f472b6" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+    <line x1="28" y1="57" x2="-28" y2="115" stroke="#f472b6" stroke-width="10" stroke-linecap="round" filter="url(#glow)"/>
+    <!-- O bottom-right -->
+    <circle cx="87" cy="87" r="28" fill="none" stroke="#fbcfe8" stroke-width="10" filter="url(#glow)"/>
+    <!-- Win line diagonal -->
+    <line x1="-115" y1="-115" x2="115" y2="115" stroke="#f43f5e" stroke-width="6" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <!-- Title right side -->
+  <text x="750" y="240" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="56" font-weight="900" letter-spacing="4" fill="#fbcfe8">TIC-TAC-TOE</text>
+  <text x="750" y="310" text-anchor="middle" font-family="Arial Black,sans-serif" font-size="56" font-weight="900" letter-spacing="4" fill="#f472b6" filter="url(#glow)">ONLINE</text>
+  <text x="750" y="370" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" letter-spacing="6" fill="#a18072">REAL-TIME  ·  FREE  ·  NO SIGN-UP</text>
+  <!-- Divider -->
+  <line x1="460" y1="160" x2="460" y2="480" stroke="#846358" stroke-width="1.5" opacity="0.4"/>
+  <!-- Branding -->
+  <text x="600" y="600" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#4a342d" letter-spacing="4">HACKATOA GAMES  ·  games.hackatoa.com</text>
+  <rect x="0" y="580" width="1200" height="50" fill="#1c1209" opacity="0.5"/>
+  <text x="600" y="612" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="#846358" letter-spacing="4">HACKATOA GAMES  ·  games.hackatoa.com</text>
+</svg>
