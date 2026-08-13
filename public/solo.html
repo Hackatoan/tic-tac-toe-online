@@ -10,7 +10,7 @@
   <meta property="og:title" content="Solo Tic-Tac-Toe vs AI" />
   <meta property="og:description" content="Play Tic-Tac-Toe solo against an AI opponent. Practice your strategy in this single-player browser version of the classic game by Hackatoa." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ttt.hackatoa.com/solo.html" />
+  <meta property="og:url" content="https://ttt.hackatoa.com/solo" />
   <meta property="og:image" content="https://hackatoa.com/assets/me.png" />
   <meta property="og:site_name" content="Hackatoa" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -18,9 +18,25 @@
   <meta name="twitter:description" content="Play Tic-Tac-Toe solo against an AI opponent. Practice your strategy in this single-player browser version of the classic game by Hackatoa." />
   <meta name="twitter:image" content="https://hackatoa.com/assets/me.png" />
   <meta name="twitter:site" content="@jhackatoa" />
-  <link rel="canonical" href="https://ttt.hackatoa.com/solo.html" />
-    <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://ttt.hackatoa.com/solo" />
+    <meta name="robots" content="index, follow" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Tic-Tac-Toe vs AI",
+      "description": "Play Tic-Tac-Toe solo against an AI opponent with easy, medium, and hard difficulty levels.",
+      "url": "https://ttt.hackatoa.com/solo",
+      "genre": ["Strategy", "Board Game"],
+      "playMode": "SinglePlayer",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web Browser",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Preston Harris", "alternateName": "Hackatoa", "url": "https://hackatoa.com" },
+      "isPartOf": { "@type": "WebSite", "name": "Hackatoa Games", "url": "https://games.hackatoa.com" }
+    }
+    </script>
     <link rel="stylesheet" href="style.css">
     <style>
         .diff-picker { display: flex; gap: .5rem; justify-content: center; margin: .75rem 0 1rem; }
@@ -36,7 +52,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tic Tac Toe</h1>
+        <h1>Tic Tac Toe vs AI</h1>
 
         <div class="diff-picker">
             <button class="diff-btn active" data-level="easy">Easy</button>
