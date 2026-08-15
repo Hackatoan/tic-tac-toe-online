@@ -46,6 +46,29 @@
             <button id="createGameBtn">Play vs Friend</button>
             <button id="soloBtn" onclick="window.location.href='/solo'" style="background:#c2185b;border-color:#c2185b;color:#fff;">Play vs AI</button>
         </div>
+
+        <p style="margin-top:.9rem;font-size:.85rem;color:#888;">
+            Playing as <strong id="whoami" style="color:#ff69b4;">…</strong>
+            <a href="#" id="changeName" style="color:#888;margin-left:.4rem;">change</a>
+        </p>
+
+        <section id="leaderboardSection" style="margin-top:1.8rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.08);text-align:left;">
+            <h2 style="font-size:.95rem;letter-spacing:.5px;color:#ff69b4;margin-bottom:.6rem;">🏆 Leaderboard</h2>
+            <table id="leaderboardTable" style="width:100%;border-collapse:collapse;font-size:.85rem;color:#d8b4be;">
+                <thead>
+                    <tr style="text-align:left;color:#888;">
+                        <th style="padding:.25rem .4rem;">#</th>
+                        <th style="padding:.25rem .4rem;">Player</th>
+                        <th style="padding:.25rem .4rem;text-align:right;">W</th>
+                        <th style="padding:.25rem .4rem;text-align:right;">L</th>
+                        <th style="padding:.25rem .4rem;text-align:right;">D</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                    <tr><td colspan="5" style="padding:.4rem;color:#888;">Loading…</td></tr>
+                </tbody>
+            </table>
+        </section>
         <div style="margin-top:1.2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;font-size:.88rem;">
             <a href="https://games.hackatoa.com" style="color:#888;text-decoration:none;">All Games</a>
             <a href="https://github.com/Hackatoan/tic-tac-toe-online" target="_blank" rel="noopener" style="color:#888;text-decoration:none;">Source Code</a>
@@ -57,8 +80,53 @@
         </section>
     </div>
 
+    <script src="name.js"></script>
     <script>
+        // Nickname bar
+        const whoami = document.getElementById('whoami');
+        function refreshName() {
+            const n = window.PlayerName.get();
+            whoami.textContent = n || 'anonymous';
+        }
+        document.getElementById('changeName').addEventListener('click', (e) => {
+            e.preventDefault();
+            const current = window.PlayerName.get();
+            const next = window.PlayerName.clean(window.prompt('Choose a nickname for the leaderboard:', current));
+            if (next) { window.PlayerName.set(next); refreshName(); }
+        });
+        refreshName();
+
+        // Leaderboard
+        async function loadLeaderboard() {
+            const body = document.getElementById('leaderboardBody');
+            try {
+                const res = await fetch('/api/leaderboard');
+                const data = await res.json();
+                const players = (data && data.players) || [];
+                if (!players.length) {
+                    body.innerHTML = '<tr><td colspan="5" style="padding:.4rem;color:#888;">No games played yet — be the first!</td></tr>';
+                    return;
+                }
+                const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+                const me = window.PlayerName.get();
+                body.innerHTML = players.map((p, i) => {
+                    const mine = me && p.player === me;
+                    return `<tr style="${mine ? 'color:#ff69b4;font-weight:600;' : ''}">
+                        <td style="padding:.25rem .4rem;">${i + 1}</td>
+                        <td style="padding:.25rem .4rem;">${esc(p.player)}</td>
+                        <td style="padding:.25rem .4rem;text-align:right;">${p.wins}</td>
+                        <td style="padding:.25rem .4rem;text-align:right;">${p.losses}</td>
+                        <td style="padding:.25rem .4rem;text-align:right;">${p.draws}</td>
+                    </tr>`;
+                }).join('');
+            } catch (err) {
+                body.innerHTML = '<tr><td colspan="5" style="padding:.4rem;color:#888;">Leaderboard unavailable.</td></tr>';
+            }
+        }
+        loadLeaderboard();
+
         document.getElementById('createGameBtn').addEventListener('click', async () => {
+            window.PlayerName.ensure();
             try {
                 const response = await fetch('/api/games', { method: 'POST' });
                 const data = await response.json();

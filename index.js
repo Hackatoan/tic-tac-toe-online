@@ -2,6 +2,7 @@ const express = require('express');
 const http = require('http');
 const { Server } = require('socket.io');
 const path = require('path');
+const db = require('./db');
 
 function generateShortId() {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -31,6 +32,7 @@ function createGame() {
     games[gameId] = {
         board: Array(9).fill(null),
         players: { X: null, O: null },
+        names: { X: null, O: null },
         scores: { X: 0, O: 0 },
         turn: starter,
         starter: starter,
@@ -44,6 +46,12 @@ function createGame() {
 app.post('/api/games', (req, res) => {
     const gameId = createGame();
     res.json({ gameId });
+});
+
+// Leaderboard for this game (nickname-based).
+app.get('/api/leaderboard', async (req, res) => {
+    const rows = await db.getLeaderboard(20);
+    res.json({ game: db.GAME, players: rows });
 });
 
 app.get('/solo', (req, res) => {
@@ -63,7 +71,10 @@ io.on('connection', (socket) => {
     let currentGameId = null;
     let currentSymbol = null;
 
-    socket.on('joinGame', (gameId) => {
+    socket.on('joinGame', (payload) => {
+        // Backward compatible: payload may be a plain gameId string or { gameId, name }.
+        const gameId = typeof payload === 'string' ? payload : (payload && payload.gameId);
+        const name = db.cleanName(payload && payload.name);
         const game = games[gameId];
         if (!game) {
             socket.emit('error', 'Game not found or has expired.');
@@ -86,6 +97,10 @@ io.on('connection', (socket) => {
             currentSymbol = 'O';
         } else {
             currentSymbol = 'Spectator';
+        }
+
+        if (name && currentSymbol !== 'Spectator') {
+            game.names[currentSymbol] = name;
         }
 
         socket.emit('joined', { symbol: currentSymbol, game });
@@ -126,6 +141,10 @@ io.on('connection', (socket) => {
 
         if (!game.winner) {
             game.turn = currentSymbol === 'X' ? 'O' : 'X';
+        } else {
+            // Round finished — record it for the leaderboard (fire-and-forget).
+            const winnerName = game.winner === 'Draw' ? null : game.names[game.winner];
+            db.recordMatch(game.names.X, game.names.O, winnerName);
         }
 
         io.to(currentGameId).emit('gameState', game);

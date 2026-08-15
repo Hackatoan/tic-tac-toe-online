@@ -18,13 +18,16 @@ document.getElementById('copyBtn').addEventListener('click', () => {
 const statusMessage = document.getElementById('statusMessage');
 const scoreX = document.getElementById('scoreX');
 const scoreO = document.getElementById('scoreO');
+const nameX = document.getElementById('nameX');
+const nameO = document.getElementById('nameO');
 const cells = document.querySelectorAll('.cell');
 const replayBtn = document.getElementById('replayBtn');
 
 let mySymbol = null;
 let currentGameState = null;
 
-socket.emit('joinGame', gameId);
+const playerName = window.PlayerName.ensure();
+socket.emit('joinGame', { gameId, name: playerName });
 
 socket.on('joined', (data) => {
     mySymbol = data.symbol;
@@ -40,17 +43,24 @@ socket.on('error', (msg) => {
     window.location.href = '/';
 });
 
+function label(sym) {
+    const nm = currentGameState && currentGameState.names && currentGameState.names[sym];
+    return nm ? `${sym} (${nm})` : sym;
+}
+
 socket.on('gameState', (game) => {
     currentGameState = game;
     updateBoard(game.board);
     scoreX.textContent = game.scores.X;
     scoreO.textContent = game.scores.O;
+    if (nameX) nameX.textContent = game.names && game.names.X ? game.names.X : '—';
+    if (nameO) nameO.textContent = game.names && game.names.O ? game.names.O : '—';
 
     if (game.winner) {
         if (game.winner === 'Draw') {
             statusMessage.textContent = "It's a draw!";
         } else {
-            statusMessage.textContent = `${game.winner} wins!`;
+            statusMessage.textContent = `${label(game.winner)} wins!`;
         }
         if (mySymbol !== 'Spectator') {
             replayBtn.style.display = 'inline-block';
@@ -60,11 +70,11 @@ socket.on('gameState', (game) => {
         if (!game.players.X || !game.players.O) {
             statusMessage.textContent = `You are ${mySymbol}. Waiting for an opponent to join...`;
         } else if (mySymbol === 'Spectator') {
-            statusMessage.textContent = `It is ${game.turn}'s turn.`;
+            statusMessage.textContent = `It is ${label(game.turn)}'s turn.`;
         } else if (game.turn === mySymbol) {
             statusMessage.textContent = "It's your turn!";
         } else {
-            statusMessage.textContent = `Waiting for ${game.turn} to make a move...`;
+            statusMessage.textContent = `Waiting for ${label(game.turn)} to make a move...`;
         }
     }
 });
