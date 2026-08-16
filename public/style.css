@@ -1,14 +1,20 @@
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     margin: 0;
     padding-bottom: 56px;
     background-color: #3e2723;
     background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="4" height="4"%3E%3Cpath d="M1 1h2v2H1z" fill="%232b1a16" fill-opacity="0.5"/%3E%3C/svg%3E');
     color: #ffb6c1;
+}
+
+/* Centered play area — preserves the original full-viewport, vertically-centered menu */
+.game-stage {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
 }
 
 .container {
@@ -184,4 +190,40 @@ button:hover {
 .footer-coffee-btn:hover {
     background-color: #ff69b4;
     transform: translateY(-2px);
+}
+
+/* ── SEO / informational content (below the menu) ── */
+.seo-content {
+    border-top: 1px solid #5d4037;
+    background: rgba(43, 26, 22, 0.35);
+    padding: 48px 20px 80px;
+}
+.seo-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: #f3d9df;
+    text-align: left;
+}
+.seo-inner h2 {
+    color: #ff69b4;
+    text-shadow: 1px 1px 2px #2b1a16;
+    margin: 0 0 16px;
+    font-size: 1.6rem;
+}
+.seo-inner .seo-h {
+    color: #ff8ac4;
+    margin: 28px 0 10px;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+.seo-inner p { margin: 0 0 14px; }
+.seo-inner strong { color: #ffd1e0; }
+.seo-list { margin: 0 0 8px 1.2em; padding: 0; }
+.seo-list li { margin-bottom: 9px; }
+.seo-faq h4 { color: #ffd1e0; margin: 16px 0 4px; font-size: 1rem; }
+.seo-faq p { color: #d6a9b4; margin-bottom: 6px; }
+@media (max-width: 600px) {
+    .seo-content { padding: 36px 18px 80px; }
+    .seo-inner h2 { font-size: 1.35rem; }
 }
