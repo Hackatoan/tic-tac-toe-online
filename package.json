@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "i18n:translate": "node scripts/i18n-translate.mjs",
+    "i18n:build": "node scripts/i18n-build.mjs"
   },
   "repository": {
     "type": "git",

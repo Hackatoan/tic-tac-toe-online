@@ -1,0 +1,124 @@
+{
+  "htmlLang": "es",
+  "shared": {
+    "footer": {
+      "builtBy": "Creado por",
+      "coffee": "☕ Cómprame un café"
+    },
+    "links": {
+      "allGames": "Todos los juegos",
+      "sourceCode": "Código fuente",
+      "vsFriend": "vs Amigo"
+    }
+  },
+  "index": {
+    "gameName": "Tres en raya",
+    "title": "Tres en raya online — Juego multijugador para navegador | Hackatoa",
+    "description": "Juega al Tres en raya online contra un amigo en tiempo real. Estrategia clásica de 3 en línea en tu navegador: sin registro, sin descargas, juego instantáneo. Juego multijugador gratuito.",
+    "ogTitle": "Tres en raya online — Juego multijugador para navegador",
+    "h1": "Tres en raya online",
+    "tagline": "¡Juega al Tres en raya con un amigo o desafía a la IA!",
+    "ui": {
+      "playVsFriend": "Jugar vs Amigo",
+      "playVsAi": "Jugar vs IA",
+      "playingAs": "Jugando como",
+      "change": "cambiar",
+      "leaderboard": "🏆 Clasificación",
+      "loading": "Cargando…"
+    },
+    "seo": {
+      "h2": "Juega al Tres en raya online — Gratis y multijugador",
+      "intro": "Tres en raya online es una versión gratuita para navegador del clásico juego de tres en línea (también conocido como gato o ceros y cruces). Desafía a un amigo a una partida multijugador en tiempo real compartiendo un enlace, o juega solo contra la IA. Sin registros ni descargas: funciona al instante en PC y móviles.",
+      "howToTitle": "Cómo jugar al Tres en raya online",
+      "howToSteps": [
+        "Elige un modo — Jugar vs Amigo para multijugador online, o Jugar vs IA para una partida en solitario.",
+        "Invita a un amigo — para el multijugador, comparte el enlace generado. Ambos se unirán al mismo tablero.",
+        "Turnos alternos — los jugadores colocan por turnos X y O en la cuadrícula de 3×3.",
+        "Consigue tres en línea — alinea tres de tus marcas horizontal, vertical o diagonalmente para ganar."
+      ],
+      "featuresTitle": "Características",
+      "features": [
+        "Multijugador online en tiempo real — juega con un amigo en vivo compartiendo un enlace.",
+        "Un jugador vs IA — practica contra la computadora en cualquier momento.",
+        "Gratis e instantáneo — sin cuenta, sin instalación, sin descargas.",
+        "Juega en cualquier lugar — funciona en cualquier navegador moderno en PC, móvil o tablet."
+      ],
+      "faqTitle": "Preguntas frecuentes",
+      "faqs": [
+        {
+          "q": "¿Es gratis jugar al Tres en raya online?",
+          "a": "Sí. Es completamente gratis, sin registros, sin anuncios y sin descargas; solo abre la página y juega."
+        },
+        {
+          "q": "¿Puedo jugar al Tres en raya online con un amigo?",
+          "a": "Sí. Haz clic en Jugar vs Amigo para crear una partida y comparte el enlace. Ambos jugarán en tiempo real en el mismo tablero."
+        },
+        {
+          "q": "¿Puedo jugar al Tres en raya contra la computadora?",
+          "a": "Sí. Elige Jugar vs IA para jugar una partida en solitario contra la computadora directamente en tu navegador."
+        },
+        {
+          "q": "¿Necesito descargar o instalar algo?",
+          "a": "No. Se ejecuta totalmente en tu navegador web en PC y móvil; no hay nada que descargar ni instalar."
+        }
+      ]
+    },
+    "runtime": {
+      "anonymous": "anónimo",
+      "nicknamePrompt": "Elige un apodo para la clasificación:",
+      "noGames": "Aún no hay partidas — ¡sé el primero!",
+      "lbUnavailable": "Clasificación no disponible.",
+      "failedCreate": "Error al crear la partida.",
+      "errorCreate": "Ocurrió un error al crear la partida."
+    }
+  },
+  "solo": {
+    "title": "Tres en raya en solitario vs IA | Hackatoa",
+    "description": "Juega al Tres en raya en solitario contra un oponente de IA. Practica tu estrategia en esta versión para navegador del clásico juego de Hackatoa.",
+    "ogTitle": "Tres en raya en solitario vs IA",
+    "h1": "Tres en raya vs IA",
+    "ui": {
+      "easy": "Fácil",
+      "medium": "Medio",
+      "hard": "Difícil",
+      "youX": "Tú (X):",
+      "aiO": "IA (O):",
+      "playAgain": "Jugar de nuevo"
+    },
+    "runtime": {
+      "yourTurn": "Tu turno",
+      "aiThinking": "🤖 La IA está pensando…",
+      "youWin": "🎉 ¡Ganaste!",
+      "aiWins": "🤖 ¡Gana la IA!",
+      "itsDraw": "¡Es un empate!"
+    }
+  },
+  "room": {
+    "runtime": {
+      "linkCopied": "¡Enlace copiado al portapapeles!",
+      "spectating": "Estás observando esta partida.",
+      "waitingOpponent": "Estás jugando como {sym}. Esperando al oponente...",
+      "winner": "¡{label} gana!",
+      "waitingJoin": "Eres {sym}. Esperando a que se una un oponente...",
+      "itsTurn": "Es el turno de {label}.",
+      "waitingMove": "Esperando a que {label} mueva...",
+      "disconnected": "Un jugador se ha desconectado. Esperando a que regrese o a un nuevo jugador..."
+    }
+  },
+  "_meta": {
+    "site": "ttt",
+    "origin": "https://ttt.hackatoa.com",
+    "locales": [
+      "en",
+      "es",
+      "pt-br",
+      "fr",
+      "de",
+      "vi",
+      "th"
+    ],
+    "note": "en is the source of truth. Locale files are Gemini-generated and consumed by scripts/i18n-build.mjs. Do not hand-edit generated public/<locale>/ files.",
+    "generatedFrom": "i18n/en.json",
+    "locale": "es"
+  }
+}

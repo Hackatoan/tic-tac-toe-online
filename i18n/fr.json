@@ -1,0 +1,124 @@
+{
+  "htmlLang": "fr",
+  "shared": {
+    "footer": {
+      "builtBy": "Créé par",
+      "coffee": "☕ Offrez-moi un café"
+    },
+    "links": {
+      "allGames": "Tous les jeux",
+      "sourceCode": "Code source",
+      "vsFriend": "vs Ami"
+    }
+  },
+  "index": {
+    "gameName": "Morpion",
+    "title": "Morpion en ligne — Jeu multijoueur sur navigateur | Hackatoa",
+    "description": "Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de 3 alignés dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit.",
+    "ogTitle": "Morpion en ligne — Jeu multijoueur sur navigateur",
+    "h1": "Morpion en ligne",
+    "tagline": "Jouez au Morpion avec un ami ou défiez l'IA !",
+    "ui": {
+      "playVsFriend": "Jouer vs Ami",
+      "playVsAi": "Jouer vs IA",
+      "playingAs": "Jouer en tant que",
+      "change": "modifier",
+      "leaderboard": "🏆 Classement",
+      "loading": "Chargement…"
+    },
+    "seo": {
+      "h2": "Jouez au Morpion en ligne — Gratuit & Multijoueur",
+      "intro": "Morpion en ligne est une version gratuite sur navigateur du jeu classique d'alignement (aussi connu sous le nom de Tic-Tac-Toe). Défiez un ami dans un match multijoueur en ligne en temps réel en partageant un lien, ou jouez en solo contre l'IA de l'ordinateur. Pas d'inscription ni de téléchargement — jouable instantanément sur ordinateur et mobile.",
+      "howToTitle": "Comment jouer au Morpion en ligne",
+      "howToSteps": [
+        "Choisissez un mode — Jouer vs Ami pour le multijoueur en ligne, ou Jouer vs IA pour une partie en solo.",
+        "Invitez un ami — pour le multijoueur, partagez le lien de jeu créé. Vous rejoindrez tous les deux le même plateau.",
+        "Chacun son tour — les joueurs placent alternativement X et O sur la grille 3×3.",
+        "Alignez-en trois — alignez trois de vos marques horizontalement, verticalement ou diagonalement pour gagner."
+      ],
+      "featuresTitle": "Fonctionnalités",
+      "features": [
+        "Multijoueur en ligne en temps réel — jouez avec un ami en direct en partageant un lien.",
+        "Solo vs IA — entraînez-vous contre l'ordinateur à tout moment.",
+        "Gratuit et instantané — pas de compte, pas d'installation, pas de téléchargement requis.",
+        "Jouez n'importe où — fonctionne sur n'importe quel navigateur moderne sur ordinateur, téléphone ou tablette."
+      ],
+      "faqTitle": "Foire aux questions",
+      "faqs": [
+        {
+          "q": "Le Morpion en ligne est-il gratuit ?",
+          "a": "Oui. C'est totalement gratuit, sans inscription, sans publicité et sans téléchargement — ouvrez simplement la page et jouez."
+        },
+        {
+          "q": "Puis-je jouer au Morpion en ligne avec un ami ?",
+          "a": "Oui. Cliquez sur Jouer vs Ami pour créer une partie, puis partagez le lien. Vous jouez tous les deux en temps réel sur le même plateau."
+        },
+        {
+          "q": "Puis-je jouer au Morpion contre l'ordinateur ?",
+          "a": "Oui. Choisissez Jouer vs IA pour faire une partie en solo contre l'ordinateur directement dans votre navigateur."
+        },
+        {
+          "q": "Dois-je télécharger ou installer quelque chose ?",
+          "a": "Non. Il fonctionne entièrement dans votre navigateur web sur ordinateur et mobile — il n'y a rien à télécharger ou à installer."
+        }
+      ]
+    },
+    "runtime": {
+      "anonymous": "anonyme",
+      "nicknamePrompt": "Choisissez un pseudo pour le classement :",
+      "noGames": "Aucune partie jouée pour le moment — soyez le premier !",
+      "lbUnavailable": "Classement indisponible.",
+      "failedCreate": "Échec de la création de la partie.",
+      "errorCreate": "Une erreur est survenue lors de la création de la partie."
+    }
+  },
+  "solo": {
+    "title": "Morpion Solo vs IA | Hackatoa",
+    "description": "Jouez au Morpion en solo contre une IA. Entraînez votre stratégie dans cette version navigateur solo du jeu classique par Hackatoa.",
+    "ogTitle": "Morpion Solo vs IA",
+    "h1": "Morpion vs IA",
+    "ui": {
+      "easy": "Facile",
+      "medium": "Moyen",
+      "hard": "Difficile",
+      "youX": "Vous (X) :",
+      "aiO": "IA (O) :",
+      "playAgain": "Rejouer"
+    },
+    "runtime": {
+      "yourTurn": "À vous de jouer",
+      "aiThinking": "🤖 L'IA réfléchit…",
+      "youWin": "🎉 Vous avez gagné !",
+      "aiWins": "🤖 L'IA a gagné !",
+      "itsDraw": "Match nul !"
+    }
+  },
+  "room": {
+    "runtime": {
+      "linkCopied": "Lien copié dans le presse-papiers !",
+      "spectating": "Vous regardez cette partie en spectateur.",
+      "waitingOpponent": "Vous jouez avec {sym}. En attente de l'adversaire...",
+      "winner": "{label} a gagné !",
+      "waitingJoin": "Vous êtes {sym}. En attente d'un adversaire...",
+      "itsTurn": "C'est au tour de {label}.",
+      "waitingMove": "En attente du coup de {label}...",
+      "disconnected": "Un joueur s'est déconnecté. En attente de son retour ou d'un nouveau joueur..."
+    }
+  },
+  "_meta": {
+    "site": "ttt",
+    "origin": "https://ttt.hackatoa.com",
+    "locales": [
+      "en",
+      "es",
+      "pt-br",
+      "fr",
+      "de",
+      "vi",
+      "th"
+    ],
+    "note": "en is the source of truth. Locale files are Gemini-generated and consumed by scripts/i18n-build.mjs. Do not hand-edit generated public/<locale>/ files.",
+    "generatedFrom": "i18n/en.json",
+    "locale": "fr"
+  }
+}

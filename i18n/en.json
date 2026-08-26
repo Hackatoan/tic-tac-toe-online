@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "site": "ttt",
+    "origin": "https://ttt.hackatoa.com",
+    "locales": ["en", "es", "pt-br", "fr", "de", "vi", "th"],
+    "note": "en is the source of truth. Locale files are Gemini-generated and consumed by scripts/i18n-build.mjs. Do not hand-edit generated public/<locale>/ files."
+  },
+  "shared": {
+    "footer": { "builtBy": "Built by", "coffee": "☕ Buy me a coffee" },
+    "links": { "allGames": "All Games", "sourceCode": "Source Code", "vsFriend": "vs Friend" }
+  },
+  "index": {
+    "gameName": "Tic-Tac-Toe",
+    "title": "Tic-Tac-Toe Online — Multiplayer Browser Game | Hackatoa",
+    "description": "Play Tic-Tac-Toe online against a friend in real time. Classic 3-in-a-row strategy in your browser — no signup, no download, instant play. Free multiplayer game.",
+    "ogTitle": "Tic-Tac-Toe Online — Multiplayer Browser Game",
+    "h1": "Tic Tac Toe Online",
+    "tagline": "Play Tic Tac Toe with a friend or challenge the AI!",
+    "ui": {
+      "playVsFriend": "Play vs Friend",
+      "playVsAi": "Play vs AI",
+      "playingAs": "Playing as",
+      "change": "change",
+      "leaderboard": "🏆 Leaderboard",
+      "loading": "Loading…"
+    },
+    "seo": {
+      "h2": "Play Tic-Tac-Toe Online — Free & Multiplayer",
+      "intro": "Tic-Tac-Toe Online is a free, browser-based version of the classic three-in-a-row game (also known as noughts and crosses). Challenge a friend to a real-time online multiplayer match by sharing a link, or play solo against the computer AI. There is no sign-up and no download — it plays instantly on desktop and mobile.",
+      "howToTitle": "How to Play Tic-Tac-Toe Online",
+      "howToSteps": [
+        "Choose a mode — Play vs Friend for online multiplayer, or Play vs AI for a solo game.",
+        "Invite a friend — for multiplayer, share the game link that is created. You both join the same board.",
+        "Take turns — players alternate placing X and O on the 3×3 grid.",
+        "Get three in a row — line up three of your marks horizontally, vertically, or diagonally to win."
+      ],
+      "featuresTitle": "Features",
+      "features": [
+        "Real-time online multiplayer — play a friend live by sharing a link.",
+        "Single-player vs AI — practice against the computer any time.",
+        "Free and instant — no account, no install, no download required.",
+        "Plays anywhere — works in any modern browser on desktop, phone, or tablet."
+      ],
+      "faqTitle": "Frequently Asked Questions",
+      "faqs": [
+        { "q": "Is Tic-Tac-Toe Online free to play?", "a": "Yes. It is completely free with no sign-up, no ads, and no download — just open the page and play." },
+        { "q": "Can I play Tic-Tac-Toe online with a friend?", "a": "Yes. Click Play vs Friend to create a game, then share the link. You both play in real time on the same board." },
+        { "q": "Can I play Tic-Tac-Toe against the computer?", "a": "Yes. Choose Play vs AI to play a solo game against the computer opponent right in your browser." },
+        { "q": "Do I need to download or install anything?", "a": "No. It runs entirely in your web browser on desktop and mobile — there is nothing to download or install." }
+      ]
+    },
+    "runtime": {
+      "anonymous": "anonymous",
+      "nicknamePrompt": "Choose a nickname for the leaderboard:",
+      "noGames": "No games played yet — be the first!",
+      "lbUnavailable": "Leaderboard unavailable.",
+      "failedCreate": "Failed to create game.",
+      "errorCreate": "An error occurred while creating the game."
+    }
+  },
+  "solo": {
+    "title": "Solo Tic-Tac-Toe vs AI | Hackatoa",
+    "description": "Play Tic-Tac-Toe solo against an AI opponent. Practice your strategy in this single-player browser version of the classic game by Hackatoa.",
+    "ogTitle": "Solo Tic-Tac-Toe vs AI",
+    "h1": "Tic Tac Toe vs AI",
+    "ui": {
+      "easy": "Easy",
+      "medium": "Medium",
+      "hard": "Hard",
+      "youX": "You (X):",
+      "aiO": "AI (O):",
+      "playAgain": "Play Again"
+    },
+    "runtime": {
+      "yourTurn": "Your turn",
+      "aiThinking": "🤖 AI is thinking…",
+      "youWin": "🎉 You win!",
+      "aiWins": "🤖 AI wins!",
+      "itsDraw": "It's a draw!"
+    }
+  },
+  "room": {
+    "runtime": {
+      "linkCopied": "Link copied to clipboard!",
+      "spectating": "You are spectating this game.",
+      "waitingOpponent": "You are playing as {sym}. Waiting for opponent...",
+      "winner": "{label} wins!",
+      "waitingJoin": "You are {sym}. Waiting for an opponent to join...",
+      "itsTurn": "It is {label}'s turn.",
+      "waitingMove": "Waiting for {label} to make a move...",
+      "disconnected": "A player disconnected. Waiting for them to return or a new player..."
+    }
+  }
+}

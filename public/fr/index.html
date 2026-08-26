@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tic-Tac-Toe Online — Multiplayer Browser Game | Hackatoa</title>
-    <meta name="description" content="Play Tic-Tac-Toe online against a friend in real time. Classic 3-in-a-row strategy in your browser — no signup, no download, instant play. Free multiplayer game." />
+    <title>Morpion en ligne — Jeu multijoueur sur navigateur | Hackatoa</title>
+    <meta name="description" content="Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de 3 alignés dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit." />
   <meta name="author" content="Preston Harris" />
   <meta name="keywords" content="tic tac toe online, multiplayer tic tac toe, browser game, noughts and crosses, free online game, Hackatoa" />
-  <meta property="og:title" content="Tic-Tac-Toe Online — Multiplayer Browser Game" />
-  <meta property="og:description" content="Play Tic-Tac-Toe online against a friend in real time. Classic 3-in-a-row strategy in your browser — no signup, no download, instant play. Free multiplayer game." />
+  <meta property="og:title" content="Morpion en ligne — Jeu multijoueur sur navigateur" />
+  <meta property="og:description" content="Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de 3 alignés dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ttt.hackatoa.com/" />
   <meta property="og:image" content="https://ttt.hackatoa.com/og.png" />
@@ -17,12 +17,12 @@
   <meta property="og:image:alt" content="Tic-Tac-Toe Online — real-time, free, no sign-up" />
   <meta property="og:site_name" content="Hackatoa" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Tic-Tac-Toe Online — Multiplayer Browser Game" />
-  <meta name="twitter:description" content="Play Tic-Tac-Toe online against a friend in real time. Classic 3-in-a-row strategy in your browser — no signup, no download, instant play. Free multiplayer game." />
+  <meta name="twitter:title" content="Morpion en ligne — Jeu multijoueur sur navigateur" />
+  <meta name="twitter:description" content="Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de 3 alignés dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit." />
   <meta name="twitter:image" content="https://ttt.hackatoa.com/og.png" />
   <meta name="twitter:image:alt" content="Tic-Tac-Toe Online — real-time, free, no sign-up" />
   <meta name="twitter:site" content="@jhackatoa" />
-  <link rel="canonical" href="https://ttt.hackatoa.com/" />
+  <link rel="canonical" href="https://ttt.hackatoa.com/fr/" />
     <meta name="application-name" content="Hackatoa" />    <meta name="robots" content="index, follow" />    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
     {
@@ -42,33 +42,45 @@
     </script>
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Is Tic-Tac-Toe Online free to play?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is completely free with no sign-up, no ads, and no download — just open the page and play in your browser." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I play Tic-Tac-Toe online with a friend?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Click Play vs Friend to create a game, then share the link. You both play in real time on the same board." }
-        },
-        {
-          "@type": "Question",
-          "name": "Can I play Tic-Tac-Toe against the computer?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Choose Play vs AI to play a solo game against the computer opponent right in your browser." }
-        },
-        {
-          "@type": "Question",
-          "name": "Do I need to download or install anything?",
-          "acceptedAnswer": { "@type": "Answer", "text": "No. Tic-Tac-Toe Online runs entirely in your web browser on desktop and mobile — there is nothing to download or install." }
-        }
-      ]
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Le Morpion en ligne est-il gratuit ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. C'est totalement gratuit, sans inscription, sans publicité et sans téléchargement — ouvrez simplement la page et jouez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je jouer au Morpion en ligne avec un ami ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Cliquez sur Jouer vs Ami pour créer une partie, puis partagez le lien. Vous jouez tous les deux en temps réel sur le même plateau."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je jouer au Morpion contre l'ordinateur ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. Choisissez Jouer vs IA pour faire une partie en solo contre l'ordinateur directement dans votre navigateur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dois-je télécharger ou installer quelque chose ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Il fonctionne entièrement dans votre navigateur web sur ordinateur et mobile — il n'y a rien à télécharger ou à installer."
+      }
     }
+  ]
+}
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 
   <!-- i18n:hreflang:start -->
   <link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/" />
@@ -84,10 +96,10 @@
 <body>
 <!-- i18n:switcher:start -->
 <nav aria-label="Language" style="position:fixed;top:8px;right:10px;z-index:300;font-size:12px;font-family:system-ui,-apple-system,sans-serif;background:rgba(20,10,20,.9);border:1px solid rgba(244,114,182,.4);border-radius:999px;padding:5px 12px;display:flex;gap:9px;box-shadow:0 2px 10px rgba(0,0,0,.4);">
-  <a href="/" hreflang="en" aria-current="true" style="color:#fff;font-weight:700;text-decoration:none;">EN</a>
+  <a href="/" hreflang="en" style="color:#b8a0ac;text-decoration:none;">EN</a>
   <a href="/es/" hreflang="es" style="color:#b8a0ac;text-decoration:none;">ES</a>
   <a href="/pt-br/" hreflang="pt-BR" style="color:#b8a0ac;text-decoration:none;">PT</a>
-  <a href="/fr/" hreflang="fr" style="color:#b8a0ac;text-decoration:none;">FR</a>
+  <a href="/fr/" hreflang="fr" aria-current="true" style="color:#fff;font-weight:700;text-decoration:none;">FR</a>
   <a href="/de/" hreflang="de" style="color:#b8a0ac;text-decoration:none;">DE</a>
   <a href="/vi/" hreflang="vi" style="color:#b8a0ac;text-decoration:none;">VI</a>
   <a href="/th/" hreflang="th" style="color:#b8a0ac;text-decoration:none;">TH</a>
@@ -95,20 +107,20 @@
 <!-- i18n:switcher:end -->
     <main class="game-stage">
     <div class="container">
-        <h1>Tic Tac Toe Online</h1>
-        <p>Play Tic Tac Toe with a friend or challenge the AI!</p>
+        <h1>Morpion en ligne</h1>
+        <p>Jouez au Morpion avec un ami ou défiez l'IA !</p>
         <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
-            <button id="createGameBtn">Play vs Friend</button>
-            <button id="soloBtn" onclick="window.location.href='/solo'" style="background:#c2185b;border-color:#c2185b;color:#fff;">Play vs AI</button>
+            <button id="createGameBtn">Jouer vs Ami</button>
+            <button id="soloBtn" onclick="window.location.href='/fr/solo.html'" style="background:#c2185b;border-color:#c2185b;color:#fff;">Jouer vs IA</button>
         </div>
 
         <p style="margin-top:.9rem;font-size:.85rem;color:#888;">
-            Playing as <strong id="whoami" style="color:#ff69b4;">…</strong>
-            <a href="#" id="changeName" style="color:#888;margin-left:.4rem;">change</a>
+            Jouer en tant que <strong id="whoami" style="color:#ff69b4;">…</strong>
+            <a href="#" id="changeName" style="color:#888;margin-left:.4rem;">modifier</a>
         </p>
 
         <section id="leaderboardSection" style="margin-top:1.8rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.08);text-align:left;">
-            <h2 style="font-size:.95rem;letter-spacing:.5px;color:#ff69b4;margin-bottom:.6rem;">🏆 Leaderboard</h2>
+            <h2 style="font-size:.95rem;letter-spacing:.5px;color:#ff69b4;margin-bottom:.6rem;">🏆 Classement</h2>
             <table id="leaderboardTable" style="width:100%;border-collapse:collapse;font-size:.85rem;color:#d8b4be;">
                 <thead>
                     <tr style="text-align:left;color:#888;">
@@ -120,13 +132,13 @@
                     </tr>
                 </thead>
                 <tbody id="leaderboardBody">
-                    <tr><td colspan="5" style="padding:.4rem;color:#888;">Loading…</td></tr>
+                    <tr><td colspan="5" style="padding:.4rem;color:#888;">Chargement…</td></tr>
                 </tbody>
             </table>
         </section>
         <div style="margin-top:1.2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;font-size:.88rem;">
-            <a href="https://games.hackatoa.com" style="color:#888;text-decoration:none;">All Games</a>
-            <a href="https://github.com/Hackatoan/tic-tac-toe-online" target="_blank" rel="noopener" style="color:#888;text-decoration:none;">Source Code</a>
+            <a href="https://games.hackatoa.com" style="color:#888;text-decoration:none;">Tous les jeux</a>
+            <a href="https://github.com/Hackatoan/tic-tac-toe-online" target="_blank" rel="noopener" style="color:#888;text-decoration:none;">Code source</a>
         </div>
 
     </div>
@@ -135,52 +147,43 @@
     <!-- SEO / informational content (always in the DOM, crawlable) -->
     <section class="seo-content">
       <div class="seo-inner">
-        <h2>Play Tic-Tac-Toe Online — Free &amp; Multiplayer</h2>
-        <p>
-          <strong>Tic-Tac-Toe Online</strong> is a free, browser-based version of the classic
-          three-in-a-row game (also known as <em>noughts and crosses</em>). Challenge a friend to a
-          real-time <strong>online multiplayer</strong> match by sharing a link, or play solo against
-          the <strong>computer AI</strong>. There is no sign-up and no download — it plays instantly on
-          desktop and mobile.
-        </p>
-
-        <h3 class="seo-h">How to Play Tic-Tac-Toe Online</h3>
+        <h2>Jouez au Morpion en ligne — Gratuit &amp; Multijoueur</h2>
+        <p>Morpion en ligne est une version gratuite sur navigateur du jeu classique d'alignement (aussi connu sous le nom de Tic-Tac-Toe). Défiez un ami dans un match multijoueur en ligne en temps réel en partageant un lien, ou jouez en solo contre l'IA de l'ordinateur. Pas d'inscription ni de téléchargement — jouable instantanément sur ordinateur et mobile.</p>
+        <h3 class="seo-h">Comment jouer au Morpion en ligne</h3>
         <ol class="seo-list">
-          <li><strong>Choose a mode</strong> — <em>Play vs Friend</em> for online multiplayer, or <em>Play vs AI</em> for a solo game.</li>
-          <li><strong>Invite a friend</strong> — for multiplayer, share the game link that is created. You both join the same board.</li>
-          <li><strong>Take turns</strong> — players alternate placing X and O on the 3&times;3 grid.</li>
-          <li><strong>Get three in a row</strong> — line up three of your marks horizontally, vertically, or diagonally to win.</li>
+          <li>Choisissez un mode — Jouer vs Ami pour le multijoueur en ligne, ou Jouer vs IA pour une partie en solo.</li>
+          <li>Invitez un ami — pour le multijoueur, partagez le lien de jeu créé. Vous rejoindrez tous les deux le même plateau.</li>
+          <li>Chacun son tour — les joueurs placent alternativement X et O sur la grille 3×3.</li>
+          <li>Alignez-en trois — alignez trois de vos marques horizontalement, verticalement ou diagonalement pour gagner.</li>
         </ol>
-
-        <h3 class="seo-h">Features</h3>
+        <h3 class="seo-h">Fonctionnalités</h3>
         <ul class="seo-list">
-          <li><strong>Real-time online multiplayer</strong> — play a friend live by sharing a link.</li>
-          <li><strong>Single-player vs AI</strong> — practice against the computer any time.</li>
-          <li><strong>Free and instant</strong> — no account, no install, no download required.</li>
-          <li><strong>Plays anywhere</strong> — works in any modern browser on desktop, phone, or tablet.</li>
+          <li>Multijoueur en ligne en temps réel — jouez avec un ami en direct en partageant un lien.</li>
+          <li>Solo vs IA — entraînez-vous contre l'ordinateur à tout moment.</li>
+          <li>Gratuit et instantané — pas de compte, pas d'installation, pas de téléchargement requis.</li>
+          <li>Jouez n'importe où — fonctionne sur n'importe quel navigateur moderne sur ordinateur, téléphone ou tablette.</li>
         </ul>
-
-        <h3 class="seo-h">Frequently Asked Questions</h3>
+        <h3 class="seo-h">Foire aux questions</h3>
         <div class="seo-faq">
-          <h4>Is Tic-Tac-Toe Online free to play?</h4>
-          <p>Yes. It is completely free with no sign-up, no ads, and no download — just open the page and play.</p>
-          <h4>Can I play Tic-Tac-Toe online with a friend?</h4>
-          <p>Yes. Click <em>Play vs Friend</em> to create a game, then share the link. You both play in real time on the same board.</p>
-          <h4>Can I play Tic-Tac-Toe against the computer?</h4>
-          <p>Yes. Choose <em>Play vs AI</em> to play a solo game against the computer opponent right in your browser.</p>
-          <h4>Do I need to download or install anything?</h4>
-          <p>No. It runs entirely in your web browser on desktop and mobile — there is nothing to download or install.</p>
+          <h4>Le Morpion en ligne est-il gratuit ?</h4>
+          <p>Oui. C'est totalement gratuit, sans inscription, sans publicité et sans téléchargement — ouvrez simplement la page et jouez.</p>
+          <h4>Puis-je jouer au Morpion en ligne avec un ami ?</h4>
+          <p>Oui. Cliquez sur Jouer vs Ami pour créer une partie, puis partagez le lien. Vous jouez tous les deux en temps réel sur le même plateau.</p>
+          <h4>Puis-je jouer au Morpion contre l'ordinateur ?</h4>
+          <p>Oui. Choisissez Jouer vs IA pour faire une partie en solo contre l'ordinateur directement dans votre navigateur.</p>
+          <h4>Dois-je télécharger ou installer quelque chose ?</h4>
+          <p>Non. Il fonctionne entièrement dans votre navigateur web sur ordinateur et mobile — il n'y a rien à télécharger ou à installer.</p>
         </div>
       </div>
     </section>
 
     <!-- i18n:runtime:start -->
 <script>
-window.__I18N__ = {"anonymous":"anonymous","nicknamePrompt":"Choose a nickname for the leaderboard:","noGames":"No games played yet — be the first!","lbUnavailable":"Leaderboard unavailable.","failedCreate":"Failed to create game.","errorCreate":"An error occurred while creating the game."};
+window.__I18N__ = {"anonymous":"anonyme","nicknamePrompt":"Choisissez un pseudo pour le classement :","noGames":"Aucune partie jouée pour le moment — soyez le premier !","lbUnavailable":"Classement indisponible.","failedCreate":"Échec de la création de la partie.","errorCreate":"Une erreur est survenue lors de la création de la partie."};
 window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };
 </script>
 <!-- i18n:runtime:end -->
-    <script src="name.js"></script>
+    <script src="/name.js"></script>
     <script>
         const T = (k, p) => (window.t ? t(k, p) : k);
         // Nickname bar
@@ -245,10 +248,10 @@ window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).spli
 
     <footer class="support-footer">
         <div class="footer-built-by">
-            Built by <a href="https://hackatoa.com" target="_blank" rel="noopener noreferrer">hackatoa</a>
+            Créé par <a href="https://hackatoa.com" target="_blank" rel="noopener noreferrer">hackatoa</a>
         </div>
         <a href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener noreferrer" class="footer-coffee-btn">
-            ☕ Buy me a coffee
+            ☕ Offrez-moi un café
         </a>
     </footer>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fb943269b344332804cfc907bf18ee5"}'></script><!-- End Cloudflare Web Analytics -->

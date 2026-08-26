@@ -1,15 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ttt.hackatoa.com/</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/es/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/pt-br/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/fr/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/de/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/vi/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/th/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/"/>
   </url>
   <url>
     <loc>https://ttt.hackatoa.com/solo</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/solo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/solo"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/es/solo.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/solo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/solo"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/pt-br/solo.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/solo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/solo"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/fr/solo.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/solo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/solo"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/de/solo.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/solo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/solo"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/vi/solo.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/solo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/solo"/>
+  </url>
+  <url>
+    <loc>https://ttt.hackatoa.com/th/solo.html</loc>
+    <lastmod>2026-08-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ttt.hackatoa.com/solo"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ttt.hackatoa.com/es/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ttt.hackatoa.com/pt-br/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ttt.hackatoa.com/fr/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ttt.hackatoa.com/de/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ttt.hackatoa.com/vi/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ttt.hackatoa.com/th/solo.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ttt.hackatoa.com/solo"/>
   </url>
 </urlset>

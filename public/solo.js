@@ -1,5 +1,6 @@
 const cells = document.querySelectorAll('.cell');
 const statusEl = document.getElementById('statusMessage');
+const T = (k, p) => (window.t ? t(k, p) : k);
 const scoreXEl = document.getElementById('scoreX');
 const scoreOEl = document.getElementById('scoreO');
 const replayBtn = document.getElementById('replayBtn');
@@ -120,13 +121,13 @@ function applyMove(index, sym) {
         gameOver = true;
         replayBtn.style.display = 'inline-block';
         if (result === 'Draw') {
-            statusEl.textContent = "It's a draw!";
+            statusEl.textContent = T('itsDraw');
         } else if (result === P) {
-            statusEl.textContent = '🎉 You win!';
+            statusEl.textContent = T('youWin');
             scores.X++;
             scoreXEl.textContent = scores.X;
         } else {
-            statusEl.textContent = '🤖 AI wins!';
+            statusEl.textContent = T('aiWins');
             scores.O++;
             scoreOEl.textContent = scores.O;
         }
@@ -134,7 +135,7 @@ function applyMove(index, sym) {
     }
 
     if (sym === P) {
-        statusEl.innerHTML = '<span class="ai-thinking">🤖 AI is thinking…</span>';
+        statusEl.innerHTML = '<span class="ai-thinking">' + T('aiThinking') + '</span>';
         const delay = difficulty === 'easy' ? 600 : difficulty === 'medium' ? 380 : 180;
         aiTimer = setTimeout(() => {
             if (!gameOver) {
@@ -143,7 +144,7 @@ function applyMove(index, sym) {
             }
         }, delay);
     } else {
-        statusEl.textContent = 'Your turn';
+        statusEl.textContent = T('yourTurn');
     }
 }
 
@@ -153,7 +154,7 @@ function resetGame() {
     gameOver = false;
     replayBtn.style.display = 'none';
     cells.forEach(c => { c.textContent = ''; c.className = 'cell'; });
-    statusEl.textContent = 'Your turn';
+    statusEl.textContent = T('yourTurn');
 }
 
 // ── Event listeners ──

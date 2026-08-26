@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solo Tic-Tac-Toe vs AI | Hackatoa</title>
-    <meta name="description" content="Play Tic-Tac-Toe solo against an AI opponent. Practice your strategy in this single-player browser version of the classic game by Hackatoa." />
+    <title>Cờ ca-rô Đơn đấu với AI | Hackatoa</title>
+    <meta name="description" content="Chơi Cờ ca-rô đơn đấu với đối thủ AI. Luyện tập chiến lược của bạn trong phiên bản trình duyệt chơi đơn của trò chơi cổ điển này bởi Hackatoa." />
   <meta name="author" content="Preston Harris" />
   <meta name="keywords" content="tic tac toe solo, tic tac toe vs computer, AI tic tac toe, browser game, Hackatoa" />
-  <meta property="og:title" content="Solo Tic-Tac-Toe vs AI" />
-  <meta property="og:description" content="Play Tic-Tac-Toe solo against an AI opponent. Practice your strategy in this single-player browser version of the classic game by Hackatoa." />
+  <meta property="og:title" content="Cờ ca-rô Đơn đấu với AI" />
+  <meta property="og:description" content="Chơi Cờ ca-rô đơn đấu với đối thủ AI. Luyện tập chiến lược của bạn trong phiên bản trình duyệt chơi đơn của trò chơi cổ điển này bởi Hackatoa." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ttt.hackatoa.com/solo" />
   <meta property="og:image" content="https://hackatoa.com/assets/me.png" />
   <meta property="og:site_name" content="Hackatoa" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Solo Tic-Tac-Toe vs AI" />
-  <meta name="twitter:description" content="Play Tic-Tac-Toe solo against an AI opponent. Practice your strategy in this single-player browser version of the classic game by Hackatoa." />
+  <meta name="twitter:title" content="Cờ ca-rô Đơn đấu với AI" />
+  <meta name="twitter:description" content="Chơi Cờ ca-rô đơn đấu với đối thủ AI. Luyện tập chiến lược của bạn trong phiên bản trình duyệt chơi đơn của trò chơi cổ điển này bởi Hackatoa." />
   <meta name="twitter:image" content="https://hackatoa.com/assets/me.png" />
   <meta name="twitter:site" content="@jhackatoa" />
-  <link rel="canonical" href="https://ttt.hackatoa.com/solo" />
+  <link rel="canonical" href="https://ttt.hackatoa.com/vi/solo.html" />
     <meta name="robots" content="index, follow" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <script type="application/ld+json">
@@ -37,7 +37,7 @@
       "isPartOf": { "@type": "WebSite", "name": "Hackatoa Games", "url": "https://games.hackatoa.com" }
     }
     </script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <style>
         .diff-picker { display: flex; gap: .5rem; justify-content: center; margin: .75rem 0 1rem; }
         .diff-btn { padding: .45rem 1.2rem; border-radius: 8px; border: 2px solid transparent; cursor: pointer; font-weight: 700; font-size: .9rem; background: rgba(255,255,255,.06); color: #aaa; transition: all .15s; }
@@ -64,30 +64,30 @@
 <body>
 <!-- i18n:switcher:start -->
 <nav aria-label="Language" style="position:fixed;top:8px;right:10px;z-index:300;font-size:12px;font-family:system-ui,-apple-system,sans-serif;background:rgba(20,10,20,.9);border:1px solid rgba(244,114,182,.4);border-radius:999px;padding:5px 12px;display:flex;gap:9px;box-shadow:0 2px 10px rgba(0,0,0,.4);">
-  <a href="/solo" hreflang="en" aria-current="true" style="color:#fff;font-weight:700;text-decoration:none;">EN</a>
+  <a href="/solo" hreflang="en" style="color:#b8a0ac;text-decoration:none;">EN</a>
   <a href="/es/solo.html" hreflang="es" style="color:#b8a0ac;text-decoration:none;">ES</a>
   <a href="/pt-br/solo.html" hreflang="pt-BR" style="color:#b8a0ac;text-decoration:none;">PT</a>
   <a href="/fr/solo.html" hreflang="fr" style="color:#b8a0ac;text-decoration:none;">FR</a>
   <a href="/de/solo.html" hreflang="de" style="color:#b8a0ac;text-decoration:none;">DE</a>
-  <a href="/vi/solo.html" hreflang="vi" style="color:#b8a0ac;text-decoration:none;">VI</a>
+  <a href="/vi/solo.html" hreflang="vi" aria-current="true" style="color:#fff;font-weight:700;text-decoration:none;">VI</a>
   <a href="/th/solo.html" hreflang="th" style="color:#b8a0ac;text-decoration:none;">TH</a>
 </nav>
 <!-- i18n:switcher:end -->
     <div class="container">
-        <h1>Tic Tac Toe vs AI</h1>
+        <h1>Cờ ca-rô đấu với AI</h1>
 
         <div class="diff-picker">
-            <button class="diff-btn active" data-level="easy">Easy</button>
-            <button class="diff-btn" data-level="medium">Medium</button>
-            <button class="diff-btn" data-level="hard">Hard</button>
+            <button class="diff-btn active" data-level="easy">Dễ</button>
+            <button class="diff-btn" data-level="medium">Trung bình</button>
+            <button class="diff-btn" data-level="hard">Khó</button>
         </div>
 
         <div class="scoreboard">
-            <div class="score">You (X): <span id="scoreX">0</span></div>
+            <div class="score">Bạn (X): <span id="scoreX">0</span></div>
             <div class="score">AI (O): <span id="scoreO">0</span></div>
         </div>
 
-        <p class="turn-indicator" id="statusMessage">Your turn</p>
+        <p class="turn-indicator" id="statusMessage">Lượt của bạn</p>
 
         <div class="board" id="board">
             <div class="cell" data-index="0"></div>
@@ -101,31 +101,31 @@
             <div class="cell" data-index="8"></div>
         </div>
 
-        <button id="replayBtn" style="display: none;">Play Again</button>
+        <button id="replayBtn" style="display: none;">Chơi lại</button>
 
         <div class="solo-links">
-            <a href="/">vs Friend</a>
-            <a href="https://games.hackatoa.com">All Games</a>
-            <a href="https://github.com/Hackatoan/tic-tac-toe-online" target="_blank" rel="noopener">Source Code</a>
+            <a href="/vi/">Đấu với Bạn bè</a>
+            <a href="https://games.hackatoa.com">Tất cả trò chơi</a>
+            <a href="https://github.com/Hackatoan/tic-tac-toe-online" target="_blank" rel="noopener">Mã nguồn</a>
         </div>
     </div>
 
     <footer class="support-footer">
         <div class="footer-built-by">
-            Built by <a href="https://hackatoa.com" target="_blank" rel="noopener noreferrer">hackatoa</a>
+            Được xây dựng bởi <a href="https://hackatoa.com" target="_blank" rel="noopener noreferrer">hackatoa</a>
         </div>
         <a href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener noreferrer" class="footer-coffee-btn">
-            ☕ Buy me a coffee
+            ☕ Mời tôi một ly cà phê
         </a>
     </footer>
 
     <!-- i18n:runtime:start -->
 <script>
-window.__I18N__ = {"yourTurn":"Your turn","aiThinking":"🤖 AI is thinking…","youWin":"🎉 You win!","aiWins":"🤖 AI wins!","itsDraw":"It's a draw!"};
+window.__I18N__ = {"yourTurn":"Lượt của bạn","aiThinking":"🤖 AI đang suy nghĩ…","youWin":"🎉 Bạn thắng!","aiWins":"🤖 AI thắng!","itsDraw":"Hòa rồi!"};
 window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };
 </script>
 <!-- i18n:runtime:end -->
-    <script src="solo.js"></script>
+    <script src="/solo.js"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fb943269b344332804cfc907bf18ee5"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
