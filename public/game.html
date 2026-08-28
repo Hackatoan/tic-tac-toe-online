@@ -24,11 +24,11 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tic Tac Toe</h1>
+        <h1 data-i18n="h1">Tic Tac Toe</h1>
 
         <div id="gameInfo">
-            <p>Share this link to play: <span id="shareLink"></span> <button id="copyBtn">Copy</button></p>
-            <p id="statusMessage">Connecting...</p>
+            <p><span data-i18n="shareLabel">Share this link to play:</span> <span id="shareLink"></span> <button id="copyBtn" data-i18n="copy">Copy</button></p>
+            <p id="statusMessage" data-i18n="connecting">Connecting...</p>
         </div>
 
         <div class="scoreboard">
@@ -48,14 +48,31 @@
             <div class="cell" data-index="8"></div>
         </div>
 
-        <button id="replayBtn" style="display: none;">Play Again</button>
+        <button id="replayBtn" style="display: none;" data-i18n="playAgain">Play Again</button>
         <div style="margin-top: 20px; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; font-size: .9rem;">
-            <a href="/">New Game</a>
-            <a href="https://games.hackatoa.com">All Games</a>
-            <a href="https://github.com/Hackatoan/tic-tac-toe-online" target="_blank" rel="noopener">Source Code</a>
+            <a href="/" data-i18n="newGame">New Game</a>
+            <a href="https://games.hackatoa.com" data-i18n="allGames">All Games</a>
+            <a href="https://github.com/Hackatoan/tic-tac-toe-online" target="_blank" rel="noopener" data-i18n="sourceCode">Source Code</a>
         </div>
     </div>
 
+    <!-- i18n:room:start -->
+<script>
+(function(){
+  var ALL = {"en":{"linkCopied":"Link copied to clipboard!","spectating":"You are spectating this game.","waitingOpponent":"You are playing as {sym}. Waiting for opponent...","winner":"{label} wins!","waitingJoin":"You are {sym}. Waiting for an opponent to join...","itsTurn":"It is {label}'s turn.","waitingMove":"Waiting for {label} to make a move...","disconnected":"A player disconnected. Waiting for them to return or a new player...","draw":"It's a draw!","yourTurn":"It's your turn!","title":"Play Tic-Tac-Toe — Game Room | Hackatoa","h1":"Tic Tac Toe","shareLabel":"Share this link to play:","copy":"Copy","connecting":"Connecting...","playAgain":"Play Again","newGame":"New Game","allGames":"All Games","sourceCode":"Source Code"},"es":{"linkCopied":"¡Enlace copiado al portapapeles!","spectating":"Estás espectando esta partida.","waitingOpponent":"Estás jugando como {sym}. Esperando al oponente...","winner":"¡{label} gana!","waitingJoin":"Eres {sym}. Esperando a que se una un oponente...","itsTurn":"Es el turno de {label}.","waitingMove":"Esperando a que {label} mueva...","disconnected":"Un jugador se ha desconectado. Esperando a que vuelva o a que entre un nuevo jugador...","draw":"¡Empate!","yourTurn":"¡Es tu turno!","title":"Juega al tres en raya — Sala de juego | Hackatoa","h1":"Tres en raya","shareLabel":"Comparte este enlace para jugar:","copy":"Copiar","connecting":"Conectando...","playAgain":"Jugar de nuevo","newGame":"Nueva partida","allGames":"Todos los juegos","sourceCode":"Código fuente"},"pt-br":{"linkCopied":"Link copiado para a área de transferência!","spectating":"Você está assistindo a esta partida.","waitingOpponent":"Você está jogando como {sym}. Aguardando o oponente...","winner":"{label} venceu!","waitingJoin":"Você é {sym}. Aguardando um oponente entrar...","itsTurn":"É a vez de {label}.","waitingMove":"Aguardando {label} fazer uma jogada...","disconnected":"Um jogador se desconectou. Aguardando o retorno dele ou um novo jogador...","draw":"Empate!","yourTurn":"Sua vez!","title":"Jogue Jogo da Velha — Sala de Jogo | Hackatoa","h1":"Jogo da Velha","shareLabel":"Compartilhe este link para jogar:","copy":"Copiar","connecting":"Conectando...","playAgain":"Jogar Novamente","newGame":"Novo Jogo","allGames":"Todos os Jogos","sourceCode":"Código-Fonte"},"fr":{"linkCopied":"Lien copié dans le presse-papier !","spectating":"Vous spectatez cette partie.","waitingOpponent":"Vous jouez en tant que {sym}. En attente de l'adversaire...","winner":"{label} a gagné !","waitingJoin":"Vous êtes {sym}. En attente d'un adversaire...","itsTurn":"C'est au tour de {label}.","waitingMove":"En attente du coup de {label}...","disconnected":"Un joueur s'est déconnecté. En attente de son retour ou d'un nouveau joueur...","draw":"Match nul !","yourTurn":"C'est votre tour !","title":"Jouer au Morpion — Salon de jeu | Hackatoa","h1":"Morpion","shareLabel":"Partagez ce lien pour jouer :","copy":"Copier","connecting":"Connexion en cours...","playAgain":"Rejouer","newGame":"Nouvelle partie","allGames":"Tous les jeux","sourceCode":"Code source"},"de":{"linkCopied":"Link in die Zwischenablage kopiert!","spectating":"Du schaust diesem Spiel als Zuschauer zu.","waitingOpponent":"Du spielst als {sym}. Warten auf den Gegner...","winner":"{label} gewinnt!","waitingJoin":"Du bist {sym}. Warten darauf, dass ein Gegner beitritt...","itsTurn":"{label} ist am Zug.","waitingMove":"Warten auf den Zug von {label}...","disconnected":"Ein Spieler hat die Verbindung getrennt. Es wird gewartet, bis er zurückkehrt, oder auf einen neuen Spieler...","draw":"Unentschieden!","yourTurn":"Du bist am Zug!","title":"Tic-Tac-Toe spielen — Spielraum | Hackatoa","h1":"Tic Tac Toe","shareLabel":"Teile diesen Link zum Spielen:","copy":"Kopieren","connecting":"Verbindung wird hergestellt...","playAgain":"Nochmal spielen","newGame":"Neues Spiel","allGames":"Alle Spiele","sourceCode":"Quellcode"},"vi":{"linkCopied":"Đã sao chép liên kết vào bộ nhớ tạm!","spectating":"Bạn đang xem trận đấu này.","waitingOpponent":"Bạn đang chơi với tư cách {sym}. Đang đợi đối thủ...","winner":"{label} chiến thắng!","waitingJoin":"Bạn là {sym}. Đang đợi đối thủ tham gia...","itsTurn":"Đến lượt của {label}.","waitingMove":"Đang đợi {label} đi nước đi...","disconnected":"Một người chơi đã ngắt kết nối. Đang đợi họ quay lại hoặc người chơi mới...","draw":"Hòa rồi!","yourTurn":"Đến lượt bạn!","title":"Chơi Cờ ca-rô — Phòng trò chơi | Hackatoa","h1":"Cờ Ca-rô","shareLabel":"Chia sẻ liên kết này để chơi:","copy":"Sao chép","connecting":"Đang kết nối...","playAgain":"Chơi lại","newGame":"Trò chơi mới","allGames":"Tất cả trò chơi","sourceCode":"Mã nguồn"},"th":{"linkCopied":"คัดลอกลิงก์ไปยังคลิปบอร์ดแล้ว!","spectating":"คุณกำลังรับชมเกมนี้อยู่","waitingOpponent":"คุณเล่นเป็น {sym} กำลังรอคู่แข่ง...","winner":"{label} ชนะ!","waitingJoin":"คุณคือ {sym} กำลังรอให้คู่แข่งเข้าร่วม...","itsTurn":"ตาของ {label}","waitingMove":"กำลังรอให้ {label} เดิน...","disconnected":"ผู้เล่นตัดการเชื่อมต่อ กำลังรอให้พวกเขากลับมาหรือผู้เล่นใหม่...","draw":"เสมอ!","yourTurn":"ตาของคุณแล้ว!","title":"เล่น Tic-Tac-Toe — ห้องเกม | Hackatoa","h1":"Tic Tac Toe","shareLabel":"แชร์ลิงก์นี้เพื่อเล่น:","copy":"คัดลอก","connecting":"กำลังเชื่อมต่อ...","playAgain":"เล่นอีกครั้ง","newGame":"เกมใหม่","allGames":"เกมทั้งหมด","sourceCode":"ซอร์สโค้ด"}};
+  var loc = 'en';
+  try { var s = localStorage.getItem('hk_lang'); if (s && ALL[s]) loc = s; } catch(e){}
+  if (loc === 'en') { var n = (navigator.language||'').toLowerCase(); if (n.indexOf('pt')===0) { if (ALL['pt-br']) loc='pt-br'; } else { var b=n.slice(0,2); if (ALL[b]) loc=b; } }
+  window.__I18N__ = ALL[loc] || ALL.en;
+  window.t = function(k, p){ var v = (window.__I18N__ && window.__I18N__[k]); if (v == null) v = k; if (p) for (var m in p) v = v.split('{'+m+'}').join(p[m]); return v; };
+  document.documentElement.lang = loc;
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__I18N__.title) document.title = window.__I18N__.title;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ el.textContent = window.t(el.getAttribute('data-i18n')); });
+  });
+})();
+</script>
+<!-- i18n:room:end -->
     <script src="name.js"></script>
     <script src="client.js"></script>
 

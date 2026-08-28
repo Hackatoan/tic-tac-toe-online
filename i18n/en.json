@@ -2,12 +2,27 @@
   "_meta": {
     "site": "ttt",
     "origin": "https://ttt.hackatoa.com",
-    "locales": ["en", "es", "pt-br", "fr", "de", "vi", "th"],
+    "locales": [
+      "en",
+      "es",
+      "pt-br",
+      "fr",
+      "de",
+      "vi",
+      "th"
+    ],
     "note": "en is the source of truth. Locale files are Gemini-generated and consumed by scripts/i18n-build.mjs. Do not hand-edit generated public/<locale>/ files."
   },
   "shared": {
-    "footer": { "builtBy": "Built by", "coffee": "☕ Buy me a coffee" },
-    "links": { "allGames": "All Games", "sourceCode": "Source Code", "vsFriend": "vs Friend" }
+    "footer": {
+      "builtBy": "Built by",
+      "coffee": "☕ Buy me a coffee"
+    },
+    "links": {
+      "allGames": "All Games",
+      "sourceCode": "Source Code",
+      "vsFriend": "vs Friend"
+    }
   },
   "index": {
     "gameName": "Tic-Tac-Toe",
@@ -43,10 +58,22 @@
       ],
       "faqTitle": "Frequently Asked Questions",
       "faqs": [
-        { "q": "Is Tic-Tac-Toe Online free to play?", "a": "Yes. It is completely free with no sign-up, no ads, and no download — just open the page and play." },
-        { "q": "Can I play Tic-Tac-Toe online with a friend?", "a": "Yes. Click Play vs Friend to create a game, then share the link. You both play in real time on the same board." },
-        { "q": "Can I play Tic-Tac-Toe against the computer?", "a": "Yes. Choose Play vs AI to play a solo game against the computer opponent right in your browser." },
-        { "q": "Do I need to download or install anything?", "a": "No. It runs entirely in your web browser on desktop and mobile — there is nothing to download or install." }
+        {
+          "q": "Is Tic-Tac-Toe Online free to play?",
+          "a": "Yes. It is completely free with no sign-up, no ads, and no download — just open the page and play."
+        },
+        {
+          "q": "Can I play Tic-Tac-Toe online with a friend?",
+          "a": "Yes. Click Play vs Friend to create a game, then share the link. You both play in real time on the same board."
+        },
+        {
+          "q": "Can I play Tic-Tac-Toe against the computer?",
+          "a": "Yes. Choose Play vs AI to play a solo game against the computer opponent right in your browser."
+        },
+        {
+          "q": "Do I need to download or install anything?",
+          "a": "No. It runs entirely in your web browser on desktop and mobile — there is nothing to download or install."
+        }
       ]
     },
     "runtime": {
@@ -88,7 +115,20 @@
       "waitingJoin": "You are {sym}. Waiting for an opponent to join...",
       "itsTurn": "It is {label}'s turn.",
       "waitingMove": "Waiting for {label} to make a move...",
-      "disconnected": "A player disconnected. Waiting for them to return or a new player..."
+      "disconnected": "A player disconnected. Waiting for them to return or a new player...",
+      "draw": "It's a draw!",
+      "yourTurn": "It's your turn!"
+    },
+    "static": {
+      "title": "Play Tic-Tac-Toe — Game Room | Hackatoa",
+      "h1": "Tic Tac Toe",
+      "shareLabel": "Share this link to play:",
+      "copy": "Copy",
+      "connecting": "Connecting...",
+      "playAgain": "Play Again",
+      "newGame": "New Game",
+      "allGames": "All Games",
+      "sourceCode": "Source Code"
     }
   }
 }

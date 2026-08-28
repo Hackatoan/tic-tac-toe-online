@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morpion Solo vs IA | Hackatoa</title>
-    <meta name="description" content="Jouez au Morpion en solo contre une IA. Entraînez votre stratégie dans cette version navigateur solo du jeu classique par Hackatoa." />
+    <title>Morpion en solo vs IA | Hackatoa</title>
+    <meta name="description" content="Jouez au Morpion en solo contre une IA. Exercez votre stratégie dans cette version solo sur navigateur du jeu classique par Hackatoa." />
   <meta name="author" content="Preston Harris" />
   <meta name="keywords" content="tic tac toe solo, tic tac toe vs computer, AI tic tac toe, browser game, Hackatoa" />
-  <meta property="og:title" content="Morpion Solo vs IA" />
-  <meta property="og:description" content="Jouez au Morpion en solo contre une IA. Entraînez votre stratégie dans cette version navigateur solo du jeu classique par Hackatoa." />
+  <meta property="og:title" content="Morpion en solo vs IA" />
+  <meta property="og:description" content="Jouez au Morpion en solo contre une IA. Exercez votre stratégie dans cette version solo sur navigateur du jeu classique par Hackatoa." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ttt.hackatoa.com/solo" />
   <meta property="og:image" content="https://hackatoa.com/assets/me.png" />
   <meta property="og:site_name" content="Hackatoa" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Morpion Solo vs IA" />
-  <meta name="twitter:description" content="Jouez au Morpion en solo contre une IA. Entraînez votre stratégie dans cette version navigateur solo du jeu classique par Hackatoa." />
+  <meta name="twitter:title" content="Morpion en solo vs IA" />
+  <meta name="twitter:description" content="Jouez au Morpion en solo contre une IA. Exercez votre stratégie dans cette version solo sur navigateur du jeu classique par Hackatoa." />
   <meta name="twitter:image" content="https://hackatoa.com/assets/me.png" />
   <meta name="twitter:site" content="@jhackatoa" />
   <link rel="canonical" href="https://ttt.hackatoa.com/fr/solo.html" />
@@ -87,7 +87,7 @@
             <div class="score">IA (O) : <span id="scoreO">0</span></div>
         </div>
 
-        <p class="turn-indicator" id="statusMessage">À vous de jouer</p>
+        <p class="turn-indicator" id="statusMessage">À votre tour</p>
 
         <div class="board" id="board">
             <div class="cell" data-index="0"></div>
@@ -118,10 +118,10 @@
             ☕ Offrez-moi un café
         </a>
     </footer>
-
     <!-- i18n:runtime:start -->
 <script>
-window.__I18N__ = {"yourTurn":"À vous de jouer","aiThinking":"🤖 L'IA réfléchit…","youWin":"🎉 Vous avez gagné !","aiWins":"🤖 L'IA a gagné !","itsDraw":"Match nul !"};
+try{localStorage.setItem('hk_lang',"fr")}catch(e){}
+window.__I18N__ = {"yourTurn":"À votre tour","aiThinking":"🤖 L'IA réfléchit…","youWin":"🎉 Vous avez gagné !","aiWins":"🤖 L'IA a gagné !","itsDraw":"Match nul !"};
 window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };
 </script>
 <!-- i18n:runtime:end -->

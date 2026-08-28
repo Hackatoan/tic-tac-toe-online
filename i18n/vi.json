@@ -1,24 +1,24 @@
 {
   "shared": {
     "footer": {
-      "builtBy": "Được xây dựng bởi",
-      "coffee": "☕ Mời tôi một ly cà phê"
+      "builtBy": "Được phát triển bởi",
+      "coffee": "☕ Mời tôi ly cà phê"
     },
     "links": {
       "allGames": "Tất cả trò chơi",
       "sourceCode": "Mã nguồn",
-      "vsFriend": "Đấu với Bạn bè"
+      "vsFriend": "Đấu với bạn bè"
     }
   },
   "index": {
     "gameName": "Cờ ca-rô",
-    "title": "Cờ ca-rô Trực tuyến — Trò chơi Nhiều người chơi trên Trình duyệt | Hackatoa",
-    "description": "Chơi Cờ ca-rô trực tuyến với bạn bè theo thời gian thực. Chiến thuật 3 ô cổ điển ngay trên trình duyệt — không cần đăng ký, không cần tải xuống, chơi ngay lập tức. Trò chơi nhiều người chơi miễn phí.",
-    "ogTitle": "Cờ ca-rô Trực tuyến — Trò chơi Nhiều người chơi trên Trình duyệt",
-    "h1": "Cờ ca-rô Trực tuyến",
+    "title": "Cờ ca-rô Trực tuyến — Trò chơi Trình duyệt Nhiều người chơi | Hackatoa",
+    "description": "Chơi Cờ ca-rô trực tuyến với bạn bè theo thời gian thực. Chiến thuật 3 ô cổ điển ngay trên trình duyệt của bạn — không cần đăng ký, không cần tải xuống, chơi ngay lập tức. Trò chơi nhiều người chơi miễn phí.",
+    "ogTitle": "Cờ ca-rô Trực tuyến — Trò chơi Trình duyệt Nhiều người chơi",
+    "h1": "Cờ Ca-rô Trực tuyến",
     "tagline": "Chơi Cờ ca-rô với bạn bè hoặc thách đấu với AI!",
     "ui": {
-      "playVsFriend": "Đấu với Bạn bè",
+      "playVsFriend": "Đấu với bạn bè",
       "playVsAi": "Đấu với AI",
       "playingAs": "Đang chơi với tư cách",
       "change": "thay đổi",
@@ -27,37 +27,37 @@
     },
     "seo": {
       "h2": "Chơi Cờ ca-rô Trực tuyến — Miễn phí & Nhiều người chơi",
-      "intro": "Cờ ca-rô Trực tuyến là phiên bản miễn phí trên trình duyệt của trò chơi 3 ô cổ điển. Thách đấu bạn bè trong trận đấu nhiều người chơi trực tuyến thời gian thực bằng cách chia sẻ liên kết, hoặc chơi đơn với máy AI. Không cần đăng ký và không cần tải xuống — trò chơi chạy ngay lập tức trên máy tính và điện thoại.",
+      "intro": "Cờ ca-rô Trực tuyến là phiên bản miễn phí trên trình duyệt của trò chơi ba ô truyền thống. Thách đấu bạn bè trong trận đấu nhiều người chơi trực tuyến thời gian thực bằng cách chia sẻ liên kết, hoặc chơi đơn với máy tính AI. Không cần đăng ký và không cần tải xuống — trò chơi chạy ngay lập tức trên máy tính và điện thoại.",
       "howToTitle": "Cách chơi Cờ ca-rô Trực tuyến",
       "howToSteps": [
-        "Chọn chế độ — Đấu với Bạn bè để chơi nhiều người trực tuyến, hoặc Đấu với AI để chơi đơn.",
-        "Mời bạn bè — đối với chế độ nhiều người chơi, hãy chia sẻ liên kết trò chơi được tạo. Cả hai bạn sẽ tham gia cùng một bàn cờ.",
-        "Lần lượt đi — người chơi luân phiên đặt X và O trên lưới 3×3.",
-        "Nối ba ô — xếp ba biểu tượng của bạn theo chiều ngang, chiều dọc hoặc đường chéo để giành chiến thắng."
+        "Chọn chế độ — Đấu với bạn bè để chơi nhiều người trực tuyến, hoặc Đấu với AI để chơi đơn.",
+        "Mời bạn bè — đối với chế độ nhiều người chơi, hãy chia sẻ liên kết trò chơi được tạo. Cả hai bạn sẽ cùng tham gia một bàn cờ.",
+        "Lần lượt đi — người chơi thay phiên đặt dấu X và O trên lưới 3×3.",
+        "Được ba ô liên tiếp — xếp ba dấu của bạn theo hàng ngang, hàng dọc hoặc đường chéo để giành chiến thắng."
       ],
       "featuresTitle": "Tính năng",
       "features": [
         "Nhiều người chơi trực tuyến thời gian thực — chơi trực tiếp với bạn bè bằng cách chia sẻ liên kết.",
         "Chơi đơn đấu với AI — luyện tập với máy tính bất cứ lúc nào.",
         "Miễn phí và tức thì — không cần tài khoản, không cần cài đặt, không cần tải xuống.",
-        "Chơi ở mọi nơi — hoạt động trên mọi trình duyệt hiện đại trên máy tính, điện thoại hoặc máy tính bảng."
+        "Chơi mọi lúc mọi nơi — hoạt động trên mọi trình duyệt hiện đại trên máy tính, điện thoại hoặc máy tính bảng."
       ],
       "faqTitle": "Các câu hỏi thường gặp",
       "faqs": [
         {
           "q": "Cờ ca-rô Trực tuyến có miễn phí không?",
-          "a": "Có. Trò chơi hoàn toàn miễn phí, không cần đăng ký, không quảng cáo và không cần tải xuống — chỉ cần mở trang và chơi."
+          "a": "Có. Trò chơi hoàn toàn miễn phí, không cần đăng ký, không có quảng cáo và không cần tải xuống — chỉ cần mở trang và chơi."
         },
         {
           "q": "Tôi có thể chơi Cờ ca-rô trực tuyến với bạn bè không?",
-          "a": "Có. Nhấp vào Đấu với Bạn bè để tạo trò chơi, sau đó chia sẻ liên kết. Cả hai bạn sẽ chơi theo thời gian thực trên cùng một bàn cờ."
+          "a": "Có. Nhấp vào Đấu với bạn bè để tạo trò chơi, sau đó chia sẻ liên kết. Cả hai bạn sẽ chơi theo thời gian thực trên cùng một bàn cờ."
         },
         {
           "q": "Tôi có thể chơi Cờ ca-rô với máy tính không?",
           "a": "Có. Chọn Đấu với AI để chơi đơn với máy tính ngay trên trình duyệt của bạn."
         },
         {
-          "q": "Tôi có cần tải xuống hoặc cài đặt gì không?",
+          "q": "Tôi có cần tải xuống hoặc cài đặt bất cứ thứ gì không?",
           "a": "Không. Trò chơi chạy hoàn toàn trên trình duyệt web của bạn trên máy tính và thiết bị di động — không có gì cần tải xuống hoặc cài đặt."
         }
       ]
@@ -73,7 +73,7 @@
   },
   "solo": {
     "title": "Cờ ca-rô Đơn đấu với AI | Hackatoa",
-    "description": "Chơi Cờ ca-rô đơn đấu với đối thủ AI. Luyện tập chiến lược của bạn trong phiên bản trình duyệt chơi đơn của trò chơi cổ điển này bởi Hackatoa.",
+    "description": "Chơi Cờ ca-rô đơn đấu với đối thủ AI. Rèn luyện chiến thuật của bạn trong phiên bản trình duyệt chơi đơn của trò chơi cổ điển do Hackatoa phát triển.",
     "ogTitle": "Cờ ca-rô Đơn đấu với AI",
     "h1": "Cờ ca-rô đấu với AI",
     "ui": {
@@ -96,14 +96,28 @@
     "runtime": {
       "linkCopied": "Đã sao chép liên kết vào bộ nhớ tạm!",
       "spectating": "Bạn đang xem trận đấu này.",
-      "waitingOpponent": "Bạn đang chơi với tư cách {sym}. Đang chờ đối thủ...",
-      "winner": "{label} thắng!",
-      "waitingJoin": "Bạn là {sym}. Đang chờ đối thủ tham gia...",
-      "itsTurn": "Lượt của {label}.",
-      "waitingMove": "Đang chờ {label} đi nước đi...",
-      "disconnected": "Một người chơi đã ngắt kết nối. Đang chờ họ quay lại hoặc người chơi mới..."
+      "waitingOpponent": "Bạn đang chơi với tư cách {sym}. Đang đợi đối thủ...",
+      "winner": "{label} chiến thắng!",
+      "waitingJoin": "Bạn là {sym}. Đang đợi đối thủ tham gia...",
+      "itsTurn": "Đến lượt của {label}.",
+      "waitingMove": "Đang đợi {label} đi nước đi...",
+      "disconnected": "Một người chơi đã ngắt kết nối. Đang đợi họ quay lại hoặc người chơi mới...",
+      "draw": "Hòa rồi!",
+      "yourTurn": "Đến lượt bạn!"
+    },
+    "static": {
+      "title": "Chơi Cờ ca-rô — Phòng trò chơi | Hackatoa",
+      "h1": "Cờ Ca-rô",
+      "shareLabel": "Chia sẻ liên kết này để chơi:",
+      "copy": "Sao chép",
+      "connecting": "Đang kết nối...",
+      "playAgain": "Chơi lại",
+      "newGame": "Trò chơi mới",
+      "allGames": "Tất cả trò chơi",
+      "sourceCode": "Mã nguồn"
     }
   },
+  "htmlLang": "vi",
   "_meta": {
     "site": "ttt",
     "origin": "https://ttt.hackatoa.com",

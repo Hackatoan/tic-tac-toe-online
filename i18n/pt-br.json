@@ -1,21 +1,20 @@
 {
-  "htmlLang": "pt-br",
   "shared": {
     "footer": {
       "builtBy": "Criado por",
-      "coffee": "☕ Me pague um café"
+      "coffee": "☕ Pague-me um café"
     },
     "links": {
       "allGames": "Todos os Jogos",
-      "sourceCode": "Código Fonte",
+      "sourceCode": "Código-Fonte",
       "vsFriend": "vs Amigo"
     }
   },
   "index": {
     "gameName": "Jogo da Velha",
-    "title": "Jogo da Velha Online — Jogo Multiplayer no Navegador | Hackatoa",
-    "description": "Jogue Jogo da Velha online contra um amigo em tempo real. Estratégia clássica de 3 em linha no seu navegador — sem cadastro, sem download, jogo instantâneo. Jogo multiplayer gratuito.",
-    "ogTitle": "Jogo da Velha Online — Jogo Multiplayer no Navegador",
+    "title": "Jogo da Velha Online — Jogo Multiplayer de Navegador | Hackatoa",
+    "description": "Jogue Jogo da Velha online contra um amigo em tempo real. A clássica estratégia de alinhar 3 no navegador — sem cadastro, sem download, jogo instantâneo. Jogo multiplayer gratuito.",
+    "ogTitle": "Jogo da Velha Online — Jogo Multiplayer de Navegador",
     "h1": "Jogo da Velha Online",
     "tagline": "Jogue Jogo da Velha com um amigo ou desafie a IA!",
     "ui": {
@@ -23,30 +22,30 @@
       "playVsAi": "Jogar vs IA",
       "playingAs": "Jogando como",
       "change": "alterar",
-      "leaderboard": "🏆 Ranking",
+      "leaderboard": "🏆 Placar de Líderes",
       "loading": "Carregando…"
     },
     "seo": {
-      "h2": "Jogue Jogo da Velha Online — Grátis e Multiplayer",
-      "intro": "O Jogo da Velha Online é uma versão gratuita para navegador do clássico jogo de três em linha. Desafie um amigo para uma partida multiplayer online em tempo real compartilhando um link, ou jogue sozinho contra a IA do computador. Não há cadastro nem download — funciona instantaneamente no desktop e celular.",
+      "h2": "Jogue Jogo da Velha Online — Gratuito e Multiplayer",
+      "intro": "O Jogo da Velha Online é uma versão gratuita para navegador do clássico jogo de alinhar três peças. Desafie um amigo para uma partida multiplayer online em tempo real compartilhando um link, ou jogue sozinho contra a inteligência artificial do computador. Não é necessário cadastro nem download — funciona instantaneamente no PC e no celular.",
       "howToTitle": "Como Jogar Jogo da Velha Online",
       "howToSteps": [
-        "Escolha um modo — Jogar vs Amigo para multiplayer online, ou Jogar vs IA para um jogo solo.",
-        "Convide um amigo — para o multiplayer, compartilhe o link do jogo criado. Vocês dois entrarão no mesmo tabuleiro.",
-        "Alternem os turnos — os jogadores alternam colocando X e O na grade 3×3.",
-        "Faça três em linha — alinhe três de suas marcas horizontalmente, verticalmente ou diagonalmente para vencer."
+        "Escolha um modo — Jogar vs Amigo para multiplayer online, ou Jogar vs IA para uma partida solo.",
+        "Convide um amigo — para o modo multiplayer, compartilhe o link do jogo gerado. Ambos entram no mesmo tabuleiro.",
+        "Jogue em turnos — os jogadores alternam entre colocar X e O na grade 3×3.",
+        "Faça três em linha — alinhe três das suas marcas na horizontal, vertical ou diagonal para vencer."
       ],
       "featuresTitle": "Recursos",
       "features": [
         "Multiplayer online em tempo real — jogue com um amigo ao vivo compartilhando um link.",
-        "Single-player vs IA — pratique contra o computador a qualquer momento.",
-        "Grátis e instantâneo — sem conta, sem instalação, sem necessidade de download.",
-        "Jogue em qualquer lugar — funciona em qualquer navegador moderno no desktop, celular ou tablet."
+        "Um jogador vs IA — pratique contra o computador a qualquer momento.",
+        "Gratuito e instantâneo — sem conta, sem instalação, sem necessidade de download.",
+        "Jogue em qualquer lugar — funciona em qualquer navegador moderno no PC, celular ou tablet."
       ],
       "faqTitle": "Perguntas Frequentes",
       "faqs": [
         {
-          "q": "O Jogo da Velha Online é gratuito para jogar?",
+          "q": "O Jogo da Velha Online é gratuito?",
           "a": "Sim. É totalmente gratuito, sem cadastro, sem anúncios e sem download — basta abrir a página e jogar."
         },
         {
@@ -55,26 +54,26 @@
         },
         {
           "q": "Posso jogar Jogo da Velha contra o computador?",
-          "a": "Sim. Escolha Jogar vs IA para jogar uma partida solo contra o computador diretamente no seu navegador."
+          "a": "Sim. Escolha Jogar vs IA para jogar uma partida solo contra o oponente controlado pelo computador direto no seu navegador."
         },
         {
-          "q": "Preciso baixar ou instalar algo?",
-          "a": "Não. Ele roda inteiramente no seu navegador web no desktop e celular — não há nada para baixar ou instalar."
+          "q": "Preciso baixar ou instalar alguma coisa?",
+          "a": "Não. O jogo roda inteiramente no seu navegador de internet no PC e no celular — não há nada para baixar ou instalar."
         }
       ]
     },
     "runtime": {
       "anonymous": "anônimo",
-      "nicknamePrompt": "Escolha um apelido para o ranking:",
-      "noGames": "Nenhum jogo jogado ainda — seja o primeiro!",
-      "lbUnavailable": "Ranking indisponível.",
+      "nicknamePrompt": "Escolha um apelido para o placar de líderes:",
+      "noGames": "Nenhuma partida jogada ainda — seja o primeiro!",
+      "lbUnavailable": "Placar de líderes indisponível.",
       "failedCreate": "Falha ao criar o jogo.",
       "errorCreate": "Ocorreu um erro ao criar o jogo."
     }
   },
   "solo": {
     "title": "Jogo da Velha Solo vs IA | Hackatoa",
-    "description": "Jogue Jogo da Velha solo contra um oponente de IA. Pratique sua estratégia nesta versão single-player para navegador do clássico jogo da Hackatoa.",
+    "description": "Jogue Jogo da Velha sozinho contra um oponente de IA. Pratique sua estratégia nesta versão para um jogador do clássico jogo feita pela Hackatoa.",
     "ogTitle": "Jogo da Velha Solo vs IA",
     "h1": "Jogo da Velha vs IA",
     "ui": {
@@ -87,24 +86,38 @@
     },
     "runtime": {
       "yourTurn": "Sua vez",
-      "aiThinking": "🤖 IA está pensando…",
+      "aiThinking": "🤖 A IA está pensando…",
       "youWin": "🎉 Você venceu!",
-      "aiWins": "🤖 IA venceu!",
+      "aiWins": "🤖 A IA venceu!",
       "itsDraw": "Empate!"
     }
   },
   "room": {
     "runtime": {
       "linkCopied": "Link copiado para a área de transferência!",
-      "spectating": "Você está assistindo a este jogo.",
-      "waitingOpponent": "Você está jogando como {sym}. Aguardando oponente...",
+      "spectating": "Você está assistindo a esta partida.",
+      "waitingOpponent": "Você está jogando como {sym}. Aguardando o oponente...",
       "winner": "{label} venceu!",
       "waitingJoin": "Você é {sym}. Aguardando um oponente entrar...",
       "itsTurn": "É a vez de {label}.",
       "waitingMove": "Aguardando {label} fazer uma jogada...",
-      "disconnected": "Um jogador desconectou. Aguardando o retorno ou um novo jogador..."
+      "disconnected": "Um jogador se desconectou. Aguardando o retorno dele ou um novo jogador...",
+      "draw": "Empate!",
+      "yourTurn": "Sua vez!"
+    },
+    "static": {
+      "title": "Jogue Jogo da Velha — Sala de Jogo | Hackatoa",
+      "h1": "Jogo da Velha",
+      "shareLabel": "Compartilhe este link para jogar:",
+      "copy": "Copiar",
+      "connecting": "Conectando...",
+      "playAgain": "Jogar Novamente",
+      "newGame": "Novo Jogo",
+      "allGames": "Todos os Jogos",
+      "sourceCode": "Código-Fonte"
     }
   },
+  "htmlLang": "pt-br",
   "_meta": {
     "site": "ttt",
     "origin": "https://ttt.hackatoa.com",

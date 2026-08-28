@@ -1,21 +1,20 @@
 {
-  "htmlLang": "de",
   "shared": {
     "footer": {
-      "builtBy": "Erstellt von",
+      "builtBy": "Entwickelt von",
       "coffee": "☕ Spendier mir einen Kaffee"
     },
     "links": {
       "allGames": "Alle Spiele",
       "sourceCode": "Quellcode",
-      "vsFriend": "Gegen Freund"
+      "vsFriend": "Gegen einen Freund"
     }
   },
   "index": {
     "gameName": "Tic-Tac-Toe",
-    "title": "Tic-Tac-Toe Online — Multiplayer Browsergame | Hackatoa",
-    "description": "Spiele Tic-Tac-Toe online gegen einen Freund in Echtzeit. Klassische 3-gewinnt-Strategie im Browser — ohne Anmeldung, ohne Download, sofort spielbar. Kostenloses Multiplayer-Spiel.",
-    "ogTitle": "Tic-Tac-Toe Online — Multiplayer Browsergame",
+    "title": "Tic-Tac-Toe Online — Multiplayer-Browserspiel | Hackatoa",
+    "description": "Spiele Tic-Tac-Toe online in Echtzeit gegen einen Freund. Die klassische 3-in-einer-Reihe-Strategie direkt im Browser — ohne Registrierung, ohne Download, sofort spielbar. Kostenloses Multiplayer-Spiel.",
+    "ogTitle": "Tic-Tac-Toe Online — Multiplayer-Browserspiel",
     "h1": "Tic Tac Toe Online",
     "tagline": "Spiele Tic Tac Toe mit einem Freund oder fordere die KI heraus!",
     "ui": {
@@ -24,38 +23,38 @@
       "playingAs": "Du spielst als",
       "change": "ändern",
       "leaderboard": "🏆 Bestenliste",
-      "loading": "Lädt…"
+      "loading": "Wird geladen…"
     },
     "seo": {
-      "h2": "Tic-Tac-Toe online spielen — Kostenlos & Multiplayer",
-      "intro": "Tic-Tac-Toe Online ist eine kostenlose Browser-Version des Spieleklassikers (auch bekannt als Drei gewinnt). Fordere einen Freund zu einem Echtzeit-Multiplayer-Match heraus, indem du einen Link teilst, oder spiele solo gegen die Computer-KI. Keine Anmeldung, kein Download — direkt spielbar auf Desktop und Mobilgeräten.",
-      "howToTitle": "So spielst du Tic-Tac-Toe online",
+      "h2": "Tic-Tac-Toe Online spielen — Kostenlos & Multiplayer",
+      "intro": "Tic-Tac-Toe Online ist eine kostenlose, browserbasierte Version des klassischen Drei-gewinnt-Spiels (auch bekannt als Kreis und Kreuz). Fordere einen Freund zu einem Online-Multiplayer-Match in Echtzeit heraus, indem du einen Link teilst, oder spiele alleine gegen die Computer-KI. Es ist keine Registrierung und kein Download erforderlich — es läuft sofort auf Desktop und Mobilgeräten.",
+      "howToTitle": "So wird Tic-Tac-Toe Online gespielt",
       "howToSteps": [
-        "Wähle einen Modus — 'Gegen Freund spielen' für Online-Multiplayer oder 'Gegen KI spielen' für ein Einzelspiel.",
-        "Lade einen Freund ein — teile für den Multiplayer-Modus den erstellten Link. Ihr spielt auf demselben Feld.",
-        "Abwechselnd ziehen — Spieler setzen abwechselnd X und O in das 3×3-Gitter.",
-        "Drei in einer Reihe — bringe drei deiner Zeichen horizontal, vertikal oder diagonal in eine Reihe, um zu gewinnen."
+        "Wähle einen Modus — „Gegen Freund spielen“ für Online-Multiplayer oder „Gegen KI spielen“ für ein Solo-Spiel.",
+        "Lade einen Freund ein — teile für den Multiplayer-Modus den generierten Spiellink. Ihr tretet beide demselben Spielfeld bei.",
+        "Wechselt euch ab — die Spieler platzieren abwechselnd X und O auf dem 3×3-Gitter.",
+        "Erziele drei in einer Reihe — ordne drei deiner Markierungen horizontal, vertikal oder diagonal an, um zu gewinnen."
       ],
-      "featuresTitle": "Features",
+      "featuresTitle": "Funktionen",
       "features": [
-        "Echtzeit-Online-Multiplayer — spiele live gegen Freunde per Link-Teilen.",
-        "Einzelspieler gegen KI — übe jederzeit gegen den Computer.",
-        "Kostenlos und sofort — kein Account, keine Installation, kein Download nötig.",
-        "Überall spielbar — funktioniert in jedem modernen Browser auf PC, Handy oder Tablet."
+        "Online-Multiplayer in Echtzeit — spiele live gegen einen Freund, indem du einen Link teilst.",
+        "Einzelspieler gegen KI — trainiere jederzeit gegen den Computer.",
+        "Kostenlos und sofort spielbar — kein Konto, keine Installation, kein Download erforderlich.",
+        "Überall spielbar — funktioniert in jedem modernen Browser auf Desktop, Smartphone oder Tablet."
       ],
       "faqTitle": "Häufig gestellte Fragen",
       "faqs": [
         {
           "q": "Ist Tic-Tac-Toe Online kostenlos?",
-          "a": "Ja. Es ist komplett kostenlos, ohne Anmeldung, ohne Werbung und ohne Download — einfach Seite öffnen und spielen."
+          "a": "Ja. Es ist völlig kostenlos, ohne Registrierung, ohne Werbung und ohne Download — einfach die Seite öffnen und spielen."
         },
         {
           "q": "Kann ich Tic-Tac-Toe online mit einem Freund spielen?",
-          "a": "Ja. Klicke auf 'Gegen Freund spielen', um ein Spiel zu erstellen, und teile dann den Link. Ihr spielt beide in Echtzeit auf demselben Feld."
+          "a": "Ja. Klicke auf „Gegen Freund spielen“, um ein Spiel zu erstellen, und teile dann den Link. Ihr spielt beide in Echtzeit auf demselben Spielfeld."
         },
         {
           "q": "Kann ich Tic-Tac-Toe gegen den Computer spielen?",
-          "a": "Ja. Wähle 'Gegen KI spielen', um ein Einzelspiel gegen den Computer direkt in deinem Browser zu starten."
+          "a": "Ja. Wähle „Gegen KI spielen“, um direkt in deinem Browser eine Solopartie gegen den Computergegner zu spielen."
         },
         {
           "q": "Muss ich etwas herunterladen oder installieren?",
@@ -65,8 +64,8 @@
     },
     "runtime": {
       "anonymous": "anonym",
-      "nicknamePrompt": "Wähle einen Nickname für die Bestenliste:",
-      "noGames": "Noch keine Spiele absolviert — sei der Erste!",
+      "nicknamePrompt": "Wähle einen Spitznamen für die Bestenliste:",
+      "noGames": "Noch keine Spiele gespielt — sei der Erste!",
       "lbUnavailable": "Bestenliste nicht verfügbar.",
       "failedCreate": "Spiel konnte nicht erstellt werden.",
       "errorCreate": "Beim Erstellen des Spiels ist ein Fehler aufgetreten."
@@ -74,11 +73,11 @@
   },
   "solo": {
     "title": "Solo Tic-Tac-Toe gegen KI | Hackatoa",
-    "description": "Spiele Tic-Tac-Toe solo gegen einen KI-Gegner. Trainiere deine Strategie in dieser Einzelspieler-Browserversion des Klassikers von Hackatoa.",
+    "description": "Spiele Tic-Tac-Toe im Einzelspielermodus gegen einen KI-Gegner. Trainiere deine Strategie in dieser Browser-Version des Klassikers von Hackatoa.",
     "ogTitle": "Solo Tic-Tac-Toe gegen KI",
     "h1": "Tic Tac Toe gegen KI",
     "ui": {
-      "easy": "Einfach",
+      "easy": "Leicht",
       "medium": "Mittel",
       "hard": "Schwer",
       "youX": "Du (X):",
@@ -87,7 +86,7 @@
     },
     "runtime": {
       "yourTurn": "Du bist dran",
-      "aiThinking": "🤖 KI überlegt…",
+      "aiThinking": "🤖 KI denkt nach…",
       "youWin": "🎉 Du gewinnst!",
       "aiWins": "🤖 KI gewinnt!",
       "itsDraw": "Unentschieden!"
@@ -96,15 +95,29 @@
   "room": {
     "runtime": {
       "linkCopied": "Link in die Zwischenablage kopiert!",
-      "spectating": "Du schaust bei diesem Spiel zu.",
-      "waitingOpponent": "Du spielst als {sym}. Warte auf Gegner...",
+      "spectating": "Du schaust diesem Spiel als Zuschauer zu.",
+      "waitingOpponent": "Du spielst als {sym}. Warten auf den Gegner...",
       "winner": "{label} gewinnt!",
-      "waitingJoin": "Du bist {sym}. Warte darauf, dass ein Gegner beitritt...",
+      "waitingJoin": "Du bist {sym}. Warten darauf, dass ein Gegner beitritt...",
       "itsTurn": "{label} ist am Zug.",
-      "waitingMove": "Warte auf den Zug von {label}...",
-      "disconnected": "Ein Spieler hat die Verbindung verloren. Warte auf Rückkehr oder einen neuen Spieler..."
+      "waitingMove": "Warten auf den Zug von {label}...",
+      "disconnected": "Ein Spieler hat die Verbindung getrennt. Es wird gewartet, bis er zurückkehrt, oder auf einen neuen Spieler...",
+      "draw": "Unentschieden!",
+      "yourTurn": "Du bist am Zug!"
+    },
+    "static": {
+      "title": "Tic-Tac-Toe spielen — Spielraum | Hackatoa",
+      "h1": "Tic Tac Toe",
+      "shareLabel": "Teile diesen Link zum Spielen:",
+      "copy": "Kopieren",
+      "connecting": "Verbindung wird hergestellt...",
+      "playAgain": "Nochmal spielen",
+      "newGame": "Neues Spiel",
+      "allGames": "Alle Spiele",
+      "sourceCode": "Quellcode"
     }
   },
+  "htmlLang": "de",
   "_meta": {
     "site": "ttt",
     "origin": "https://ttt.hackatoa.com",

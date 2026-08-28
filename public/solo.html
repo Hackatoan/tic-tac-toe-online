@@ -118,9 +118,9 @@
             ☕ Buy me a coffee
         </a>
     </footer>
-
     <!-- i18n:runtime:start -->
 <script>
+try{localStorage.setItem('hk_lang',"en")}catch(e){}
 window.__I18N__ = {"yourTurn":"Your turn","aiThinking":"🤖 AI is thinking…","youWin":"🎉 You win!","aiWins":"🤖 AI wins!","itsDraw":"It's a draw!"};
 window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };
 </script>

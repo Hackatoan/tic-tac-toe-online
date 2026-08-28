@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morpion en ligne — Jeu multijoueur sur navigateur | Hackatoa</title>
-    <meta name="description" content="Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de 3 alignés dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit." />
+    <meta name="description" content="Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de tic-tac-toe dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit." />
   <meta name="author" content="Preston Harris" />
   <meta name="keywords" content="tic tac toe online, multiplayer tic tac toe, browser game, noughts and crosses, free online game, Hackatoa" />
   <meta property="og:title" content="Morpion en ligne — Jeu multijoueur sur navigateur" />
-  <meta property="og:description" content="Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de 3 alignés dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit." />
+  <meta property="og:description" content="Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de tic-tac-toe dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ttt.hackatoa.com/" />
   <meta property="og:image" content="https://ttt.hackatoa.com/og.png" />
@@ -18,7 +18,7 @@
   <meta property="og:site_name" content="Hackatoa" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Morpion en ligne — Jeu multijoueur sur navigateur" />
-  <meta name="twitter:description" content="Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de 3 alignés dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit." />
+  <meta name="twitter:description" content="Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de tic-tac-toe dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit." />
   <meta name="twitter:image" content="https://ttt.hackatoa.com/og.png" />
   <meta name="twitter:image:alt" content="Tic-Tac-Toe Online — real-time, free, no sign-up" />
   <meta name="twitter:site" content="@jhackatoa" />
@@ -50,7 +50,7 @@
       "name": "Le Morpion en ligne est-il gratuit ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. C'est totalement gratuit, sans inscription, sans publicité et sans téléchargement — ouvrez simplement la page et jouez."
+        "text": "Oui. Il est entièrement gratuit, sans inscription, sans publicité et sans téléchargement — ouvrez simplement la page et jouez."
       }
     },
     {
@@ -58,7 +58,7 @@
       "name": "Puis-je jouer au Morpion en ligne avec un ami ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Cliquez sur Jouer vs Ami pour créer une partie, puis partagez le lien. Vous jouez tous les deux en temps réel sur le même plateau."
+        "text": "Oui. Cliquez sur Jouer vs Ami pour créer une partie, puis partagez le lien. Vous jouez tous les deux en temps réel sur la même grille."
       }
     },
     {
@@ -66,7 +66,7 @@
       "name": "Puis-je jouer au Morpion contre l'ordinateur ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Oui. Choisissez Jouer vs IA pour faire une partie en solo contre l'ordinateur directement dans votre navigateur."
+        "text": "Oui. Choisissez Jouer vs IA pour faire une partie solo contre l'ordinateur directement dans votre navigateur."
       }
     },
     {
@@ -74,7 +74,7 @@
       "name": "Dois-je télécharger ou installer quelque chose ?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Non. Il fonctionne entièrement dans votre navigateur web sur ordinateur et mobile — il n'y a rien à télécharger ou à installer."
+        "text": "Non. Le jeu s'exécute entièrement dans votre navigateur web sur ordinateur et mobile — il n'y a rien à télécharger ni à installer."
       }
     }
   ]
@@ -108,14 +108,14 @@
     <main class="game-stage">
     <div class="container">
         <h1>Morpion en ligne</h1>
-        <p>Jouez au Morpion avec un ami ou défiez l'IA !</p>
+        <p>Jouez au Morpion avec un ami ou affrontez l'IA !</p>
         <div style="display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-top:1rem;">
             <button id="createGameBtn">Jouer vs Ami</button>
             <button id="soloBtn" onclick="window.location.href='/fr/solo.html'" style="background:#c2185b;border-color:#c2185b;color:#fff;">Jouer vs IA</button>
         </div>
 
         <p style="margin-top:.9rem;font-size:.85rem;color:#888;">
-            Jouer en tant que <strong id="whoami" style="color:#ff69b4;">…</strong>
+            Vous jouez en tant que <strong id="whoami" style="color:#ff69b4;">…</strong>
             <a href="#" id="changeName" style="color:#888;margin-left:.4rem;">modifier</a>
         </p>
 
@@ -147,39 +147,39 @@
     <!-- SEO / informational content (always in the DOM, crawlable) -->
     <section class="seo-content">
       <div class="seo-inner">
-        <h2>Jouez au Morpion en ligne — Gratuit &amp; Multijoueur</h2>
-        <p>Morpion en ligne est une version gratuite sur navigateur du jeu classique d'alignement (aussi connu sous le nom de Tic-Tac-Toe). Défiez un ami dans un match multijoueur en ligne en temps réel en partageant un lien, ou jouez en solo contre l'IA de l'ordinateur. Pas d'inscription ni de téléchargement — jouable instantanément sur ordinateur et mobile.</p>
+        <h2>Jouez au Morpion en ligne — Gratuit et Multijoueur</h2>
+        <p>Morpion en ligne est une version gratuite sur navigateur du jeu classique de tic-tac-toe (également appelé noughts and crosses). Défiez un ami lors d'une partie multijoueur en ligne en temps réel en partageant un lien, ou jouez en solo contre l'ordinateur. Sans inscription et sans téléchargement — jouez instantanément sur ordinateur et mobile.</p>
         <h3 class="seo-h">Comment jouer au Morpion en ligne</h3>
         <ol class="seo-list">
           <li>Choisissez un mode — Jouer vs Ami pour le multijoueur en ligne, ou Jouer vs IA pour une partie en solo.</li>
-          <li>Invitez un ami — pour le multijoueur, partagez le lien de jeu créé. Vous rejoindrez tous les deux le même plateau.</li>
-          <li>Chacun son tour — les joueurs placent alternativement X et O sur la grille 3×3.</li>
-          <li>Alignez-en trois — alignez trois de vos marques horizontalement, verticalement ou diagonalement pour gagner.</li>
+          <li>Invitez un ami — pour le multijoueur, partagez le lien de jeu créé. Vous rejoindrez tous les deux la même grille.</li>
+          <li>Jouez à tour de rôle — les joueurs placent alternativement X et O sur la grille 3×3.</li>
+          <li>Alignez trois symboles — alignez trois de vos symboles horizontalement, verticalement ou en diagonale pour gagner.</li>
         </ol>
         <h3 class="seo-h">Fonctionnalités</h3>
         <ul class="seo-list">
-          <li>Multijoueur en ligne en temps réel — jouez avec un ami en direct en partageant un lien.</li>
-          <li>Solo vs IA — entraînez-vous contre l'ordinateur à tout moment.</li>
-          <li>Gratuit et instantané — pas de compte, pas d'installation, pas de téléchargement requis.</li>
-          <li>Jouez n'importe où — fonctionne sur n'importe quel navigateur moderne sur ordinateur, téléphone ou tablette.</li>
+          <li>Multijoueur en ligne en temps réel — affrontez un ami en direct en partageant un lien.</li>
+          <li>Joueur solo vs IA — entraînez-vous contre l'ordinateur à tout moment.</li>
+          <li>Gratuit et instantané — aucun compte, aucune installation et aucun téléchargement requis.</li>
+          <li>Jouez partout — fonctionne sur tous les navigateurs modernes sur ordinateur, téléphone ou tablette.</li>
         </ul>
         <h3 class="seo-h">Foire aux questions</h3>
         <div class="seo-faq">
           <h4>Le Morpion en ligne est-il gratuit ?</h4>
-          <p>Oui. C'est totalement gratuit, sans inscription, sans publicité et sans téléchargement — ouvrez simplement la page et jouez.</p>
+          <p>Oui. Il est entièrement gratuit, sans inscription, sans publicité et sans téléchargement — ouvrez simplement la page et jouez.</p>
           <h4>Puis-je jouer au Morpion en ligne avec un ami ?</h4>
-          <p>Oui. Cliquez sur Jouer vs Ami pour créer une partie, puis partagez le lien. Vous jouez tous les deux en temps réel sur le même plateau.</p>
+          <p>Oui. Cliquez sur Jouer vs Ami pour créer une partie, puis partagez le lien. Vous jouez tous les deux en temps réel sur la même grille.</p>
           <h4>Puis-je jouer au Morpion contre l'ordinateur ?</h4>
-          <p>Oui. Choisissez Jouer vs IA pour faire une partie en solo contre l'ordinateur directement dans votre navigateur.</p>
+          <p>Oui. Choisissez Jouer vs IA pour faire une partie solo contre l'ordinateur directement dans votre navigateur.</p>
           <h4>Dois-je télécharger ou installer quelque chose ?</h4>
-          <p>Non. Il fonctionne entièrement dans votre navigateur web sur ordinateur et mobile — il n'y a rien à télécharger ou à installer.</p>
+          <p>Non. Le jeu s'exécute entièrement dans votre navigateur web sur ordinateur et mobile — il n'y a rien à télécharger ni à installer.</p>
         </div>
       </div>
     </section>
-
     <!-- i18n:runtime:start -->
 <script>
-window.__I18N__ = {"anonymous":"anonyme","nicknamePrompt":"Choisissez un pseudo pour le classement :","noGames":"Aucune partie jouée pour le moment — soyez le premier !","lbUnavailable":"Classement indisponible.","failedCreate":"Échec de la création de la partie.","errorCreate":"Une erreur est survenue lors de la création de la partie."};
+try{localStorage.setItem('hk_lang',"fr")}catch(e){}
+window.__I18N__ = {"anonymous":"anonyme","nicknamePrompt":"Choisissez un pseudonyme pour le classement :","noGames":"Aucune partie jouée pour l'instant — soyez le premier !","lbUnavailable":"Classement indisponible.","failedCreate":"Échec de la création de la partie.","errorCreate":"Une erreur est survenue lors de la création de la partie."};
 window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };
 </script>
 <!-- i18n:runtime:end -->

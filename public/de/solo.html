@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solo Tic-Tac-Toe gegen KI | Hackatoa</title>
-    <meta name="description" content="Spiele Tic-Tac-Toe solo gegen einen KI-Gegner. Trainiere deine Strategie in dieser Einzelspieler-Browserversion des Klassikers von Hackatoa." />
+    <meta name="description" content="Spiele Tic-Tac-Toe im Einzelspielermodus gegen einen KI-Gegner. Trainiere deine Strategie in dieser Browser-Version des Klassikers von Hackatoa." />
   <meta name="author" content="Preston Harris" />
   <meta name="keywords" content="tic tac toe solo, tic tac toe vs computer, AI tic tac toe, browser game, Hackatoa" />
   <meta property="og:title" content="Solo Tic-Tac-Toe gegen KI" />
-  <meta property="og:description" content="Spiele Tic-Tac-Toe solo gegen einen KI-Gegner. Trainiere deine Strategie in dieser Einzelspieler-Browserversion des Klassikers von Hackatoa." />
+  <meta property="og:description" content="Spiele Tic-Tac-Toe im Einzelspielermodus gegen einen KI-Gegner. Trainiere deine Strategie in dieser Browser-Version des Klassikers von Hackatoa." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ttt.hackatoa.com/solo" />
   <meta property="og:image" content="https://hackatoa.com/assets/me.png" />
   <meta property="og:site_name" content="Hackatoa" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Solo Tic-Tac-Toe gegen KI" />
-  <meta name="twitter:description" content="Spiele Tic-Tac-Toe solo gegen einen KI-Gegner. Trainiere deine Strategie in dieser Einzelspieler-Browserversion des Klassikers von Hackatoa." />
+  <meta name="twitter:description" content="Spiele Tic-Tac-Toe im Einzelspielermodus gegen einen KI-Gegner. Trainiere deine Strategie in dieser Browser-Version des Klassikers von Hackatoa." />
   <meta name="twitter:image" content="https://hackatoa.com/assets/me.png" />
   <meta name="twitter:site" content="@jhackatoa" />
   <link rel="canonical" href="https://ttt.hackatoa.com/de/solo.html" />
@@ -77,7 +77,7 @@
         <h1>Tic Tac Toe gegen KI</h1>
 
         <div class="diff-picker">
-            <button class="diff-btn active" data-level="easy">Einfach</button>
+            <button class="diff-btn active" data-level="easy">Leicht</button>
             <button class="diff-btn" data-level="medium">Mittel</button>
             <button class="diff-btn" data-level="hard">Schwer</button>
         </div>
@@ -104,7 +104,7 @@
         <button id="replayBtn" style="display: none;">Nochmal spielen</button>
 
         <div class="solo-links">
-            <a href="/de/">Gegen Freund</a>
+            <a href="/de/">Gegen einen Freund</a>
             <a href="https://games.hackatoa.com">Alle Spiele</a>
             <a href="https://github.com/Hackatoan/tic-tac-toe-online" target="_blank" rel="noopener">Quellcode</a>
         </div>
@@ -112,16 +112,16 @@
 
     <footer class="support-footer">
         <div class="footer-built-by">
-            Erstellt von <a href="https://hackatoa.com" target="_blank" rel="noopener noreferrer">hackatoa</a>
+            Entwickelt von <a href="https://hackatoa.com" target="_blank" rel="noopener noreferrer">hackatoa</a>
         </div>
         <a href="https://buymeacoffee.com/hackatoa" target="_blank" rel="noopener noreferrer" class="footer-coffee-btn">
             ☕ Spendier mir einen Kaffee
         </a>
     </footer>
-
     <!-- i18n:runtime:start -->
 <script>
-window.__I18N__ = {"yourTurn":"Du bist dran","aiThinking":"🤖 KI überlegt…","youWin":"🎉 Du gewinnst!","aiWins":"🤖 KI gewinnt!","itsDraw":"Unentschieden!"};
+try{localStorage.setItem('hk_lang',"de")}catch(e){}
+window.__I18N__ = {"yourTurn":"Du bist dran","aiThinking":"🤖 KI denkt nach…","youWin":"🎉 Du gewinnst!","aiWins":"🤖 KI gewinnt!","itsDraw":"Unentschieden!"};
 window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };
 </script>
 <!-- i18n:runtime:end -->

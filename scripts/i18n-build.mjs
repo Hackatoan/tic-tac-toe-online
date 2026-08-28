@@ -48,13 +48,46 @@ const switcher = (page, cur) => {
   });
   return `\n<!-- i18n:switcher:start -->\n<nav aria-label="Language" style="position:fixed;top:8px;right:10px;z-index:300;font-size:12px;font-family:system-ui,-apple-system,sans-serif;background:rgba(20,10,20,.9);border:1px solid rgba(244,114,182,.4);border-radius:999px;padding:5px 12px;display:flex;gap:9px;box-shadow:0 2px 10px rgba(0,0,0,.4);">\n  ${items.join('\n  ')}\n</nav>\n<!-- i18n:switcher:end -->`;
 };
-const runtimeBlock = (runtime) =>
-  `<!-- i18n:runtime:start -->\n<script>\nwindow.__I18N__ = ${JSON.stringify(runtime)};\nwindow.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };\n</script>\n<!-- i18n:runtime:end -->\n`;
+const runtimeBlock = (runtime, cur) =>
+  `<!-- i18n:runtime:start -->\n<script>\ntry{localStorage.setItem('hk_lang',${JSON.stringify(cur)})}catch(e){}\nwindow.__I18N__ = ${JSON.stringify(runtime)};\nwindow.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };\n</script>\n<!-- i18n:runtime:end -->\n`;
 
 const injectCommon = (html, page, cur, runtime, scriptRegex) =>
   html.replace('</head>', `${hreflangBlock(page)}\n</head>`)
       .replace(/(<body[^>]*>)/, `$1${switcher(page, cur)}`)
-      .replace(scriptRegex, (m) => `${runtimeBlock(runtime)}    ${m}`);
+      .replace(scriptRegex, (m) => `${runtimeBlock(runtime, cur)}    ${m}`);
+
+// ---------- game room (game.html): one file, localized per-player at runtime ----------
+// The multiplayer room is reached via /<gameId> (no locale in the URL), so it reads
+// the player's stored locale (hk_lang, set by the localized landing) and localizes
+// itself from an embedded all-locale dictionary. Two players in different languages
+// each see their own language.
+function buildRoom(base) {
+  const ROOM_ALL = {};
+  for (const l of LOCALES) {
+    const t = l === 'en' ? en : JSON.parse(readFileSync(join(ROOT, `i18n/${l}.json`), 'utf8'));
+    ROOM_ALL[l] = Object.assign({}, t.room.runtime, t.room.static);
+  }
+  const boot = `<!-- i18n:room:start -->
+<script>
+(function(){
+  var ALL = ${JSON.stringify(ROOM_ALL)};
+  var loc = 'en';
+  try { var s = localStorage.getItem('hk_lang'); if (s && ALL[s]) loc = s; } catch(e){}
+  if (loc === 'en') { var n = (navigator.language||'').toLowerCase(); if (n.indexOf('pt')===0) { if (ALL['pt-br']) loc='pt-br'; } else { var b=n.slice(0,2); if (ALL[b]) loc=b; } }
+  window.__I18N__ = ALL[loc] || ALL.en;
+  window.t = function(k, p){ var v = (window.__I18N__ && window.__I18N__[k]); if (v == null) v = k; if (p) for (var m in p) v = v.split('{'+m+'}').join(p[m]); return v; };
+  document.documentElement.lang = loc;
+  document.addEventListener('DOMContentLoaded', function(){
+    if (window.__I18N__.title) document.title = window.__I18N__.title;
+    document.querySelectorAll('[data-i18n]').forEach(function(el){ el.textContent = window.t(el.getAttribute('data-i18n')); });
+  });
+})();
+</script>
+<!-- i18n:room:end -->
+`;
+  const cleaned = base.replace(/\s*<!-- i18n:room:start -->[\s\S]*?<!-- i18n:room:end -->/g, '');
+  return cleaned.replace(/(<script src="\/?name\.js"><\/script>)/, `${boot}    $1`);
+}
 
 const faqJsonLd = (faqs) => {
   const obj = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) };
@@ -164,6 +197,10 @@ for (const loc of LOCALES) {
   }
   console.log(`${loc.padEnd(5)} -> index + solo`);
 }
+
+// game room: single game.html, localized per-player at runtime from stored locale
+writeFileSync(join(ROOT, 'public/game.html'), buildRoom(readFileSync(join(ROOT, 'public/game.html'), 'utf8')));
+console.log('room  -> public/game.html');
 
 // sitemap: index + solo per locale, each with its own hreflang alternates
 const today = new Date().toISOString().slice(0, 10);

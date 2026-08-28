@@ -1,9 +1,8 @@
 {
-  "htmlLang": "es",
   "shared": {
     "footer": {
       "builtBy": "Creado por",
-      "coffee": "☕ Cómprame un café"
+      "coffee": "☕ Invítame a un café"
     },
     "links": {
       "allGames": "Todos los juegos",
@@ -13,68 +12,68 @@
   },
   "index": {
     "gameName": "Tres en raya",
-    "title": "Tres en raya online — Juego multijugador para navegador | Hackatoa",
-    "description": "Juega al Tres en raya online contra un amigo en tiempo real. Estrategia clásica de 3 en línea en tu navegador: sin registro, sin descargas, juego instantáneo. Juego multijugador gratuito.",
-    "ogTitle": "Tres en raya online — Juego multijugador para navegador",
-    "h1": "Tres en raya online",
-    "tagline": "¡Juega al Tres en raya con un amigo o desafía a la IA!",
+    "title": "Tres en raya online — Juego multijugador en el navegador | Hackatoa",
+    "description": "Juega al tres en raya online contra un amigo en tiempo real. La clásica estrategia de 3 en raya en tu navegador — sin registros, sin descargas, juego instantáneo. Juego multijugador gratuito.",
+    "ogTitle": "Tres en raya online — Juego multijugador en el navegador",
+    "h1": "Tres en Raya Online",
+    "tagline": "¡Juega al tres en raya con un amigo o desafía a la IA!",
     "ui": {
       "playVsFriend": "Jugar vs Amigo",
       "playVsAi": "Jugar vs IA",
       "playingAs": "Jugando como",
       "change": "cambiar",
-      "leaderboard": "🏆 Clasificación",
+      "leaderboard": "🏆 Tabla de clasificación",
       "loading": "Cargando…"
     },
     "seo": {
-      "h2": "Juega al Tres en raya online — Gratis y multijugador",
-      "intro": "Tres en raya online es una versión gratuita para navegador del clásico juego de tres en línea (también conocido como gato o ceros y cruces). Desafía a un amigo a una partida multijugador en tiempo real compartiendo un enlace, o juega solo contra la IA. Sin registros ni descargas: funciona al instante en PC y móviles.",
-      "howToTitle": "Cómo jugar al Tres en raya online",
+      "h2": "Juega al tres en raya online — Gratis y multijugador",
+      "intro": "Tres en raya online es una versión gratuita para navegador del clásico juego de tres en línea (también conocido como ceros y cruces). Desafía a un amigo a una partida multijugador online en tiempo real compartiendo un enlace, o juega en solitario contra la IA del ordenador. No requiere registro ni descarga, y funciona al instante en ordenador y móvil.",
+      "howToTitle": "Cómo jugar al tres en raya online",
       "howToSteps": [
         "Elige un modo — Jugar vs Amigo para multijugador online, o Jugar vs IA para una partida en solitario.",
-        "Invita a un amigo — para el multijugador, comparte el enlace generado. Ambos se unirán al mismo tablero.",
-        "Turnos alternos — los jugadores colocan por turnos X y O en la cuadrícula de 3×3.",
-        "Consigue tres en línea — alinea tres de tus marcas horizontal, vertical o diagonalmente para ganar."
+        "Invita a un amigo — para el multijugador, comparte el enlace del juego que se ha creado. Ambos os uniréis al mismo tablero.",
+        "Turnos alternos — los jugadores se turnan para colocar X y O en la cuadrícula de 3×3.",
+        "Consigue tres en raya — alinea tres de tus fichas en horizontal, vertical o diagonal para ganar."
       ],
       "featuresTitle": "Características",
       "features": [
-        "Multijugador online en tiempo real — juega con un amigo en vivo compartiendo un enlace.",
-        "Un jugador vs IA — practica contra la computadora en cualquier momento.",
-        "Gratis e instantáneo — sin cuenta, sin instalación, sin descargas.",
-        "Juega en cualquier lugar — funciona en cualquier navegador moderno en PC, móvil o tablet."
+        "Multijugador online en tiempo real — juega con un amigo en directo compartiendo un enlace.",
+        "Un jugador vs IA — practica contra el ordenador en cualquier momento.",
+        "Gratis e instantáneo — sin cuenta, sin instalación y sin descargas necesarias.",
+        "Juega en cualquier lugar — funciona en cualquier navegador moderno en ordenador, teléfono o tableta."
       ],
       "faqTitle": "Preguntas frecuentes",
       "faqs": [
         {
-          "q": "¿Es gratis jugar al Tres en raya online?",
-          "a": "Sí. Es completamente gratis, sin registros, sin anuncios y sin descargas; solo abre la página y juega."
+          "q": "¿El tres en raya online es gratuito?",
+          "a": "Sí. Es completamente gratuito, sin registros, sin anuncios y sin descargas: solo abre la página y juega."
         },
         {
-          "q": "¿Puedo jugar al Tres en raya online con un amigo?",
-          "a": "Sí. Haz clic en Jugar vs Amigo para crear una partida y comparte el enlace. Ambos jugarán en tiempo real en el mismo tablero."
+          "q": "¿Puedo jugar al tres en raya online con un amigo?",
+          "a": "Sí. Haz clic en Jugar vs Amigo para crear una partida y comparte el enlace. Ambos jugaréis en tiempo real en el mismo tablero."
         },
         {
-          "q": "¿Puedo jugar al Tres en raya contra la computadora?",
-          "a": "Sí. Elige Jugar vs IA para jugar una partida en solitario contra la computadora directamente en tu navegador."
+          "q": "¿Puedo jugar al tres en raya contra el ordenador?",
+          "a": "Sí. Elige Jugar vs IA para jugar una partida en solitario contra el ordenador directamente en tu navegador."
         },
         {
           "q": "¿Necesito descargar o instalar algo?",
-          "a": "No. Se ejecuta totalmente en tu navegador web en PC y móvil; no hay nada que descargar ni instalar."
+          "a": "No. Funciona enteramente en tu navegador web tanto en ordenador como en móvil; no hay nada que descargar ni instalar."
         }
       ]
     },
     "runtime": {
       "anonymous": "anónimo",
-      "nicknamePrompt": "Elige un apodo para la clasificación:",
-      "noGames": "Aún no hay partidas — ¡sé el primero!",
-      "lbUnavailable": "Clasificación no disponible.",
+      "nicknamePrompt": "Elige un apodo para la tabla de clasificación:",
+      "noGames": "Aún no hay partidas jugadas — ¡sé el primero!",
+      "lbUnavailable": "Tabla de clasificación no disponible.",
       "failedCreate": "Error al crear la partida.",
       "errorCreate": "Ocurrió un error al crear la partida."
     }
   },
   "solo": {
     "title": "Tres en raya en solitario vs IA | Hackatoa",
-    "description": "Juega al Tres en raya en solitario contra un oponente de IA. Practica tu estrategia en esta versión para navegador del clásico juego de Hackatoa.",
+    "description": "Juega al tres en raya en solitario contra un oponente de IA. Practica tu estrategia en esta versión para navegador de un solo jugador del clásico juego de Hackatoa.",
     "ogTitle": "Tres en raya en solitario vs IA",
     "h1": "Tres en raya vs IA",
     "ui": {
@@ -88,23 +87,37 @@
     "runtime": {
       "yourTurn": "Tu turno",
       "aiThinking": "🤖 La IA está pensando…",
-      "youWin": "🎉 ¡Ganaste!",
-      "aiWins": "🤖 ¡Gana la IA!",
-      "itsDraw": "¡Es un empate!"
+      "youWin": "🎉 ¡Has ganado!",
+      "aiWins": "🤖 ¡La IA gana!",
+      "itsDraw": "¡Empate!"
     }
   },
   "room": {
     "runtime": {
       "linkCopied": "¡Enlace copiado al portapapeles!",
-      "spectating": "Estás observando esta partida.",
+      "spectating": "Estás espectando esta partida.",
       "waitingOpponent": "Estás jugando como {sym}. Esperando al oponente...",
       "winner": "¡{label} gana!",
       "waitingJoin": "Eres {sym}. Esperando a que se una un oponente...",
       "itsTurn": "Es el turno de {label}.",
       "waitingMove": "Esperando a que {label} mueva...",
-      "disconnected": "Un jugador se ha desconectado. Esperando a que regrese o a un nuevo jugador..."
+      "disconnected": "Un jugador se ha desconectado. Esperando a que vuelva o a que entre un nuevo jugador...",
+      "draw": "¡Empate!",
+      "yourTurn": "¡Es tu turno!"
+    },
+    "static": {
+      "title": "Juega al tres en raya — Sala de juego | Hackatoa",
+      "h1": "Tres en raya",
+      "shareLabel": "Comparte este enlace para jugar:",
+      "copy": "Copiar",
+      "connecting": "Conectando...",
+      "playAgain": "Jugar de nuevo",
+      "newGame": "Nueva partida",
+      "allGames": "Todos los juegos",
+      "sourceCode": "Código fuente"
     }
   },
+  "htmlLang": "es",
   "_meta": {
     "site": "ttt",
     "origin": "https://ttt.hackatoa.com",

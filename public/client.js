@@ -1,4 +1,5 @@
 const socket = io();
+const T = (k, p) => (window.t ? t(k, p) : k);
 
 // Parse game ID from URL
 const gameId = window.location.pathname.substring(1);
@@ -12,7 +13,7 @@ shareLinkEl.textContent = window.location.href;
 
 document.getElementById('copyBtn').addEventListener('click', () => {
     navigator.clipboard.writeText(window.location.href);
-    alert('Link copied to clipboard!');
+    alert(T('linkCopied'));
 });
 
 const statusMessage = document.getElementById('statusMessage');
@@ -32,9 +33,9 @@ socket.emit('joinGame', { gameId, name: playerName });
 socket.on('joined', (data) => {
     mySymbol = data.symbol;
     if (mySymbol === 'Spectator') {
-        statusMessage.textContent = 'You are spectating this game.';
+        statusMessage.textContent = T('spectating');
     } else {
-        statusMessage.textContent = `You are playing as ${mySymbol}. Waiting for opponent...`;
+        statusMessage.textContent = T('waitingOpponent', { sym: mySymbol });
     }
 });
 
@@ -58,9 +59,9 @@ socket.on('gameState', (game) => {
 
     if (game.winner) {
         if (game.winner === 'Draw') {
-            statusMessage.textContent = "It's a draw!";
+            statusMessage.textContent = T('draw');
         } else {
-            statusMessage.textContent = `${label(game.winner)} wins!`;
+            statusMessage.textContent = T('winner', { label: label(game.winner) });
         }
         if (mySymbol !== 'Spectator') {
             replayBtn.style.display = 'inline-block';
@@ -68,19 +69,19 @@ socket.on('gameState', (game) => {
     } else {
         replayBtn.style.display = 'none';
         if (!game.players.X || !game.players.O) {
-            statusMessage.textContent = `You are ${mySymbol}. Waiting for an opponent to join...`;
+            statusMessage.textContent = T('waitingJoin', { sym: mySymbol });
         } else if (mySymbol === 'Spectator') {
-            statusMessage.textContent = `It is ${label(game.turn)}'s turn.`;
+            statusMessage.textContent = T('itsTurn', { label: label(game.turn) });
         } else if (game.turn === mySymbol) {
-            statusMessage.textContent = "It's your turn!";
+            statusMessage.textContent = T('yourTurn');
         } else {
-            statusMessage.textContent = `Waiting for ${label(game.turn)} to make a move...`;
+            statusMessage.textContent = T('waitingMove', { label: label(game.turn) });
         }
     }
 });
 
 socket.on('playerDisconnected', () => {
-    statusMessage.textContent = 'A player disconnected. Waiting for them to return or a new player...';
+    statusMessage.textContent = T('disconnected');
 });
 
 cells.forEach(cell => {
