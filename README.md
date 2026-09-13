@@ -1,38 +1,40 @@
 # Tic-Tac-Toe Online
 
-![Tic-Tac-Toe Online](https://ttt.hackatoa.com/og.svg)
+Real-time online tic-tac-toe — play a friend by room code or a quick AI match.
 
-Play the classic 3×3 game online — challenge a friend in real time or take on the AI.
+🔗 **Live:** [ttt.hackatoa.com](https://ttt.hackatoa.com)   ·   ☕ **Support:** [Buy Me a Coffee](https://buymeacoffee.com/hackatoa)
 
-**▶ Play at [ttt.hackatoa.com](https://ttt.hackatoa.com)**
+## Overview
+
+A minimal, fast tic-tac-toe with online multiplayer and a leaderboard.
 
 ## Features
 
-- Real-time multiplayer via shareable link
-- **Solo mode** — play vs AI with Easy, Medium, or Hard difficulty
-- Hard mode uses **minimax with alpha-beta pruning** (perfect play)
-- Score tracking across rounds
-- No account or download required
+- Real-time online play (join by code) + local play
+- Global leaderboard
+- 6-language localization
 
-## How to play
+## Tech Stack
 
-1. Open [ttt.hackatoa.com](https://ttt.hackatoa.com)
-2. **vs Friend** → share the link with your opponent
-3. **vs AI** → pick a difficulty and play immediately
+HTML · vanilla JS · Node.js (Socket.IO) · Docker
 
-## Tech stack
-
-- Node.js + Express
-- Socket.io (real-time multiplayer)
-- Vanilla HTML/CSS/JS (zero build step)
-- Docker + GitHub Actions CI/CD
-
-## Self-hosting
+## Development
 
 ```bash
-docker run -p 3000:3000 ghcr.io/hackatoan/tic-tac-toe-online:latest
+npm install
+npm start
 ```
+
+## Deployment
+
+Docker on the homelab games host; GHCR + Watchtower auto-deploy.
+
+## Support
+
+If this project is useful to you, consider supporting development:
+
+☕ **[Buy Me a Coffee](https://buymeacoffee.com/hackatoa)**
 
 ---
 
-Part of [Hackatoa Games](https://games.hackatoa.com) · [Buy me a coffee](https://buymeacoffee.com/hackatoa)
+Part of the **[Hackatoa](https://hackatoa.com)** ecosystem — self-hosted apps, browser games, and bots. · [All repositories »](https://github.com/Hackatoan)
