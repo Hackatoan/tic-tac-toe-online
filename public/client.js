@@ -84,15 +84,23 @@ socket.on('playerDisconnected', () => {
     statusMessage.textContent = T('disconnected');
 });
 
-cells.forEach(cell => {
-    cell.addEventListener('click', (e) => {
-        if (mySymbol === 'Spectator') return;
-        if (!currentGameState || currentGameState.winner) return;
-        if (currentGameState.turn !== mySymbol) return;
+function tryMove(cell) {
+    if (mySymbol === 'Spectator') return;
+    if (!currentGameState || currentGameState.winner) return;
+    if (currentGameState.turn !== mySymbol) return;
 
-        const index = e.target.getAttribute('data-index');
-        if (currentGameState.board[index] === null) {
-            socket.emit('makeMove', index);
+    const index = cell.getAttribute('data-index');
+    if (currentGameState.board[index] === null) {
+        socket.emit('makeMove', index);
+    }
+}
+
+cells.forEach(cell => {
+    cell.addEventListener('click', (e) => tryMove(e.currentTarget));
+    cell.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            tryMove(e.currentTarget);
         }
     });
 });
@@ -107,5 +115,8 @@ function updateBoard(board) {
         cell.className = 'cell'; // reset classes
         if (board[index] === 'X') cell.classList.add('x');
         if (board[index] === 'O') cell.classList.add('o');
+        const row = Math.floor(index / 3) + 1;
+        const col = (index % 3) + 1;
+        cell.setAttribute('aria-label', `Row ${row}, column ${col}, ${board[index] || 'empty'}`);
     });
 }
