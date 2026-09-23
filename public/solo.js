@@ -187,8 +187,12 @@ cells.forEach(cell => {
 diffBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         difficulty = btn.getAttribute('data-level');
-        diffBtns.forEach(b => b.classList.remove('active'));
+        diffBtns.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
         resetGame();
     });
 });
