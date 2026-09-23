@@ -111,10 +111,17 @@ function getAIMove() {
 
 // ── Game logic ──
 
+function cellLabel(index, value) {
+    const row = Math.floor(index / 3) + 1;
+    const col = (index % 3) + 1;
+    return `Row ${row}, column ${col}, ${value || 'empty'}`;
+}
+
 function applyMove(index, sym) {
     board[index] = sym;
     cells[index].textContent = sym;
     cells[index].className = 'cell ' + sym.toLowerCase();
+    cells[index].setAttribute('aria-label', cellLabel(index, sym));
 
     const result = checkResult(board);
     if (result) {
@@ -153,19 +160,27 @@ function resetGame() {
     board = Array(9).fill(null);
     gameOver = false;
     replayBtn.style.display = 'none';
-    cells.forEach(c => { c.textContent = ''; c.className = 'cell'; });
+    cells.forEach((c, i) => { c.textContent = ''; c.className = 'cell'; c.setAttribute('aria-label', cellLabel(i, null)); });
     statusEl.textContent = T('yourTurn');
 }
 
 // ── Event listeners ──
 
+function tryPlayerMove(cell) {
+    const index = parseInt(cell.getAttribute('data-index'));
+    if (gameOver || board[index] !== null) return;
+    // Only allow a move when it's the player's turn (i.e., no AI pending)
+    if (statusEl.querySelector('.ai-thinking')) return;
+    applyMove(index, P);
+}
+
 cells.forEach(cell => {
-    cell.addEventListener('click', () => {
-        const index = parseInt(cell.getAttribute('data-index'));
-        if (gameOver || board[index] !== null) return;
-        // Only allow click when it's the player's turn (i.e., no AI pending)
-        if (statusEl.querySelector('.ai-thinking')) return;
-        applyMove(index, P);
+    cell.addEventListener('click', () => tryPlayerMove(cell));
+    cell.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            tryPlayerMove(cell);
+        }
     });
 });
 

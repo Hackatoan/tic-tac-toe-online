@@ -88,16 +88,16 @@
 
         <p class="turn-indicator" id="statusMessage">Your turn</p>
 
-        <div class="board" id="board">
-            <div class="cell" data-index="0"></div>
-            <div class="cell" data-index="1"></div>
-            <div class="cell" data-index="2"></div>
-            <div class="cell" data-index="3"></div>
-            <div class="cell" data-index="4"></div>
-            <div class="cell" data-index="5"></div>
-            <div class="cell" data-index="6"></div>
-            <div class="cell" data-index="7"></div>
-            <div class="cell" data-index="8"></div>
+        <div class="board" id="board" role="grid" aria-label="Tic-tac-toe board">
+            <div class="cell" data-index="0" role="button" tabindex="0" aria-label="Row 1, column 1, empty"></div>
+            <div class="cell" data-index="1" role="button" tabindex="0" aria-label="Row 1, column 2, empty"></div>
+            <div class="cell" data-index="2" role="button" tabindex="0" aria-label="Row 1, column 3, empty"></div>
+            <div class="cell" data-index="3" role="button" tabindex="0" aria-label="Row 2, column 1, empty"></div>
+            <div class="cell" data-index="4" role="button" tabindex="0" aria-label="Row 2, column 2, empty"></div>
+            <div class="cell" data-index="5" role="button" tabindex="0" aria-label="Row 2, column 3, empty"></div>
+            <div class="cell" data-index="6" role="button" tabindex="0" aria-label="Row 3, column 1, empty"></div>
+            <div class="cell" data-index="7" role="button" tabindex="0" aria-label="Row 3, column 2, empty"></div>
+            <div class="cell" data-index="8" role="button" tabindex="0" aria-label="Row 3, column 3, empty"></div>
         </div>
 
         <button id="replayBtn" style="display: none;">Play Again</button>

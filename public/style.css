@@ -111,6 +111,11 @@ button:hover {
     background-color: #6d4c41;
 }
 
+.cell:focus-visible {
+    outline: 3px solid #ff69b4;
+    outline-offset: 2px;
+}
+
 .cell.x {
     color: #ff69b4;
     text-shadow: 2px 2px 4px #2b1a16;
