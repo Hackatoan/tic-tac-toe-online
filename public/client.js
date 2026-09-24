@@ -11,9 +11,19 @@ if (!gameId || gameId.length !== 6) {
 const shareLinkEl = document.getElementById('shareLink');
 shareLinkEl.textContent = window.location.href;
 
-document.getElementById('copyBtn').addEventListener('click', () => {
+const copyBtn = document.getElementById('copyBtn');
+// Captured lazily on first click (not at load time) so it reflects the
+// already-localized label set by the i18n:room DOMContentLoaded handler.
+let copyBtnLabel = null;
+let copyResetTimer = null;
+copyBtn.addEventListener('click', () => {
+    if (copyBtnLabel === null) copyBtnLabel = copyBtn.textContent;
     navigator.clipboard.writeText(window.location.href);
-    alert(T('linkCopied'));
+    copyBtn.textContent = T('linkCopied');
+    clearTimeout(copyResetTimer);
+    copyResetTimer = setTimeout(() => {
+        copyBtn.textContent = copyBtnLabel;
+    }, 1800);
 });
 
 const statusMessage = document.getElementById('statusMessage');
