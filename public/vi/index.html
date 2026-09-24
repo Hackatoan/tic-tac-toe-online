@@ -228,13 +228,17 @@ window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).spli
         }
         loadLeaderboard();
 
-        document.getElementById('createGameBtn').addEventListener('click', async () => {
+        const createGameBtn = document.getElementById('createGameBtn');
+        createGameBtn.addEventListener('click', async () => {
+            if (createGameBtn.disabled) return;
             window.PlayerName.ensure();
+            createGameBtn.disabled = true;
             try {
                 const response = await fetch('/api/games', { method: 'POST' });
                 const data = await response.json();
                 if (data.gameId) {
                     window.location.href = `/${data.gameId}`;
+                    return;
                 } else {
                     alert(T('failedCreate'));
                 }
@@ -242,6 +246,7 @@ window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).spli
                 console.error('Error creating game:', error);
                 alert(T('errorCreate'));
             }
+            createGameBtn.disabled = false;
         });
     </script>
 
