@@ -61,6 +61,17 @@ button:hover {
     transform: scale(1.02);
 }
 
+button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+button:disabled:hover {
+    background-color: #ff69b4;
+    transform: none;
+}
+
 #copyBtn {
     padding: 5px 10px;
     font-size: 12px;
