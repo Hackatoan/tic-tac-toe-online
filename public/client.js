@@ -26,6 +26,7 @@ const replayBtn = document.getElementById('replayBtn');
 
 let mySymbol = null;
 let currentGameState = null;
+let lastRenderedBoard = null;
 
 const playerName = window.PlayerName.ensure();
 socket.emit('joinGame', { gameId, name: playerName });
@@ -111,6 +112,11 @@ replayBtn.addEventListener('click', () => {
 
 function updateBoard(board) {
     cells.forEach((cell, index) => {
+        // Skip cells whose value hasn't changed since the last render — a
+        // gameState broadcast only ever changes at most one cell, so
+        // touching all 9 every time is 9x the necessary DOM writes/reflows.
+        if (lastRenderedBoard && lastRenderedBoard[index] === board[index]) return;
+
         cell.textContent = board[index] || '';
         cell.className = 'cell'; // reset classes
         if (board[index] === 'X') cell.classList.add('x');
@@ -119,4 +125,5 @@ function updateBoard(board) {
         const col = (index % 3) + 1;
         cell.setAttribute('aria-label', `Row ${row}, column ${col}, ${board[index] || 'empty'}`);
     });
+    lastRenderedBoard = board.slice();
 }
