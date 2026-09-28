@@ -35,6 +35,14 @@ const WIN_PATTERNS = [
 // Clean up games that haven't been touched in a while (e.g., 1 hour)
 const GAME_TIMEOUT = 60 * 60 * 1000;
 
+// Hard cap on concurrent in-memory games. Without this, POST /api/games is
+// unauthenticated and unrate-limited — a scripted client (or a proxy that
+// masks distinct source IPs, making per-IP limiting unreliable here) could
+// call it in a tight loop and grow `games` without bound until the process
+// runs out of memory. The 1-hour idle cleanup doesn't help against a live
+// flood. This bound is independent of client IP/proxy topology.
+const MAX_ACTIVE_GAMES = 5000;
+
 function createGame() {
     const gameId = generateShortId();
     const starter = Math.random() < 0.5 ? 'X' : 'O';
@@ -53,6 +61,10 @@ function createGame() {
 
 // REST endpoint to create a new game
 app.post('/api/games', (req, res) => {
+    if (Object.keys(games).length >= MAX_ACTIVE_GAMES) {
+        res.status(503).json({ error: 'Server is at capacity, please try again shortly.' });
+        return;
+    }
     const gameId = createGame();
     res.json({ gameId });
 });
