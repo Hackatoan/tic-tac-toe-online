@@ -23,6 +23,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // In-memory game state store
 const games = {};
 
+// Win patterns are static — hoisted out of the makeMove handler so we don't
+// re-allocate this array (and its 8 sub-arrays) on every single move of
+// every game.
+const WIN_PATTERNS = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+    [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+    [0, 4, 8], [2, 4, 6]             // Diagonals
+];
+
 // Clean up games that haven't been touched in a while (e.g., 1 hour)
 const GAME_TIMEOUT = 60 * 60 * 1000;
 
@@ -118,14 +127,8 @@ io.on('connection', (socket) => {
         game.board[index] = currentSymbol;
 
         // Check for winner
-        const winPatterns = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-            [0, 4, 8], [2, 4, 6]             // Diagonals
-        ];
-
         let hasWinner = false;
-        for (const pattern of winPatterns) {
+        for (const pattern of WIN_PATTERNS) {
             const [a, b, c] = pattern;
             if (game.board[a] && game.board[a] === game.board[b] && game.board[a] === game.board[c]) {
                 game.winner = currentSymbol;
