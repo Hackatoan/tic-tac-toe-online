@@ -43,6 +43,29 @@ const GAME_TIMEOUT = 60 * 60 * 1000;
 // flood. This bound is independent of client IP/proxy topology.
 const MAX_ACTIVE_GAMES = 5000;
 
+// Per-IP cap, on top of the global one above. The global cap stops the
+// process from being OOM-killed; on its own it doesn't stop a single caller
+// from claiming most of the 5000 slots and locking everyone else out with a
+// 503. This limits how much of that pool any one source address can hold at
+// once. Behind a reverse proxy that doesn't forward the real client IP,
+// req.ip collapses to the proxy's address and this degrades to a shared
+// bucket for all proxied clients — still strictly better than no per-source
+// limit, and orthogonal to the global cap either way.
+const GAMES_PER_IP_WINDOW_MS = 5 * 60 * 1000; // 5 minutes
+const MAX_GAMES_PER_IP_PER_WINDOW = 100;
+const gameCreationsByIp = new Map(); // ip -> { count, windowStart }
+
+function isIpRateLimited(ip) {
+    const now = Date.now();
+    const entry = gameCreationsByIp.get(ip);
+    if (!entry || now - entry.windowStart > GAMES_PER_IP_WINDOW_MS) {
+        gameCreationsByIp.set(ip, { count: 1, windowStart: now });
+        return false;
+    }
+    entry.count++;
+    return entry.count > MAX_GAMES_PER_IP_PER_WINDOW;
+}
+
 function createGame() {
     const gameId = generateShortId();
     const starter = Math.random() < 0.5 ? 'X' : 'O';
@@ -63,6 +86,10 @@ function createGame() {
 app.post('/api/games', (req, res) => {
     if (Object.keys(games).length >= MAX_ACTIVE_GAMES) {
         res.status(503).json({ error: 'Server is at capacity, please try again shortly.' });
+        return;
+    }
+    if (isIpRateLimited(req.ip)) {
+        res.status(429).json({ error: 'Too many games created from this address, please slow down.' });
         return;
     }
     const gameId = createGame();
@@ -198,6 +225,13 @@ setInterval(() => {
         if (now - games[gameId].lastActivity > GAME_TIMEOUT) {
             delete games[gameId];
             console.log(`Cleaned up inactive game ${gameId}`);
+        }
+    }
+    // Also drop expired per-IP rate-limit windows so gameCreationsByIp
+    // doesn't grow without bound.
+    for (const [ip, entry] of gameCreationsByIp) {
+        if (now - entry.windowStart > GAMES_PER_IP_WINDOW_MS) {
+            gameCreationsByIp.delete(ip);
         }
     }
 }, 15 * 60 * 1000); // Check every 15 mins
