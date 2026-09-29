@@ -23,6 +23,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // In-memory game state store
 const games = {};
 
+// Running count of entries in `games`, maintained alongside create/delete so
+// the capacity check below is O(1) instead of Object.keys(games).length,
+// which would allocate a fresh array of up to MAX_ACTIVE_GAMES keys on every
+// single POST /api/games call just to read its .length.
+let activeGameCount = 0;
+
 // Win patterns are static — hoisted out of the makeMove handler so we don't
 // re-allocate this array (and its 8 sub-arrays) on every single move of
 // every game.
@@ -56,12 +62,13 @@ function createGame() {
         winner: null,
         lastActivity: Date.now()
     };
+    activeGameCount++;
     return gameId;
 }
 
 // REST endpoint to create a new game
 app.post('/api/games', (req, res) => {
-    if (Object.keys(games).length >= MAX_ACTIVE_GAMES) {
+    if (activeGameCount >= MAX_ACTIVE_GAMES) {
         res.status(503).json({ error: 'Server is at capacity, please try again shortly.' });
         return;
     }
@@ -197,6 +204,7 @@ setInterval(() => {
     for (const gameId in games) {
         if (now - games[gameId].lastActivity > GAME_TIMEOUT) {
             delete games[gameId];
+            activeGameCount--;
             console.log(`Cleaned up inactive game ${gameId}`);
         }
     }
