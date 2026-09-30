@@ -38,8 +38,30 @@ let mySymbol = null;
 let currentGameState = null;
 let lastRenderedBoard = null;
 
+if (window.PlayerAccount) window.PlayerAccount.mountWidget();
+
 const playerName = window.PlayerName.ensure();
-socket.emit('joinGame', { gameId, name: playerName });
+
+// Firebase's persisted-session check resolves quickly but isn't instant --
+// wait for the first auth callback (bounded by a short timeout) so a
+// returning signed-in player's very first joinGame carries their idToken
+// instead of joining anonymously and only linking on their *next* game.
+async function getInitialIdToken() {
+    if (!window.PlayerAccount) return null;
+    return Promise.race([
+        new Promise((resolve) => {
+            const unsub = window.PlayerAccount.onAuthChange(async (user) => {
+                unsub();
+                resolve(user ? await window.PlayerAccount.getIdToken() : null);
+            });
+        }),
+        new Promise((resolve) => setTimeout(() => resolve(null), 1500)),
+    ]);
+}
+
+getInitialIdToken().then((idToken) => {
+    socket.emit('joinGame', { gameId, name: playerName, idToken });
+});
 
 socket.on('joined', (data) => {
     mySymbol = data.symbol;
