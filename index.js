@@ -3,6 +3,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const path = require('path');
 const db = require('./db');
+const { verifyFirebaseToken } = require('./verifyFirebaseToken');
 
 function generateShortId() {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -17,6 +18,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
+app.use(express.json());
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -79,6 +81,7 @@ function createGame() {
         board: Array(9).fill(null),
         players: { X: null, O: null },
         names: { X: null, O: null },
+        uids: { X: null, O: null },
         scores: { X: 0, O: 0 },
         turn: starter,
         starter: starter,
@@ -109,6 +112,18 @@ app.get('/api/leaderboard', async (req, res) => {
     res.json({ game: db.GAME, players: rows });
 });
 
+// Merge a previously-played anonymous nickname's stats into the signed-in
+// account making this request. Rate-limited implicitly by requiring a fresh
+// verified ID token per call (an attacker can't cheaply mint those).
+app.post('/api/claim', async (req, res) => {
+    const decoded = await verifyFirebaseToken(req.body && req.body.idToken);
+    if (!decoded) return res.status(401).json({ error: 'sign in required' });
+    const nickname = db.cleanName(req.body && req.body.nickname);
+    if (!nickname) return res.status(400).json({ error: 'nickname required' });
+    const result = await db.claimNickname(nickname, decoded.uid, decoded.name);
+    res.status(result.ok ? 200 : 409).json(result);
+});
+
 app.get('/solo', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'solo.html'));
 });
@@ -126,10 +141,11 @@ io.on('connection', (socket) => {
     let currentGameId = null;
     let currentSymbol = null;
 
-    socket.on('joinGame', (payload) => {
-        // Backward compatible: payload may be a plain gameId string or { gameId, name }.
+    socket.on('joinGame', async (payload) => {
+        // Backward compatible: payload may be a plain gameId string or { gameId, name, idToken }.
         const gameId = typeof payload === 'string' ? payload : (payload && payload.gameId);
         const name = db.cleanName(payload && payload.name);
+        const idToken = payload && payload.idToken;
         const game = games[gameId];
         if (!game) {
             socket.emit('error', 'Game not found or has expired.');
@@ -156,6 +172,13 @@ io.on('connection', (socket) => {
 
         if (name && currentSymbol !== 'Spectator') {
             game.names[currentSymbol] = name;
+        }
+        if (idToken && currentSymbol !== 'Spectator') {
+            // Verified asynchronously — the join itself already happened
+            // above so a slow/failed verification never blocks or breaks
+            // joining, it just means this round won't be linked to an account.
+            const decoded = await verifyFirebaseToken(idToken);
+            if (decoded) game.uids[currentSymbol] = decoded.uid;
         }
 
         socket.emit('joined', { symbol: currentSymbol, game });
@@ -193,7 +216,7 @@ io.on('connection', (socket) => {
         } else {
             // Round finished — record it for the leaderboard (fire-and-forget).
             const winnerName = game.winner === 'Draw' ? null : game.names[game.winner];
-            db.recordMatch(game.names.X, game.names.O, winnerName);
+            db.recordMatch(game.names.X, game.names.O, winnerName, game.uids.X, game.uids.O);
         }
 
         io.to(currentGameId).emit('gameState', game);
