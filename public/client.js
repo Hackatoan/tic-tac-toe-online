@@ -38,7 +38,7 @@ let mySymbol = null;
 let currentGameState = null;
 let lastRenderedBoard = null;
 
-if (window.PlayerAccount) window.PlayerAccount.mountWidget();
+if (window.PlayerAccount) window.PlayerAccount.mountWidget('#hk-account');
 
 const playerName = window.PlayerName.ensure();
 

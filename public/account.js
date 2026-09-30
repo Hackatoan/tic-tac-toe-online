@@ -53,31 +53,32 @@
         }
     }
 
-    // Small floating widget: "Sign in" when signed out; the account's name +
-    // sign-out when signed in. After a fresh sign-in, offers a one-time
-    // "was this your nickname?" claim for whatever's in PlayerName's storage
-    // (skipped if that exact nickname is already the thing that just signed
-    // in, or if this browser already tried claiming it once).
-    function mountWidget() {
+    // Mounts into an existing element in the page's own layout (a footer
+    // links row, a header corner, etc.) instead of a floating overlay, and
+    // uses plain <button>/text with no inline colors so it inherits
+    // whatever button/link/text styling that page already has -- it should
+    // read as part of the site, not a widget bolted on top. Each game adds
+    // a small CSS block (spacing/sizing only) for its container; see
+    // public/style.css's ".hk-account-row" for the pattern.
+    //
+    // containerOrSelector: an element or CSS selector to mount into.
+    function mountWidget(containerOrSelector) {
+        const el = typeof containerOrSelector === 'string'
+            ? document.querySelector(containerOrSelector)
+            : containerOrSelector;
+        if (!el) return;
         const CLAIMED_KEY = 'hk_claim_offered';
-        const el = document.createElement('div');
-        el.id = 'hk-account-widget';
-        el.style.cssText = 'position:fixed;top:10px;right:10px;z-index:9999;font:13px system-ui,sans-serif;';
-        document.body.appendChild(el);
 
         function render() {
             if (!ready) { el.innerHTML = ''; return; }
             if (currentUser) {
                 el.innerHTML =
-                    '<span style="background:#1f2430;color:#eee;padding:6px 10px;border-radius:6px;display:inline-flex;gap:8px;align-items:center;">' +
-                    '👤 ' + (currentUser.displayName || currentUser.email) +
-                    ' <button id="hk-signout" style="cursor:pointer;background:none;border:1px solid #666;color:#eee;border-radius:4px;padding:2px 6px;">Sign out</button>' +
-                    '</span>';
-                document.getElementById('hk-signout').onclick = () => signOutUser();
+                    '<span>👤 ' + (currentUser.displayName || currentUser.email) + '</span>' +
+                    ' <button type="button" id="hk-signout">Sign out</button>';
+                el.querySelector('#hk-signout').onclick = () => signOutUser();
             } else {
-                el.innerHTML =
-                    '<button id="hk-signin" style="cursor:pointer;background:#1f2430;color:#eee;border:1px solid #666;border-radius:6px;padding:6px 10px;">Sign in to link stats</button>';
-                document.getElementById('hk-signin').onclick = () => signIn().catch((e) => console.warn('[account] sign-in failed:', e.message));
+                el.innerHTML = '<button type="button" id="hk-signin">Sign in to link stats</button>';
+                el.querySelector('#hk-signin').onclick = () => signIn().catch((e) => console.warn('[account] sign-in failed:', e.message));
             }
         }
 

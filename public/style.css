@@ -243,3 +243,20 @@ button:disabled:hover {
     .seo-content { padding: 36px 18px 80px; }
     .seo-inner h2 { font-size: 1.35rem; }
 }
+
+/* Account-linking widget (public/account.js) — deliberately no colors here,
+   it inherits the page's own button/link/text styles so it reads as part
+   of the site instead of a floating overlay. */
+.hk-account-row {
+    margin-top: 14px;
+    font-size: .85rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+.hk-account-row button {
+    padding: 5px 10px;
+    font-size: .85rem;
+}
