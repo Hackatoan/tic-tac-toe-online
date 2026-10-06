@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/Hackatoan/tic-tac-toe-online#readme",
   "dependencies": {
+    "@hackatoan/leaderboard": "https://github.com/Hackatoan/game-leaderboard/archive/refs/tags/v1.0.0.tar.gz",
     "express": "^5.2.1",
     "jose": "^6.2.12",
     "node-fetch": "^2.7.0",
