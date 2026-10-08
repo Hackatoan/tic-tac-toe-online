@@ -184,6 +184,7 @@ window.__I18N__ = {"anonymous":"anonym","nicknamePrompt":"Wähle einen Spitzname
 window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };
 </script>
 <!-- i18n:runtime:end -->
+    <script src="/sfx.js"></script>
     <script src="/name.js"></script>
     <script>
         const T = (k, p) => (window.t ? t(k, p) : k);

@@ -73,6 +73,7 @@ socket.on('joined', (data) => {
 });
 
 socket.on('error', (msg) => {
+    if (window.SFX) SFX.play('error');
     alert(msg);
     window.location.href = '/';
 });
@@ -82,9 +83,31 @@ function label(sym) {
     return nm ? `${sym} (${nm})` : sym;
 }
 
+let lastWinner = null;
+let lastBothPlayers = false;
 socket.on('gameState', (game) => {
+    const prevBoard = lastRenderedBoard;
     currentGameState = game;
     updateBoard(game.board);
+    if (window.SFX) {
+        // Sounds only for changes after the first render, so joining mid-game stays silent.
+        if (prevBoard) {
+            game.board.forEach((v, i) => {
+                if (v && !prevBoard[i]) SFX.play(v === 'X' ? 'place' : 'place2');
+            });
+        }
+        if (game.winner && !lastWinner) {
+            if (game.winner === 'Draw') SFX.play('draw');
+            else if (mySymbol === 'Spectator') SFX.play('click');
+            else SFX.play(game.winner === mySymbol ? 'win' : 'lose');
+        } else if (!game.winner) {
+            const both = !!(game.players.X && game.players.O);
+            if (both && !lastBothPlayers && mySymbol !== 'Spectator') SFX.play('join');
+            else if (prevBoard && game.turn === mySymbol && game.board.some((v, i) => v !== prevBoard[i])) SFX.play('turn');
+        }
+        lastBothPlayers = !!(game.players.X && game.players.O);
+    }
+    lastWinner = game.winner || null;
     scoreX.textContent = game.scores.X;
     scoreO.textContent = game.scores.O;
     if (nameX) nameX.textContent = game.names && game.names.X ? game.names.X : '—';
@@ -139,6 +162,7 @@ cells.forEach(cell => {
 });
 
 replayBtn.addEventListener('click', () => {
+    if (window.SFX) SFX.play('click');
     socket.emit('replay');
 });
 

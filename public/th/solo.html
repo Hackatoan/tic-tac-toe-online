@@ -124,6 +124,7 @@ window.__I18N__ = {"yourTurn":"ตาของคุณ","aiThinking":"🤖 AI �
 window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };
 </script>
 <!-- i18n:runtime:end -->
+    <script src="/sfx.js"></script>
     <script src="/solo.js"></script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1fb943269b344332804cfc907bf18ee5"}'></script><!-- End Cloudflare Web Analytics -->
 </body>

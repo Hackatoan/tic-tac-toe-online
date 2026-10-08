@@ -122,9 +122,11 @@ function applyMove(index, sym) {
     cells[index].textContent = sym;
     cells[index].className = 'cell ' + sym.toLowerCase();
     cells[index].setAttribute('aria-label', cellLabel(index, sym));
+    if (window.SFX) SFX.play(sym === 'X' ? 'place' : 'place2');
 
     const result = checkResult(board);
     if (result) {
+        if (window.SFX) setTimeout(() => SFX.play(result === 'Draw' ? 'draw' : result === P ? 'win' : 'lose'), 220);
         gameOver = true;
         replayBtn.style.display = 'inline-block';
         if (result === 'Draw') {
@@ -156,6 +158,7 @@ function applyMove(index, sym) {
 }
 
 function resetGame() {
+    if (window.SFX) SFX.play('click');
     clearTimeout(aiTimer);
     board = Array(9).fill(null);
     gameOver = false;
