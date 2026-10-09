@@ -12,9 +12,9 @@
   },
   "index": {
     "gameName": "Morpion",
-    "title": "Morpion en ligne — Jeu multijoueur sur navigateur | Hackatoa",
-    "description": "Jouez au Morpion en ligne contre un ami en temps réel. Stratégie classique de tic-tac-toe dans votre navigateur — sans inscription, sans téléchargement, jeu instantané. Jeu multijoueur gratuit.",
-    "ogTitle": "Morpion en ligne — Jeu multijoueur sur navigateur",
+    "title": "Morpion en ligne — Jouez gratuitement contre un ami ou l'IA | Hackatoa",
+    "description": "Jouez au Morpion en ligne gratuitement, sans inscription ni téléchargement. Défiez un ami en temps réel ou jouez en solo contre l'IA. Du morpion instantané dans votre navigateur.",
+    "ogTitle": "Morpion en ligne — Jouez gratuitement contre un ami ou l'IA",
     "h1": "Morpion en ligne",
     "tagline": "Jouez au Morpion avec un ami ou affrontez l'IA !",
     "ui": {

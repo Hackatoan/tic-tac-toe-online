@@ -12,9 +12,9 @@
   },
   "index": {
     "gameName": "Tic-Tac-Toe",
-    "title": "Tic-Tac-Toe Online — Multiplayer-Browserspiel | Hackatoa",
-    "description": "Spiele Tic-Tac-Toe online in Echtzeit gegen einen Freund. Die klassische 3-in-einer-Reihe-Strategie direkt im Browser — ohne Registrierung, ohne Download, sofort spielbar. Kostenloses Multiplayer-Spiel.",
-    "ogTitle": "Tic-Tac-Toe Online — Multiplayer-Browserspiel",
+    "title": "Tic-Tac-Toe Online — Kostenlos gegen Freunde oder KI spielen | Hackatoa",
+    "description": "Spiele Tic-Tac-Toe online kostenlos — ohne Registrierung, ohne Download. Fordere einen Freund in Echtzeit heraus oder spiele solo gegen die KI. Sofortiger Drei-gewinnt-Spaß im Browser.",
+    "ogTitle": "Tic-Tac-Toe Online — Kostenlos gegen Freunde oder KI spielen",
     "h1": "Tic Tac Toe Online",
     "tagline": "Spiele Tic Tac Toe mit einem Freund oder fordere die KI heraus!",
     "ui": {
