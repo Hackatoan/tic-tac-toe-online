@@ -26,9 +26,9 @@
   },
   "index": {
     "gameName": "Tic-Tac-Toe",
-    "title": "Tic-Tac-Toe Online — Multiplayer Browser Game | Hackatoa",
-    "description": "Play Tic-Tac-Toe online against a friend in real time. Classic 3-in-a-row strategy in your browser — no signup, no download, instant play. Free multiplayer game.",
-    "ogTitle": "Tic-Tac-Toe Online — Multiplayer Browser Game",
+    "title": "Tic Tac Toe Online — Play Free vs Friend or AI | Hackatoa",
+    "description": "Play tic tac toe online for free — no signup, no download. Challenge a friend in real time or play solo against the AI. Instant 3-in-a-row fun in your browser.",
+    "ogTitle": "Tic Tac Toe Online — Play Free vs Friend or AI",
     "h1": "Tic Tac Toe Online",
     "tagline": "Play Tic Tac Toe with a friend or challenge the AI!",
     "ui": {
