@@ -46,7 +46,7 @@ const switcher = (page, cur) => {
     const style = active ? 'color:#fff;font-weight:700;text-decoration:none;' : 'color:#b8a0ac;text-decoration:none;';
     return `<a href="${pageHref(page, l)}" hreflang="${HREFLANG[l]}"${active ? ' aria-current="true"' : ''} style="${style}">${SWITCH_LABEL[l]}</a>`;
   });
-  return `\n<!-- i18n:switcher:start -->\n<nav aria-label="Language" style="position:fixed;top:8px;right:10px;z-index:300;font-size:12px;font-family:system-ui,-apple-system,sans-serif;background:rgba(20,10,20,.9);border:1px solid rgba(244,114,182,.4);border-radius:999px;padding:5px 12px;display:flex;gap:9px;box-shadow:0 2px 10px rgba(0,0,0,.4);">\n  ${items.join('\n  ')}\n</nav>\n<!-- i18n:switcher:end -->`;
+  return `\n<!-- i18n:switcher:start -->\n<nav aria-label="Language" style="position:relative;width:max-content;margin:8px 10px 0 auto;z-index:300;font-size:12px;font-family:system-ui,-apple-system,sans-serif;background:rgba(20,10,20,.9);border:1px solid rgba(244,114,182,.4);border-radius:999px;padding:5px 12px;display:flex;gap:9px;box-shadow:0 2px 10px rgba(0,0,0,.4);">\n  ${items.join('\n  ')}\n</nav>\n<!-- i18n:switcher:end -->`;
 };
 const runtimeBlock = (runtime, cur) =>
   `<!-- i18n:runtime:start -->\n<script>\ntry{localStorage.setItem('hk_lang',${JSON.stringify(cur)})}catch(e){}\nwindow.__I18N__ = ${JSON.stringify(runtime)};\nwindow.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };\n</script>\n<!-- i18n:runtime:end -->\n`;
