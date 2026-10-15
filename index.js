@@ -86,7 +86,8 @@ function createGame() {
         turn: starter,
         starter: starter,
         winner: null,
-        lastActivity: Date.now()
+        lastActivity: Date.now(),
+        moveCount: 0
     };
     activeGameCount++;
     return gameId;
@@ -202,6 +203,7 @@ io.on('connection', (socket) => {
 
         game.lastActivity = Date.now();
         game.board[index] = currentSymbol;
+        game.moveCount++;
 
         // Check for winner
         let hasWinner = false;
@@ -215,7 +217,7 @@ io.on('connection', (socket) => {
             }
         }
 
-        if (!hasWinner && !game.board.includes(null)) {
+        if (!hasWinner && game.moveCount === 9) {
             game.winner = 'Draw';
         }
 
@@ -237,6 +239,7 @@ io.on('connection', (socket) => {
 
         game.lastActivity = Date.now();
         game.board = Array(9).fill(null);
+        game.moveCount = 0;
         game.winner = null;
         game.starter = game.starter === 'X' ? 'O' : 'X';
         game.turn = game.starter;
