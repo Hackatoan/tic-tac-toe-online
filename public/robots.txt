@@ -48,4 +48,9 @@ Disallow: /
 User-agent: ImagesiftBot
 Disallow: /
 
+# Site rules for all crawlers (Google merges this with the managed `User-agent: *` group).
+# /api/ is JSON (leaderboard etc.) — GSC reported /api/leaderboard as a crawled 5xx page.
+User-agent: *
+Disallow: /api/
+
 Sitemap: https://ttt.hackatoa.com/sitemap.xml
