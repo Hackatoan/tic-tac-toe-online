@@ -68,7 +68,8 @@
       "noGames": "Chưa có trò chơi nào được chơi — hãy là người đầu tiên!",
       "lbUnavailable": "Bảng xếp hạng không khả dụng.",
       "failedCreate": "Không thể tạo trò chơi.",
-      "errorCreate": "Đã xảy ra lỗi khi tạo trò chơi."
+      "errorCreate": "Đã xảy ra lỗi khi tạo trò chơi.",
+      "creatingGame": "Đang tạo trận…"
     }
   },
   "solo": {

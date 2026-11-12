@@ -68,7 +68,8 @@
       "noGames": "Noch keine Spiele gespielt — sei der Erste!",
       "lbUnavailable": "Bestenliste nicht verfügbar.",
       "failedCreate": "Spiel konnte nicht erstellt werden.",
-      "errorCreate": "Beim Erstellen des Spiels ist ein Fehler aufgetreten."
+      "errorCreate": "Beim Erstellen des Spiels ist ein Fehler aufgetreten.",
+      "creatingGame": "Spiel wird erstellt…"
     }
   },
   "solo": {

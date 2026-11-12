@@ -40,17 +40,22 @@ const hreflangBlock = (page) => {
   links.push(`  <link rel="alternate" hreflang="x-default" href="${pageUrl(page, 'en')}" />`);
   return `\n  <!-- i18n:hreflang:start -->\n${links.join('\n')}\n  <!-- i18n:hreflang:end -->`;
 };
+// Globe button + popover menu (all inline: no shared stylesheet/script across pages).
+const SWITCH_BTN = '<button id="lang-btn" type="button" aria-label="Language" aria-haspopup="true" aria-expanded="false" style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;padding:0;background:rgba(6,10,6,.92);border:1px solid #1a3d1a;border-radius:999px;color:#8a8;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.5)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><ellipse cx="12" cy="12" rx="4" ry="9"/></svg></button>';
+const SWITCH_JS = `<script>(function(){var b=document.getElementById('lang-btn'),p=document.getElementById('lang-pop');if(!b||!p)return;var d=p.querySelector('a:not([aria-current])');if(d&&d.style&&d.style.color)b.style.color=d.style.color;function setOpen(open){p.style.display=open?'flex':'none';b.setAttribute('aria-expanded',open?'true':'false');}b.addEventListener('click',function(e){e.stopPropagation();setOpen(p.style.display!=='flex');});p.addEventListener('click',function(e){e.stopPropagation();});document.addEventListener('click',function(){setOpen(false);});})();</script>`;
 const switcher = (page, cur) => {
   const items = LOCALES.map((l) => {
     const active = l === cur;
     const style = active ? 'color:#fff;font-weight:700;text-decoration:none;' : 'color:#b8a0ac;text-decoration:none;';
     return `<a href="${pageHref(page, l)}" hreflang="${HREFLANG[l]}"${active ? ' aria-current="true"' : ''} style="${style}">${SWITCH_LABEL[l]}</a>`;
   });
-  return `\n<!-- i18n:switcher:start -->\n<nav aria-label="Language" style="position:relative;width:max-content;margin:8px 10px 0 auto;z-index:300;font-size:12px;font-family:system-ui,-apple-system,sans-serif;background:rgba(20,10,20,.9);border:1px solid rgba(244,114,182,.4);border-radius:999px;padding:5px 12px;display:flex;gap:9px;box-shadow:0 2px 10px rgba(0,0,0,.4);">\n  ${items.join('\n  ')}\n</nav>\n<!-- i18n:switcher:end -->`;
+  return `\n<!-- i18n:switcher:start -->\n<div id="lang-switch" style="position:relative;display:flex;justify-content:flex-end;padding:6px 10px;z-index:99999;font-family:system-ui,-apple-system,sans-serif">${SWITCH_BTN}<div id="lang-pop" role="menu" style="display:none;position:absolute;top:calc(100% + 8px);right:0;flex-direction:column;gap:8px;background:rgba(6,10,6,.95);border:1px solid #1a3d1a;border-radius:10px;padding:9px 12px;box-shadow:0 4px 16px rgba(0,0,0,.6);font-size:12px;white-space:nowrap">${items.join('\n  ')}</div></div>\n${SWITCH_JS}\n<!-- i18n:switcher:end -->`;
 };
 const runtimeBlock = (runtime, cur) =>
   `<!-- i18n:runtime:start -->\n<script>\ntry{localStorage.setItem('hk_lang',${JSON.stringify(cur)})}catch(e){}\nwindow.__I18N__ = ${JSON.stringify(runtime)};\nwindow.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };\n</script>\n<!-- i18n:runtime:end -->\n`;
 
+// The runtime dict goes in front of the first page script (sfx.js), so every script can call t().
+const FIRST_SCRIPT = /<script src="\/?sfx\.js"><\/script>/;
 const injectCommon = (html, page, cur, runtime, scriptRegex) =>
   html.replace('</head>', `${hreflangBlock(page)}\n</head>`)
       .replace(/(<body[^>]*>)/, `$1${switcher(page, cur)}`)
@@ -86,7 +91,7 @@ function buildRoom(base) {
 <!-- i18n:room:end -->
 `;
   const cleaned = base.replace(/\s*<!-- i18n:room:start -->[\s\S]*?<!-- i18n:room:end -->/g, '');
-  return cleaned.replace(/(<script src="\/?name\.js"><\/script>)/, `${boot}    $1`);
+  return cleaned.replace(/(<script src="\/?sfx\.js"><\/script>)/, `${boot}    $1`);
 }
 
 const faqJsonLd = (faqs) => {
@@ -143,9 +148,9 @@ function buildIndex(base, loc, t) {
     // cross-page: Play vs AI -> localized solo
     h = litReplace(h, `window.location.href='/solo'`, `window.location.href='${pageHref('solo', loc)}'`, 'index->solo link');
     // absolute asset paths for subdir
-    h = h.replace(/href="style\.css"/g, 'href="/style.css"').replace(/src="name\.js"/g, 'src="/name.js"');
+    h = h.replace(/href="style\.css"/g, 'href="/style.css"').replace(/src="(name|sfx)\.js"/g, 'src="/$1.js"');
   }
-  return injectCommon(h, 'index', loc, t.index.runtime, /<script src="\/?name\.js"><\/script>/);
+  return injectCommon(h, 'index', loc, t.index.runtime, FIRST_SCRIPT);
 }
 
 function buildSolo(base, loc, t) {
@@ -172,9 +177,9 @@ function buildSolo(base, loc, t) {
     h = litReplace(h, esrc.footer.coffee, sh.footer.coffee, 'footer.coffee');
     // cross-page: "vs Friend" href -> localized index
     h = litReplace(h, `<a href="/">`, `<a href="${pageHref('index', loc)}">`, 'solo->index link');
-    h = h.replace(/href="style\.css"/g, 'href="/style.css"').replace(/src="solo\.js"/g, 'src="/solo.js"');
+    h = h.replace(/href="style\.css"/g, 'href="/style.css"').replace(/src="(solo|sfx)\.js"/g, 'src="/$1.js"');
   }
-  return injectCommon(h, 'solo', loc, t.solo.runtime, /<script src="\/?solo\.js"><\/script>/);
+  return injectCommon(h, 'solo', loc, t.solo.runtime, FIRST_SCRIPT);
 }
 
 // ---------- run ----------
