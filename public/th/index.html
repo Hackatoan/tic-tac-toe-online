@@ -180,7 +180,7 @@
     <!-- i18n:runtime:start -->
 <script>
 try{localStorage.setItem('hk_lang',"th")}catch(e){}
-window.__I18N__ = {"anonymous":"ไม่ระบุตัวตน","nicknamePrompt":"เลือกชื่อเล่นสำหรับตารางคะแนน:","noGames":"ยังไม่มีการเล่นเกม — มาเป็นคนแรกกันเถอะ!","lbUnavailable":"ไม่สามารถใช้งานตารางคะแนนได้","failedCreate":"ไม่สามารถสร้างเกมได้","errorCreate":"เกิดข้อผิดพลาดขณะสร้างเกม"};
+window.__I18N__ = {"anonymous":"ไม่ระบุตัวตน","nicknamePrompt":"เลือกชื่อเล่นสำหรับตารางคะแนน:","noGames":"ยังไม่มีการเล่นเกม — มาเป็นคนแรกกันเถอะ!","lbUnavailable":"ไม่สามารถใช้งานตารางคะแนนได้","failedCreate":"ไม่สามารถสร้างเกมได้","errorCreate":"เกิดข้อผิดพลาดขณะสร้างเกม","creatingGame":"กำลังสร้างเกม…"};
 window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).split('.').reduce(function(o,i){return (o==null)?undefined:o[i];}, d); if (s == null) s = k; if (p) for (var n in p) s = s.split('{'+n+'}').join(p[n]); return s; };
 </script>
 <!-- i18n:runtime:end -->
@@ -232,10 +232,13 @@ window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).spli
         loadLeaderboard();
 
         const createGameBtn = document.getElementById('createGameBtn');
+        const originalBtnText = createGameBtn.textContent;
         createGameBtn.addEventListener('click', async () => {
             if (createGameBtn.disabled) return;
             window.PlayerName.ensure();
             createGameBtn.disabled = true;
+            createGameBtn.setAttribute('aria-busy', 'true');
+            createGameBtn.textContent = T('creatingGame');
             try {
                 const response = await fetch('/api/games', { method: 'POST' });
                 const data = await response.json();
@@ -250,6 +253,8 @@ window.t = function(k, p){ var d = window.__I18N__ || {}; var s = String(k).spli
                 alert(T('errorCreate'));
             }
             createGameBtn.disabled = false;
+            createGameBtn.removeAttribute('aria-busy');
+            createGameBtn.textContent = originalBtnText;
         });
     </script>
 

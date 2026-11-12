@@ -68,7 +68,8 @@
       "noGames": "Aucune partie jouée pour l'instant — soyez le premier !",
       "lbUnavailable": "Classement indisponible.",
       "failedCreate": "Échec de la création de la partie.",
-      "errorCreate": "Une erreur est survenue lors de la création de la partie."
+      "errorCreate": "Une erreur est survenue lors de la création de la partie.",
+      "creatingGame": "Création de la partie…"
     }
   },
   "solo": {

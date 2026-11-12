@@ -68,7 +68,8 @@
       "noGames": "Aún no hay partidas jugadas — ¡sé el primero!",
       "lbUnavailable": "Tabla de clasificación no disponible.",
       "failedCreate": "Error al crear la partida.",
-      "errorCreate": "Ocurrió un error al crear la partida."
+      "errorCreate": "Ocurrió un error al crear la partida.",
+      "creatingGame": "Creando partida…"
     }
   },
   "solo": {

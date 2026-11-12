@@ -68,7 +68,8 @@
       "noGames": "Nenhuma partida jogada ainda — seja o primeiro!",
       "lbUnavailable": "Placar de líderes indisponível.",
       "failedCreate": "Falha ao criar o jogo.",
-      "errorCreate": "Ocorreu um erro ao criar o jogo."
+      "errorCreate": "Ocorreu um erro ao criar o jogo.",
+      "creatingGame": "Criando partida…"
     }
   },
   "solo": {
