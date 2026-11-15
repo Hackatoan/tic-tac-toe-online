@@ -4,7 +4,8 @@
 // per-page hreflang + a language switcher + runtime dict, rewrites cross-page
 // links to stay in-locale, and regenerates a hreflang sitemap.
 // Deterministic string replacement only — never rewrites markup/IDs/scripts.
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -189,16 +190,23 @@ const bases = {
 };
 const builders = { index: buildIndex, solo: buildSolo };
 
+// repo-relative output path for a page/locale
+const outPath = (page, l) => (l === 'en' ? `public/${page}.html` : `public/${l}/${page}.html`);
+// committed (HEAD) content of a file, or null if git/history is unavailable
+const headContent = (rel) => {
+  try { return execFileSync('git', ['show', `HEAD:${rel}`], { cwd: ROOT, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'], maxBuffer: 64 << 20 }); }
+  catch { return null; }
+};
+const outputs = {}; // rel path -> generated content
+
 for (const loc of LOCALES) {
   const t = loc === 'en' ? en : JSON.parse(readFileSync(join(ROOT, `i18n/${loc}.json`), 'utf8'));
   for (const page of PAGES) {
     const out = builders[page](bases[page], loc, t);
-    if (loc === 'en') {
-      writeFileSync(join(ROOT, `public/${page}.html`), out);
-    } else {
-      mkdirSync(join(ROOT, `public/${loc}`), { recursive: true });
-      writeFileSync(join(ROOT, `public/${loc}/${page}.html`), out);
-    }
+    const rel = outPath(page, loc);
+    if (loc !== 'en') mkdirSync(join(ROOT, `public/${loc}`), { recursive: true });
+    writeFileSync(join(ROOT, rel), out);
+    outputs[rel] = out;
   }
   console.log(`${loc.padEnd(5)} -> index + solo`);
 }
@@ -208,16 +216,31 @@ writeFileSync(join(ROOT, 'public/game.html'), buildRoom(readFileSync(join(ROOT, 
 console.log('room  -> public/game.html');
 
 // sitemap: index + solo per locale, each with its own hreflang alternates
+// <lastmod> must be deterministic: keep each URL's existing date unless that page's
+// generated output differs from what is committed at HEAD (i.e. it really changed),
+// in which case stamp today's date. Re-running the build is therefore a no-op.
 const today = new Date().toISOString().slice(0, 10);
+const SITEMAP = join(ROOT, 'public/sitemap.xml');
+const prevLastmod = {};
+if (existsSync(SITEMAP)) {
+  for (const m of readFileSync(SITEMAP, 'utf8').matchAll(/<loc>([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g)) prevLastmod[m[1]] = m[2];
+}
+const lastmodFor = (page, l) => {
+  const prev = prevLastmod[pageUrl(page, l)];
+  if (!prev) return today;
+  const rel = outPath(page, l);
+  const head = headContent(rel);
+  return head !== null && head !== outputs[rel] ? today : prev;
+};
 const altBlock = (page) =>
   LOCALES.map((l) => `    <xhtml:link rel="alternate" hreflang="${HREFLANG[l]}" href="${pageUrl(page, l)}"/>`).join('\n')
   + `\n    <xhtml:link rel="alternate" hreflang="x-default" href="${pageUrl(page, 'en')}"/>`;
 const urls = PAGES.flatMap((page) => LOCALES.map((l) => `  <url>
     <loc>${pageUrl(page, l)}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmodFor(page, l)}</lastmod>
 ${altBlock(page)}
   </url>`)).join('\n');
-writeFileSync(join(ROOT, 'public/sitemap.xml'),
+writeFileSync(SITEMAP,
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls}\n</urlset>\n`);
 console.log('sitemap -> public/sitemap.xml');
 console.log(warnings ? `\nDone with ${warnings} anchor warning(s).` : '\nDone. All anchors matched.');
