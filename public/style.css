@@ -137,6 +137,20 @@ button:disabled:hover {
     text-shadow: 2px 2px 4px #2b1a16;
 }
 
+.cell.win {
+    background-color: #8d5a4a;
+    box-shadow: inset 0 0 0 3px #ff69b4, 0 0 12px rgba(255, 105, 180, 0.55);
+    animation: win-pulse 0.9s ease-in-out 2;
+}
+
+@keyframes win-pulse {
+    50% { transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cell.win { animation: none; }
+}
+
 #statusMessage {
     font-weight: bold;
     color: #ff69b4;
