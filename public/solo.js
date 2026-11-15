@@ -33,6 +33,11 @@ function checkResult(b) {
     return b.includes(null) ? null : 'Draw';
 }
 
+function highlightWin(b) {
+    const line = WIN_PATTERNS.find(([a, bb, c]) => b[a] && b[a] === b[bb] && b[a] === b[c]);
+    if (line) line.forEach(i => cells[i].classList.add('win'));
+}
+
 // ── AI strategies ──
 
 function randomPick(b) {
@@ -128,6 +133,7 @@ function applyMove(index, sym) {
     if (result) {
         if (window.SFX) setTimeout(() => SFX.play(result === 'Draw' ? 'draw' : result === P ? 'win' : 'lose'), 220);
         gameOver = true;
+        highlightWin(board);
         replayBtn.style.display = 'inline-block';
         if (result === 'Draw') {
             statusEl.textContent = T('itsDraw');

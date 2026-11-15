@@ -12,6 +12,7 @@ A minimal, fast tic-tac-toe with online multiplayer and a leaderboard.
 
 - Real-time online play (join by code) + local play
 - Global leaderboard
+- Winning line is highlighted at the end of each round (online + vs AI)
 - 6-language localization
 
 ## Tech Stack
