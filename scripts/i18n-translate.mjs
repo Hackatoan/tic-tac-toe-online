@@ -4,6 +4,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { protect, restore } from './i18n-placeholders.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const KEY = process.env.GEMINI_API_KEY;
@@ -48,7 +49,7 @@ Hard rules:
 - Return ONLY the translated JSON object, same keys and structure, valid JSON.
 - Do NOT translate JSON keys. Keep arrays the same length and order.
 - Keep any emoji and leading symbols (e.g. "🏆", "☕", "↑", "→") exactly.
-- Keep any {curly} placeholder tokens (e.g. {code}, {ship}, {cell}) EXACTLY as-is, unchanged and untranslated.
+- Keep every ⟦n⟧ marker (e.g. ⟦0⟧, ⟦1⟧) EXACTLY as-is: same digits, same count, never translated, removed or merged. Move it within the sentence only if grammar requires.
 - Use the natural, commonly-searched local name of the game for "gameName", "logoTitle", "title" and "ogTitle" (e.g. German "Schiffe versenken", Spanish "Batalla Naval"). "logoTitle" should be uppercase.
 - Keep it natural and idiomatic for native speakers, concise enough to fit game buttons.
 - Set "htmlLang" to "${code}".
@@ -58,9 +59,12 @@ ${JSON.stringify(obj, null, 2)}`;
 
 for (const code of LOCALES) {
   process.stdout.write(`Translating -> ${code} (${LANG_NAMES[code]})... `);
-  const raw = await gemini(prompt(LANG_NAMES[code], code, source));
-  let out;
-  try { out = JSON.parse(raw); } catch (e) { console.error('\n  bad JSON:', raw.slice(0, 200)); throw e; }
+  const { protectedObj, maps } = protect(source);
+  const raw = await gemini(prompt(LANG_NAMES[code], code, protectedObj));
+  let parsed;
+  try { parsed = JSON.parse(raw); } catch (e) { console.error('\n  bad JSON:', raw.slice(0, 200)); throw e; }
+  const { restored: out, problems } = restore(parsed, source, maps);
+  if (problems.length) console.warn(`\n  ${problems.length} string(s) fell back to English:\n    ` + problems.join('\n    '));
   out.htmlLang = code;
   out._meta = { ..._meta, generatedFrom: 'i18n/en.json', locale: code };
   writeFileSync(join(ROOT, `i18n/${code}.json`), JSON.stringify(out, null, 2) + '\n');
