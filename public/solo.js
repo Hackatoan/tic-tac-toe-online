@@ -193,17 +193,32 @@ cells.forEach(cell => {
     });
 });
 
+// Remember the last-picked difficulty across visits (all locales share solo.js).
+const DIFF_KEY = 'ttt_solo_difficulty';
+
+function selectDifficulty(level) {
+    difficulty = level;
+    diffBtns.forEach(b => {
+        const on = b.getAttribute('data-level') === level;
+        b.classList.toggle('active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+}
+
 diffBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        difficulty = btn.getAttribute('data-level');
-        diffBtns.forEach(b => {
-            b.classList.remove('active');
-            b.setAttribute('aria-pressed', 'false');
-        });
-        btn.classList.add('active');
-        btn.setAttribute('aria-pressed', 'true');
+        selectDifficulty(btn.getAttribute('data-level'));
+        try { localStorage.setItem(DIFF_KEY, difficulty); } catch (e) {}
         resetGame();
     });
 });
+
+(function restoreDifficulty() {
+    let saved = null;
+    try { saved = localStorage.getItem(DIFF_KEY); } catch (e) {}
+    if (saved && saved !== difficulty && Array.from(diffBtns).some(b => b.getAttribute('data-level') === saved)) {
+        selectDifficulty(saved);
+    }
+})();
 
 replayBtn.addEventListener('click', resetGame);
