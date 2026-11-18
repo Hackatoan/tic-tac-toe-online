@@ -85,11 +85,15 @@ function label(sym) {
 
 let lastWinner = null;
 let lastBothPlayers = false;
+let lastHighlightedLine = null;
 socket.on('gameState', (game) => {
     const prevBoard = lastRenderedBoard;
     currentGameState = game;
     updateBoard(game.board);
-    highlightWin(game.board, game.winner);
+    // Only recompute highlight if winner state changed
+    if (game.winner !== lastWinner) {
+        highlightWin(game.board, game.winner, lastHighlightedLine);
+    }
     if (window.SFX) {
         // Sounds only for changes after the first render, so joining mid-game stays silent.
         if (prevBoard) {
@@ -174,11 +178,18 @@ const WIN_PATTERNS = [
 ];
 
 // Outline the three cells that won the round (cleared on the next round).
-function highlightWin(board, winner) {
+function highlightWin(board, winner, prevLine) {
     const line = winner && winner !== 'Draw'
         ? WIN_PATTERNS.find(([a, b, c]) => board[a] === winner && board[b] === winner && board[c] === winner)
         : null;
-    cells.forEach((cell, i) => cell.classList.toggle('win', !!line && line.includes(i)));
+    // Only update cells whose highlight state changed
+    if (prevLine) {
+        prevLine.forEach(i => cells[i].classList.remove('win'));
+    }
+    if (line) {
+        line.forEach(i => cells[i].classList.add('win'));
+    }
+    lastHighlightedLine = line;
 }
 
 function updateBoard(board) {
