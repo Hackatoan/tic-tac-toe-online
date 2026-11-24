@@ -171,6 +171,24 @@ replayBtn.addEventListener('click', () => {
     socket.emit('replay');
 });
 
+// Keyboard shortcuts: 1–9 play the matching square (reading order, like a
+// phone keypad), R starts the next round once it's offered. Ignored while
+// typing in a field or when a modifier is held, so browser shortcuts still work.
+function isTypingTarget(el) {
+    return !!el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
+}
+cells.forEach((cell, i) => cell.setAttribute('aria-keyshortcuts', String(i + 1)));
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey || e.metaKey || e.altKey || e.repeat || isTypingTarget(e.target)) return;
+    if (/^[1-9]$/.test(e.key)) {
+        e.preventDefault();
+        tryMove(cells[Number(e.key) - 1]);
+    } else if ((e.key === 'r' || e.key === 'R') && replayBtn.style.display !== 'none') {
+        e.preventDefault();
+        replayBtn.click();
+    }
+});
+
 const WIN_PATTERNS = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
     [0, 3, 6], [1, 4, 7], [2, 5, 8],
