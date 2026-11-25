@@ -14,6 +14,7 @@ A minimal, fast tic-tac-toe with online multiplayer and a leaderboard.
 - Global leaderboard
 - Winning line is highlighted at the end of each round (online + vs AI)
 - vs AI remembers your last difficulty (Easy/Medium/Hard) between visits
+- vs AI scoreboard tracks draws alongside wins
 - Keyboard shortcuts: press 1–9 to play a square (top-left = 1), R for the next round
 - 6-language localization
 

@@ -169,6 +169,7 @@ function buildSolo(base, loc, t) {
     h = litReplace(h, `>${src.ui.hard}<`, `>${tr.ui.hard}<`, 'solo.hard');
     h = litReplace(h, `>${src.ui.youX} <span`, `>${tr.ui.youX} <span`, 'solo.youX');
     h = litReplace(h, `>${src.ui.aiO} <span`, `>${tr.ui.aiO} <span`, 'solo.aiO');
+    h = litReplace(h, `>${src.ui.draws} <span`, `>${tr.ui.draws} <span`, 'solo.draws');
     h = litReplace(h, `>${en.solo.runtime.yourTurn}</p>`, `>${tr.runtime.yourTurn}</p>`, 'solo.yourTurn(static)');
     h = litReplace(h, `>${src.ui.playAgain}<`, `>${tr.ui.playAgain}<`, 'solo.playAgain');
     h = litReplace(h, `>${esrc.links.vsFriend}<`, `>${sh.links.vsFriend}<`, 'links.vsFriend');
