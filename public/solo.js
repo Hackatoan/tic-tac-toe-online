@@ -3,6 +3,7 @@ const statusEl = document.getElementById('statusMessage');
 const T = (k, p) => (window.t ? t(k, p) : k);
 const scoreXEl = document.getElementById('scoreX');
 const scoreOEl = document.getElementById('scoreO');
+const scoreDrawEl = document.getElementById('scoreDraw');
 const replayBtn = document.getElementById('replayBtn');
 const diffBtns = document.querySelectorAll('.diff-btn');
 
@@ -15,7 +16,7 @@ const WIN_PATTERNS = [
 let board = Array(9).fill(null);
 let gameOver = false;
 let difficulty = 'easy';
-let scores = { X: 0, O: 0 };
+let scores = { X: 0, O: 0, draw: 0 };
 let aiTimer = null;
 // Player is always X (goes first), AI is O
 const P = 'X', A = 'O';
@@ -137,6 +138,8 @@ function applyMove(index, sym) {
         replayBtn.style.display = 'inline-block';
         if (result === 'Draw') {
             statusEl.textContent = T('itsDraw');
+            scores.draw++;
+            if (scoreDrawEl) scoreDrawEl.textContent = scores.draw;
         } else if (result === P) {
             statusEl.textContent = T('youWin');
             scores.X++;
